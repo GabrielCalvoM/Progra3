@@ -2,12 +2,12 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Lenovo\TEC\estructuras\Proyecto3\x64\Debug\Proyecto3.exe</FullPath>
+      <FullPath>C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\x64\Debug\Proyecto3.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>C:\Users\Lenovo\TEC\estructuras\Proyecto3\Proyecto3\ArbolAux.h</FullPath>
+      <FullPath>C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

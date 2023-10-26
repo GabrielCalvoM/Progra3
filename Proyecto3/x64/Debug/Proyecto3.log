@@ -1,3 +1,16 @@
-﻿  Ventana.cpp
-  ArbolAux.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Proyecto3.vcxproj -> C:\Users\Lenovo\TEC\estructuras\Proyecto3\x64\Debug\Proyecto3.exe
+﻿  ArbolAux.h
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  IngresoDatos.cpp
+  Inicio.cpp
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Inicio.cpp(6,1): warning C4829: Parámetros posiblemente incorrectos para la función main. Utilice 'int main(Platform::Array<Platform::String^>^ argv)'
+  Paises.h
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Ventana.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Generando código...
+  ArbolAux.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  Proyecto3.vcxproj -> C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\x64\Debug\Proyecto3.exe
