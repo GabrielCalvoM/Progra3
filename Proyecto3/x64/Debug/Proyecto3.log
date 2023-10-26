@@ -1,3 +1,8 @@
-﻿  Ventana.cpp
+﻿  Inicio.cpp
+C:\Users\Lenovo\TEC\estructuras\Proyecto3\Proyecto3\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\estructuras\Proyecto3\Proyecto3\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\estructuras\Proyecto3\Proyecto3\Inicio.cpp(6,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  Ventana.cpp
+  Generating Code...
   ArbolAux.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Proyecto3.vcxproj -> C:\Users\Lenovo\TEC\estructuras\Proyecto3\x64\Debug\Proyecto3.exe

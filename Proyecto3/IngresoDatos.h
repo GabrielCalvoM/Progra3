@@ -44,37 +44,37 @@ namespace Proyecto3 {
 	public: System::Windows::Forms::Panel^ PPanel;
 	protected:
 
-	private: System::Windows::Forms::Label^ PLabel;
-	private: System::Windows::Forms::TextBox^ CodP;
-	private: System::Windows::Forms::Panel^ Codigos;
+	public: System::Windows::Forms::Label^ PLabel;
+	public: System::Windows::Forms::TextBox^ CodP;
+	public: System::Windows::Forms::Panel^ Codigos;
 	public: System::Windows::Forms::Panel^ CPanel;
-	private: System::Windows::Forms::TextBox^ CodC;
+	public: System::Windows::Forms::TextBox^ CodC;
 
-	private: System::Windows::Forms::Label^ CLabel;
+	public: System::Windows::Forms::Label^ CLabel;
 	public: System::Windows::Forms::Panel^ RPanel;
-	private: System::Windows::Forms::TextBox^ CodR;
-	private: System::Windows::Forms::Label^ RLabel;
+	public: System::Windows::Forms::TextBox^ CodR;
+	public: System::Windows::Forms::Label^ RLabel;
 	public: System::Windows::Forms::Panel^ MPanel;
-	private: System::Windows::Forms::TextBox^ CodM;
-	private: System::Windows::Forms::Label^ MLabel;
+	public: System::Windows::Forms::TextBox^ CodM;
+	public: System::Windows::Forms::Label^ MLabel;
 	public: System::Windows::Forms::Panel^ PrPanel;
-	private: System::Windows::Forms::TextBox^ CodPr;
-	private: System::Windows::Forms::Label^ PrLabel;
+	public: System::Windows::Forms::TextBox^ CodPr;
+	public: System::Windows::Forms::Label^ PrLabel;
 	public: System::Windows::Forms::Panel^ NPanel;
-	private: System::Windows::Forms::TextBox^ Nombre;
-	private: System::Windows::Forms::Label^ NLabel;
+	public: System::Windows::Forms::TextBox^ Nombre;
+	public: System::Windows::Forms::Label^ NLabel;
 	public: System::Windows::Forms::Panel^ KcalPanel;
-	private: System::Windows::Forms::TextBox^ Kcal;
-	private: System::Windows::Forms::Label^ KcalLabel;
+	public: System::Windows::Forms::TextBox^ Kcal;
+	public: System::Windows::Forms::Label^ KcalLabel;
 	public: System::Windows::Forms::Panel^ PrePanel;
-	private: System::Windows::Forms::TextBox^ Precio;
-	private: System::Windows::Forms::Label^ PreLabel;
+	public: System::Windows::Forms::TextBox^ Precio;
+	public: System::Windows::Forms::Label^ PreLabel;
 	public: System::Windows::Forms::Panel^ CaPanel;
-	private: System::Windows::Forms::TextBox^ Cantidad;
-	private: System::Windows::Forms::Label^ CaLabel;
+	public: System::Windows::Forms::TextBox^ Cantidad;
+	public: System::Windows::Forms::Label^ CaLabel;
 	public: System::Windows::Forms::Panel^ IdPanel;
-	private: System::Windows::Forms::TextBox^ Ced;
-	private: System::Windows::Forms::Label^ IdLabel;
+	public: System::Windows::Forms::TextBox^ Ced;
+	public: System::Windows::Forms::Label^ IdLabel;
 
 
 

@@ -1,5 +1,5 @@
 #include "Enums.h"
-#include "IngresoDatos.h"
+#include "IngresoDatos.h" 
 #pragma once
 
 namespace Proyecto3 {
@@ -625,18 +625,20 @@ namespace Proyecto3 {
 	{
 		Button^ boton = (Button^)sender;
 		Proyecto3::IngresoDatos^ ingresa = gcnew Proyecto3::IngresoDatos(); 
-		ingresa->RPanel->Visible = true;
-		ingresa->MPanel->Visible = true;
-		ingresa->PrPanel->Visible = true;
-		ingresa->KcalPanel->Visible = true;
-		ingresa->CaPanel->Visible = true;
-		ingresa->PrePanel->Visible = true;
-		ingresa->ShowDialog();
-		/*
+	
+		
 		//-----------------------Ingresar-------------------------
 		if (boton == PaisI) 
 		{
-			ingresa->PPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+			String^ codP = ingresa->CodP->Text;
+			String^ nombre = ingresa->Nombre->Text;
 			
 		}
 		if (boton == CiudadI) 
@@ -647,6 +649,9 @@ namespace Proyecto3 {
 			ingresa->KcalPanel->Visible = false;
 			ingresa->CaPanel->Visible = false;
 			ingresa->PrePanel->Visible = false;
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ nombre = ingresa->Nombre->Text;
 			
 		}
 		if (boton == RestauranteI)
@@ -656,7 +661,10 @@ namespace Proyecto3 {
 			ingresa->KcalPanel->Visible = false;
 			ingresa->CaPanel->Visible = false;
 			ingresa->PrePanel->Visible = false;
-			
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ nombre = ingresa->Nombre->Text; 
 		}
 		if (boton == MenuI)
 		{
@@ -664,72 +672,239 @@ namespace Proyecto3 {
 			ingresa->KcalPanel->Visible = false;
 			ingresa->CaPanel->Visible = false;
 			ingresa->PrePanel->Visible = false;
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
+			String^ nombre = ingresa->Nombre->Text;
 			
+		}
+		if (boton == ProductoI)
+		{
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
+			String^ codPr = ingresa->CodPr->Text;
+			String^ kcal = ingresa->Kcal->Text;
+			String^ prec = ingresa->Precio->Text;
+			String^ cant = ingresa->Cantidad->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == AdminI)
 		{
-			
+			ingresa->PPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+			String^ cedula = ingresa->Ced->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == ClienteI) 
 		{ 
-			
+			ingresa->PPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+			String^ cedula = ingresa->Ced->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		//-------------------------Consultar------------------------
 		if (boton == PaisC)
 		{
+			ingresa->NPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ codP = ingresa->CodP->Text;
 		}
 		if (boton == CiudadC)
 		{
+			ingresa->NPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
 
 		}
 		if (boton == RestauranteC)
 		{
+			ingresa->NPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
 
 		}
 		if (boton == MenuC)
 		{
+			ingresa->NPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
 
 		}
 		if (boton == ProductoC)
 		{
+			ingresa->NPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
+			String^ codPr = ingresa->CodPr->Text;
 		}
 		if (boton == AdminC)
 		{
-
+			ingresa->PPanel->Visible = false;
+			ingresa->NPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+			String^ cedula = ingresa->Ced->Text;
 		}
 		if (boton == ClienteC)
 		{
-
+			ingresa->PPanel->Visible = false;
+			ingresa->NPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+			String^ cedula = ingresa->Ced->Text;
 		}
 		//-------------------------Modificar--------------------------
 		if (boton == PaisM)
 		{
-		
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+
+			String^ codP = ingresa->CodP->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == CiudadM)
 		{
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
+
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ nombre = ingresa->Nombre->Text;
 
 		}
 		if (boton == RestauranteM)
 		{
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == MenuM)
 		{
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
+			String^ nombre = ingresa->Nombre->Text;
+		}
+		if (boton == ProductoM)
+		{
+			String^ codP = ingresa->CodP->Text;
+			String^ codC = ingresa->CodC->Text;
+			String^ codR = ingresa->CodR->Text;
+			String^ codM = ingresa->CodM->Text;
+			String^ codPr = ingresa->CodPr->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == AdminM)
 		{
+			ingresa->PPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ cedula = ingresa->Ced->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		if (boton == ClienteM)
 		{
+			ingresa->PPanel->Visible = false;
+			ingresa->CPanel->Visible = false;
+			ingresa->RPanel->Visible = false;
+			ingresa->MPanel->Visible = false;
+			ingresa->PrPanel->Visible = false;
+			ingresa->KcalPanel->Visible = false;
+			ingresa->CaPanel->Visible = false;
+			ingresa->PrePanel->Visible = false;
 
+			String^ cedula = ingresa->Ced->Text;
+			String^ nombre = ingresa->Nombre->Text;
 		}
 		ingresa->ShowDialog(); 
-		*/
+		
 	}
 	
 		
