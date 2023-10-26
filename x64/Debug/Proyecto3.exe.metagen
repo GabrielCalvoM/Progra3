@@ -1,0 +1,39 @@
+  Proyecto3.Inicio.resources - Embedded, ContainedInManifestFile, 
+  Proyecto3.Ventana.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Proyecto3, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Proyecto3.IngresoDatos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Panel PPanel : Public
+    System.Windows.Forms.Panel CPanel : Public
+    System.Windows.Forms.Panel RPanel : Public
+    System.Windows.Forms.Panel MPanel : Public
+    System.Windows.Forms.Panel PrPanel : Public
+    System.Windows.Forms.Panel NPanel : Public
+    System.Windows.Forms.Panel KcalPanel : Public
+    System.Windows.Forms.Panel PrePanel : Public
+    System.Windows.Forms.Panel CaPanel : Public
+    System.Windows.Forms.Panel IdPanel : Public
+Class Proyecto3.Ventana: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    verificarAdmin(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+Class Proyecto3.Inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
