@@ -1,0 +1,21 @@
+1;1;San Jose
+1;2;Cartago
+1;5;Puntarenas
+2;1;Nueva York
+2;2;California
+2;3;Nuevo Mexico
+3;1;Ciudad de Mexico
+3;2;Guadalajara
+5;3;Kyoto
+5;4;Nagasaki
+5;1;Tokyo
+4;1;Lima
+6;1;Berlin
+9;13;Pekin
+4;7;Cusco
+7;1;Madrid
+7;3;Barcelona
+8;2;Bocas del Toro
+8;1;Panama
+10;1;Medellin
+12;2;Paris

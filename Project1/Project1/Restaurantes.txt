@@ -1,0 +1,21 @@
+1;1;1;Serrera
+1;2;1;Arenal
+1;2;2;Pandas
+1;5;1;Los Hermanos
+2;1;1;Sweet Machine
+2;2;1;Summer Fresh
+2;3;1;Tasty House
+2;4;2;Immortal
+3;1;2;El Ajolote
+3;2;3;Aguas Calientes
+5;3;1;Puesto de Cerezo
+5;4;2;Isla del Sabor
+5;1;1;Amanecer
+4;1;3;La Llama
+6;1;2;La Taberna
+9;13;2;El Buho
+4;7;8;Tenera Audaz
+7;1;3;Filo de la Roca
+7;1;4;Pluma del Aguila
+8;1;2;El Toreador
+10;1;1;Jaguar Morado

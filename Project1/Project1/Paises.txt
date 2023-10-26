@@ -1,0 +1,10 @@
+1;Costa Rica
+2;Estados Unidos
+3;Mexico
+4;Peru
+5;Japon
+6;Alemania
+7;España
+8;Panama
+9;China
+10;Colombia
