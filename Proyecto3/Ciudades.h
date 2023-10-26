@@ -26,7 +26,7 @@ public:
 
 typedef CiudadNodo* cnodo;
 
-void CiudadNodo::InsertaBinario(int pais, int ciudad, string nom)
+inline void CiudadNodo::InsertaBinario(int pais, int ciudad, string nom)
 {
     if (pais < codigop) {
         if (Hizq == NULL) {
@@ -65,7 +65,7 @@ void CiudadNodo::InsertaBinario(int pais, int ciudad, string nom)
     }
 }
 
-cnodo CiudadNodo::VerificarCiudad(int pais, int ciudad) {
+inline cnodo CiudadNodo::VerificarCiudad(int pais, int ciudad) {
     if (this != NULL) {
         if ((pais == codigop) && (ciudad == codigoc))
             return this;
@@ -80,7 +80,7 @@ cnodo CiudadNodo::VerificarCiudad(int pais, int ciudad) {
     return this;
 }
 
-void ModificarC(CiudadNodo* R, int pais, int ciudad, string nombren) {
+inline void ModificarC(CiudadNodo* R, int pais, int ciudad, string nombren) {
     if ((pais == R->codigop) && (ciudad == R->codigoc))
     {
         R->nombre = nombren;
@@ -124,7 +124,7 @@ public:
 
 };
 
-void ArbolC::InsertaNodo(int pais, int ciudad, string nom, ArbolP paises) {
+inline void ArbolC::InsertaNodo(int pais, int ciudad, string nom, ArbolP paises) {
     if (paises.VerificarPais(pais)) {
         if (VerificarCiudad(pais, ciudad) == NULL) {
             if (raiz == NULL) {
@@ -139,7 +139,7 @@ void ArbolC::InsertaNodo(int pais, int ciudad, string nom, ArbolP paises) {
     }
 }
 
-void ArbolC::InsertaNodo(cnodo padre, cnodo ra, bool hh, int pais, int ciudad, string nom, bool* hder) {
+inline void ArbolC::InsertaNodo(cnodo padre, cnodo ra, bool hh, int pais, int ciudad, string nom, bool* hder) {
     cnodo n1;
 
     if (ra == NULL) {
@@ -204,7 +204,7 @@ void ArbolC::InsertaNodo(cnodo padre, cnodo ra, bool hh, int pais, int ciudad, s
     }
 }
 
-void ArbolC::RotacionDobleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
+inline void ArbolC::RotacionDobleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
     CiudadNodo* n2;
     n2 = n1->Hder;
     n->Hizq = n2->Hder;
@@ -238,7 +238,7 @@ void ArbolC::RotacionDobleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1, 
     n2->FB = 0;
 }
 
-void ArbolC::RotacionDobleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
+inline void ArbolC::RotacionDobleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
     CiudadNodo* n2;
     n2 = n1->Hizq;
     n->Hder = n2->Hizq;
@@ -272,7 +272,7 @@ void ArbolC::RotacionDobleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bo
     n2->FB = 0;
 }
 
-void ArbolC::RotacionSimpleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
+inline void ArbolC::RotacionSimpleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
     cnodo n2 = n1;
     n->Hder = n1->Hizq;
     n2->Hizq = n;
@@ -297,7 +297,7 @@ void ArbolC::RotacionSimpleDerecha(cnodo padre, CiudadNodo* n, CiudadNodo* n1, b
     }
 }
 
-void ArbolC::RotacionSimpleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
+inline void ArbolC::RotacionSimpleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1, bool hder) {
     cnodo n2 = n1;
     n->Hizq = n1->Hder;
     n2->Hder = n;
@@ -322,14 +322,14 @@ void ArbolC::RotacionSimpleIzquierda(cnodo padre, CiudadNodo* n, CiudadNodo* n1,
     }
 }
 
-cnodo ArbolC::VerificarCiudad(int pais, int ciudad) {
+inline cnodo ArbolC::VerificarCiudad(int pais, int ciudad) {
     if (ArbolVacio())
         return NULL;
     else
         return raiz->VerificarCiudad(pais, ciudad);
 }
 
-void ArbolC::LeerCiudades(ArbolP paises) {
+inline void ArbolC::LeerCiudades(ArbolP paises) {
     ifstream archivo;
     string str;
     cnodo aux;
@@ -348,7 +348,7 @@ void ArbolC::LeerCiudades(ArbolP paises) {
     archivo.close();
 }
 
-void ArbolC::Modificar(int pais, int ciudad, string nombren)
+inline void ArbolC::Modificar(int pais, int ciudad, string nombren)
 {
     if (!ArbolVacio()){
         ModificarC(raiz, pais, ciudad, nombren);

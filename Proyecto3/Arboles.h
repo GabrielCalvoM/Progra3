@@ -5,18 +5,7 @@
 #include "Admins.h"
 
 class Arboles {
-private:
-	Arboles() {
-		paises.LeerPaises();
-		ciudades.LeerCiudades(paises);
-		restaurantes.LeerRestaurantes(ciudades);
-		menus.LeerMenu(restaurantes);
-		productos.LeerProducto(menus);
-		clientes.LeerClientes();
-		admins.LeerAdmins();
-	}
 public:
-	static Arboles instancia;
 	ArbolP paises;
 	ArbolC ciudades;
 	ArbolR restaurantes;
@@ -24,18 +13,33 @@ public:
 	ArbolPr productos;
 	ArbolB clientes;
 	ArbolAd admins;
+	Cola fila = Cola(productos);
 
 	static Arboles getInstance() {
-		Arboles* ptr = &Arboles::instancia;
-
-		if (ptr == NULL) {
-			Arboles::instancia = Arboles::Arboles();
-		}
-		
-		return Arboles::instancia;
+		static Arboles instancia;
+		return instancia;
 	}
-};
 
-Arboles Arboles::instancia;
+private:
+	Arboles() {
+		if (paises.ArbolVacio())
+			paises.LeerPaises();
+		if (ciudades.ArbolVacio())
+			ciudades.LeerCiudades(paises);
+		if (restaurantes.ArbolVacio())
+			restaurantes.LeerRestaurantes(ciudades);
+		if (menus.ArbolVacio())
+			menus.LeerMenu(restaurantes);
+		if (productos.ArbolVacio())
+			productos.LeerProducto(menus);
+		if (clientes.ArbolVacio())
+			clientes.LeerClientes();
+		if (admins.ArbolVacio())
+			admins.LeerAdmins();
+		if (fila.ColaVacia())
+			fila = Cola(productos);
+	}
+
+};
 
 #endif //ARBOLES_H

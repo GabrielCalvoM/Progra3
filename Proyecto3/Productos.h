@@ -27,7 +27,7 @@ public:
 
 typedef PrNodo* prnodo;
 
-prnodo PrNodo::VerificarProd(int codp, int codc, int codr, int codm, int codpr) {
+inline prnodo PrNodo::VerificarProd(int codp, int codc, int codr, int codm, int codpr) {
     if ((codp == codigop) && (codc == codigoc) && (codr == codigor) && (codm == codigom) && (codpr == codigopr))
         return this;
     else {
@@ -48,17 +48,17 @@ prnodo PrNodo::VerificarProd(int codp, int codc, int codr, int codm, int codpr) 
     }
 }
 
-void PrNodo::RestaCant(int cantidad) {
+inline void PrNodo::RestaCant(int cantidad) {
     compra -= cantidad;
     cant -= cantidad;
 }
 
-void PrNodo::SumaCant(int cantidad) {
+inline void PrNodo::SumaCant(int cantidad) {
     compra += cantidad;
     cant += cantidad;
 }
 
-void ModificarPr(PrNodo* m, int pais, int ciudad, int rest, int menu, int pr, string nombren, string calo, string prec, string cantidad)
+inline void ModificarPr(PrNodo* m, int pais, int ciudad, int rest, int menu, int pr, string nombren, string calo, string prec, string cantidad)
 {
     if (m == NULL)
     {
@@ -119,20 +119,20 @@ public:
     void reportecomprado();
 };
 
-void ArbolPr::Modificar(int pais, int ciudad, int rest, int menu, int pr, string nombren, string calo, string prec, string cantidad)
+inline void ArbolPr::Modificar(int pais, int ciudad, int rest, int menu, int pr, string nombren, string calo, string prec, string cantidad)
 {
     if (!ArbolVacio())
         ModificarPr(raiz, pais, ciudad, rest, menu, pr, nombren, calo, prec, cantidad);
 }
 
-bool ArbolPr::VerificarPr(int codp, int codc, int codr, int codm, int codpr) {
+inline bool ArbolPr::VerificarPr(int codp, int codc, int codr, int codm, int codpr) {
     if (ArbolVacio())
         return false;
     else
         return raiz->VerificarProd(codp, codc, codr, codm, codpr);
 }
 
-void ArbolPr::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, string nom, int cal, int prec, int cant, ArbolAA menus) {
+inline void ArbolPr::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, string nom, int cal, int prec, int cant, ArbolAA menus) {
     if (menus.VerificarM(pais, ciudad, rest, menu)) {
         if (raiz == NULL) {
             raiz = new PrNodo(pais, ciudad, rest, menu, prod, nom, cal, prec, cant, 0);
@@ -145,7 +145,7 @@ void ArbolPr::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, st
     }
 }
 
-void ArbolPr::InsertaNodo(prnodo padre, prnodo ra, bool hh, int pais, int ciudad, int rest, int menu, int prod, string nom, int cal, int prec, int cant, bool* hder) {
+inline void ArbolPr::InsertaNodo(prnodo padre, prnodo ra, bool hh, int pais, int ciudad, int rest, int menu, int prod, string nom, int cal, int prec, int cant, bool* hder) {
     prnodo n1;
 
     if (ra == NULL) {
@@ -224,7 +224,7 @@ void ArbolPr::InsertaNodo(prnodo padre, prnodo ra, bool hh, int pais, int ciudad
     }
 }
 
-void ArbolPr::LeerProducto(ArbolAA menus) {
+inline void ArbolPr::LeerProducto(ArbolAA menus) {
     ifstream archivo;
     string str;
     prnodo aux;
@@ -249,7 +249,7 @@ void ArbolPr::LeerProducto(ArbolAA menus) {
     archivo.close();
 }
 
-void ArbolPr::RotacionDobleIzquierda(PrNodo* padre, PrNodo* n, PrNodo* n1, bool hder) {
+inline void ArbolPr::RotacionDobleIzquierda(PrNodo* padre, PrNodo* n, PrNodo* n1, bool hder) {
     PrNodo* n2;
     n2 = n1->Hder;
     n->Hizq = n2->Hder;
@@ -283,7 +283,7 @@ void ArbolPr::RotacionDobleIzquierda(PrNodo* padre, PrNodo* n, PrNodo* n1, bool 
     n2->FB = 0;
 }
 
-void ArbolPr::RotacionDobleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
+inline void ArbolPr::RotacionDobleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
     PrNodo* n2;
     n2 = n1->Hizq;
     n->Hder = n2->Hizq;
@@ -317,7 +317,7 @@ void ArbolPr::RotacionDobleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hde
     n2->FB = 0;
 }
 
-void ArbolPr::RotacionSimpleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
+inline void ArbolPr::RotacionSimpleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
     prnodo n2 = n1;
     n->Hder = n1->Hizq;
     n1->Hizq = n;
@@ -342,7 +342,7 @@ void ArbolPr::RotacionSimpleDerecha(prnodo padre, PrNodo* n, PrNodo* n1, bool hd
     }
 }
 
-void ArbolPr::RotacionSimpleIzquierda(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
+inline void ArbolPr::RotacionSimpleIzquierda(prnodo padre, PrNodo* n, PrNodo* n1, bool hder) {
     prnodo n2 = n1;
     n->Hizq = n1->Hder;
     n2->Hder = n;
@@ -368,11 +368,11 @@ void ArbolPr::RotacionSimpleIzquierda(prnodo padre, PrNodo* n, PrNodo* n1, bool 
 
 }
 
-prnodo ArbolPr::getProducto(int pais, int ciudad, int rest, int menu, int prod) {
+inline prnodo ArbolPr::getProducto(int pais, int ciudad, int rest, int menu, int prod) {
     return getNodo(raiz, pais, ciudad, rest, menu, prod);
 }
 
-prnodo ArbolPr::getNodo(prnodo ra, int pais, int ciudad, int rest, int menu, int prod) {
+inline prnodo ArbolPr::getNodo(prnodo ra, int pais, int ciudad, int rest, int menu, int prod) {
     if (ra == NULL) {
         return NULL;
     }

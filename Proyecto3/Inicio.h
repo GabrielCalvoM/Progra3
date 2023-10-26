@@ -1,6 +1,7 @@
 #include "Ventana.h"
 #include "Arboles.h"
 #include <string>
+#include <iostream>
 
 #pragma once
 

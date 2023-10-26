@@ -4,13 +4,13 @@
 class AdminNodo {
 private:
     int cedula;
-    string nombre;
 
     friend class PaginaA;
     friend class ArbolAd;
     friend class Cola;
 
 public:
+    string nombre;
     AdminNodo(int ced, string nom) {
         cedula = ced;
         nombre = nom;
@@ -62,11 +62,11 @@ private:
 
 };
 
-void ArbolAd::InsertaNodo(int ced, string nom) {
+inline void ArbolAd::InsertaNodo(int ced, string nom) {
     Inserta(ced, nom, raiz);
 }
 
-void ArbolAd::Inserta(int C1, string nom, apagina R) {
+inline void ArbolAd::Inserta(int C1, string nom, apagina R) {
     bool EmpujarArriba = false;
     int x = 0;
     apagina xr = NULL;
@@ -82,7 +82,7 @@ void ArbolAd::Inserta(int C1, string nom, apagina R) {
     }
 }
 
-void ArbolAd::Empujar(int C1, string nom, apagina R, bool* EA, int* mediana, apagina* x) {
+inline void ArbolAd::Empujar(int C1, string nom, apagina R, bool* EA, int* mediana, apagina* x) {
     int k = 0;
     bool Esta = false;
 
@@ -111,7 +111,7 @@ void ArbolAd::Empujar(int C1, string nom, apagina R, bool* EA, int* mediana, apa
     }
 }
 
-void ArbolAd::BuscarNodo(int cedula, apagina P, bool* Encontrado, int* k) {
+inline void ArbolAd::BuscarNodo(int cedula, apagina P, bool* Encontrado, int* k) {
     if (cedula < P->admin[1]->cedula) {
         *Encontrado = false;
         *k = 0;
@@ -132,7 +132,7 @@ void ArbolAd::BuscarNodo(int cedula, apagina P, bool* Encontrado, int* k) {
     }
 }
 
-void ArbolAd::MeterHoja(int x, string nom, apagina xder, apagina P, int k) {
+inline void ArbolAd::MeterHoja(int x, string nom, apagina xder, apagina P, int k) {
     for (int i = P->cuenta; i >= k + 1; i--) {
         P->admin[i + 1] = P->admin[i];
         P->rama[i + 1] = P->rama[i];
@@ -143,7 +143,7 @@ void ArbolAd::MeterHoja(int x, string nom, apagina xder, apagina P, int k) {
     P->cuenta += 1;
 }
 
-void ArbolAd::DividirNodo(int x, string nom, apagina xder, apagina P, int k, int* Mda, apagina* Mder) {
+inline void ArbolAd::DividirNodo(int x, string nom, apagina xder, apagina P, int k, int* Mda, apagina* Mder) {
     int posmoda;
     if (k <= 2) {
         posmoda = 2;
@@ -174,11 +174,11 @@ void ArbolAd::DividirNodo(int x, string nom, apagina xder, apagina P, int k, int
     P->cuenta -= 1;
 }
 
-bool ArbolAd::VerificarAdmin(int ced) {
+inline bool ArbolAd::VerificarAdmin(int ced) {
     return VerificarNodo(ced, raiz);
 }
 
-bool ArbolAd::VerificarNodo(int ced, apagina r) {
+inline bool ArbolAd::VerificarNodo(int ced, apagina r) {
     bool existe = false;
     int k = 0;
 
@@ -197,11 +197,11 @@ bool ArbolAd::VerificarNodo(int ced, apagina r) {
     return existe;
 }
 
-adnodo ArbolAd::getAdmin(int ced) {
+inline adnodo ArbolAd::getAdmin(int ced) {
     return getNodo(ced, raiz);
 }
 
-adnodo ArbolAd::getNodo(int ced, apagina r) {
+inline adnodo ArbolAd::getNodo(int ced, apagina r) {
     bool existe = false;
     int k = 0;
     adnodo admin = NULL;
@@ -220,11 +220,11 @@ adnodo ArbolAd::getNodo(int ced, apagina r) {
     return admin;
 }
 
-void ArbolAd::ModificarAdmin(int ced, string nuevo) {
+inline void ArbolAd::ModificarAdmin(int ced, string nuevo) {
     ModificarNodo(ced, raiz, nuevo);
 }
 
-void ArbolAd::ModificarNodo(int ced, apagina r, string nuevo) {
+inline void ArbolAd::ModificarNodo(int ced, apagina r, string nuevo) {
     bool existe = false;
     int k = 0;
 
@@ -244,7 +244,7 @@ void ArbolAd::ModificarNodo(int ced, apagina r, string nuevo) {
     }
 }
 
-void ArbolAd::LeerAdmins() {
+inline void ArbolAd::LeerAdmins() {
     ifstream archivo;
     string str;
     apagina aux;

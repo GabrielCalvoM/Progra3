@@ -31,7 +31,7 @@ public:
     void InsertaNodo(Compras lista, clnodo clien);
 };
 
-void ListaCaja::InsertaNodo(Compras lista, clnodo clien) {
+inline void ListaCaja::InsertaNodo(Compras lista, clnodo clien) {
     if (ListaVacia()) {
         primero = new CajaNodo(lista, clien);
     }
@@ -76,7 +76,7 @@ public:
     void ModificarProdu(int pais, int ciudad, int rest, int menu, int prod, int nmenu, int nprod, int cant);
 };
 
-void Cola::insertaCliente(int ced, ArbolB clientes) {
+inline void Cola::insertaCliente(int ced, ArbolB clientes) {
     if (clientes.VerificarCliente(ced)) {
         if (fondo < 5 - 1) {
             fondo++;
@@ -85,7 +85,7 @@ void Cola::insertaCliente(int ced, ArbolB clientes) {
     }
 }
 
-bool Cola::verificarCliente(int ced) {
+inline bool Cola::verificarCliente(int ced) {
     for (int i = 0; i < 5; i++) {
         if (Cliente[i] != NULL) {
             if (Cliente[i] != NULL && Cliente[i]->cedula == ced) {
@@ -96,11 +96,11 @@ bool Cola::verificarCliente(int ced) {
     return false;
 }
 
-bool Cola::verificarProducto(int pais, int ciudad, int rest, int menu, int prod) {
+inline bool Cola::verificarProducto(int pais, int ciudad, int rest, int menu, int prod) {
     return compras.verificarProducto(pais, ciudad, rest, menu, prod);
 }
 
-void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
+inline void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
     int dir = _mkdir("Facturas");
     ofstream arch;
     bool abierto = false;
@@ -164,19 +164,19 @@ void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
     fondo--;
 }
 
-void Cola::agregaProducto(int pais, int ciudad, int rest, int menu, int prod, int cant) {
+inline void Cola::agregaProducto(int pais, int ciudad, int rest, int menu, int prod, int cant) {
     compras.InsertaNodo(pais, ciudad, rest, menu, prod, cant);
 }
 
-void Cola::borrarProducto(int pais, int ciudad, int rest, int menu, int prod) {
+inline void Cola::borrarProducto(int pais, int ciudad, int rest, int menu, int prod) {
     compras.BorrarNodo(pais, ciudad, rest, menu, prod);
 }
 
-void Cola::modificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant) {
+inline void Cola::modificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant) {
     compras.ModificarCant(pais, ciudad, rest, menu, prod, cant);
 }
 
-void Cola::ModificarProdu(int pais, int ciudad, int rest, int menu, int prod, int nmenu, int nprod, int cant) {
+inline void Cola::ModificarProdu(int pais, int ciudad, int rest, int menu, int prod, int nmenu, int nprod, int cant) {
     compras.ModificarProdu(pais, ciudad, rest, menu, prod, nmenu, nprod, cant);
 }
 

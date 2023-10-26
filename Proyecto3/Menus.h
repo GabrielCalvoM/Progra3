@@ -21,7 +21,7 @@ public:
 
 typedef MNodo* mnodo;
 
-MNodo* MNodo::VerificarMR(int codp, int codc, int codr, int codm) {
+inline MNodo* MNodo::VerificarMR(int codp, int codc, int codr, int codm) {
     if (this == NULL) {
         return NULL;
     }
@@ -37,7 +37,7 @@ MNodo* MNodo::VerificarMR(int codp, int codc, int codr, int codm) {
     }
 }
 
-void ModificarM(MNodo* m, int pais, int ciudad, int rest, int menu, string nombren)
+inline void ModificarM(MNodo* m, int pais, int ciudad, int rest, int menu, string nombren)
 {
     if (m == NULL)
     {
@@ -79,17 +79,17 @@ private:
 
 };
 
-ArbolAA::ArbolAA() {}
+inline ArbolAA::ArbolAA() {}
 
 
-mnodo ArbolAA::VerificarM(int codp, int codc, int codr, int codm) {
+inline mnodo ArbolAA::VerificarM(int codp, int codc, int codr, int codm) {
     if (ArbolVacio())
         return NULL;
     else
         return raiz->VerificarMR(codp, codc, codr, codm);
 }
 
-void ArbolAA::LeerMenu(ArbolR restaurantes) {
+inline void ArbolAA::LeerMenu(ArbolR restaurantes) {
     ifstream archivo;
     string str;
     MNodo* aux;
@@ -110,7 +110,7 @@ void ArbolAA::LeerMenu(ArbolR restaurantes) {
     archivo.close();
 }
 
-MNodo* ArbolAA::skew(MNodo* r) {
+inline MNodo* ArbolAA::skew(MNodo* r) {
     if (r == nullptr || r->Hizq == nullptr) {
         return r;
     }
@@ -123,7 +123,7 @@ MNodo* ArbolAA::skew(MNodo* r) {
     return r;
 }
 
-MNodo* ArbolAA::split(MNodo* r) {
+inline MNodo* ArbolAA::split(MNodo* r) {
     if (r == nullptr || r->Hder == nullptr || r->Hder->Hder == nullptr) {
         return r;
     }
@@ -137,7 +137,7 @@ MNodo* ArbolAA::split(MNodo* r) {
     return r;
 }
 
-void ArbolAA::InsertaNodo(int pais, int ciudad, int rest, int menu, string nom, ArbolR restaurantes) {
+inline void ArbolAA::InsertaNodo(int pais, int ciudad, int rest, int menu, string nom, ArbolR restaurantes) {
     if (restaurantes.VerificarRestaurante(pais, ciudad, rest)) {
         if (raiz == NULL) {
             raiz = new MNodo(pais, ciudad, rest, menu, nom);
@@ -149,7 +149,7 @@ void ArbolAA::InsertaNodo(int pais, int ciudad, int rest, int menu, string nom, 
     }
 }
 
-MNodo* ArbolAA::insertar(MNodo* r, int codp, int codc, int codr, int codm, string nomb) {
+inline MNodo* ArbolAA::insertar(MNodo* r, int codp, int codc, int codr, int codm, string nomb) {
     if (r == nullptr) {
         r = new MNodo{ codp, codc, codr, codm, nomb, nullptr, nullptr, 1, 0 };
     }
@@ -165,7 +165,7 @@ MNodo* ArbolAA::insertar(MNodo* r, int codp, int codc, int codr, int codm, strin
     return r;
 }
 
-void ArbolAA::Modificar(int pais, int ciudad, int rest, int menu, string nombren)
+inline void ArbolAA::Modificar(int pais, int ciudad, int rest, int menu, string nombren)
 {
     if (raiz != NULL)
         ModificarM(raiz, pais, ciudad, rest, menu, nombren);
