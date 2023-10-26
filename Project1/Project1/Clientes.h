@@ -33,7 +33,7 @@ public:
     }
 
     void PreordenR(Pagina* R);
-    void InordenR(Pagina* R);
+    void InordenR();
     void PostordenR(Pagina* R);
     void reporte(Pagina* R);
 
@@ -50,6 +50,7 @@ class ArbolB {
 public:
 
     bool ArbolVacio() { return raiz == NULL; }
+    ppagina getRaiz() { return raiz; }
     void InsertaNodo(int ced, string nom);
     void Inserta(int C1, string nom, ppagina R);
     void Empujar(int C1, string nom, ppagina R, bool* EA, int* mdna, ppagina* x);

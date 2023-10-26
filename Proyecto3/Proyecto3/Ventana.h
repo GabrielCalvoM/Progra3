@@ -187,6 +187,7 @@ namespace Proyecto3 {
 			this->Contactos->TabIndex = 4;
 			this->Contactos->Text = L"Contactos";
 			this->Contactos->UseVisualStyleBackColor = true;
+			this->Contactos->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// Mantenimiento
 			// 
@@ -206,6 +207,7 @@ namespace Proyecto3 {
 			this->Info->TabIndex = 3;
 			this->Info->Text = L"Acerca de";
 			this->Info->UseVisualStyleBackColor = true;
+			this->Info->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// FacturacionPop
 			// 
@@ -215,6 +217,7 @@ namespace Proyecto3 {
 			this->FacturacionPop->TabIndex = 2;
 			this->FacturacionPop->Text = L"Facturación";
 			this->FacturacionPop->UseVisualStyleBackColor = true;
+			this->FacturacionPop->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// Reportes
 			// 
@@ -224,7 +227,7 @@ namespace Proyecto3 {
 			this->Reportes->TabIndex = 1;
 			this->Reportes->Text = L"Reportes";
 			this->Reportes->UseVisualStyleBackColor = true;
-			this->Reportes->Click += gcnew System::EventHandler(this, &Ventana::Reportes_Click);
+			this->Reportes->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// MantOp
 			// 
@@ -598,7 +601,6 @@ namespace Proyecto3 {
 	}
 private: System::Void Ventana_Load(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void Reportes_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

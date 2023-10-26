@@ -60,6 +60,22 @@ void InordenR(PrNodo* R) {
     }
 }
 
+void Pagina::InordenR() {
+    if (this == NULL) {
+        return;
+    }
+    else {
+        if (rama[0])
+            rama[0]->InordenR();
+
+        for (int i = 1; i <= cuenta; i++) {
+            cout << "<< " << cliente[i]->cedula << cliente[i]->nombre << " >>" << " - ";
+            if (rama[i])
+                rama[i]->InordenR();
+        }
+    }
+}
+
 int main() {
 	InordenR(Arboles::getInstance().paises.raiz);
 	cout << endl << endl;
@@ -71,9 +87,11 @@ int main() {
     cout << endl << endl;
 	InordenR(Arboles::getInstance().productos.raiz);
 	cout << endl << endl;
-    clnodo cliente = Arboles::getInstance().clientes.getCliente(6578);
+    Arboles::getInstance().clientes.getRaiz()->InordenR();
+    cout << endl << endl;
+    clnodo cliente = Arboles::getInstance().clientes.getCliente(1);
     cout << cliente->getNombre() << endl << endl;
-    Arboles::getInstance().clientes.ModificarCliente(6578, "Pepe");
+    Arboles::getInstance().clientes.ModificarCliente(1, "Pepe");
     cout << cliente->getNombre() << endl << endl;
 	
 	return 0;
