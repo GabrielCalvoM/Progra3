@@ -1,4 +1,2 @@
-﻿  main.cpp
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Project1\Project1\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Project1\Project1\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+﻿  LINK : no se encontró C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Project1\x64\Debug\Project1.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Project1.vcxproj -> C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Project1\x64\Debug\Project1.exe
