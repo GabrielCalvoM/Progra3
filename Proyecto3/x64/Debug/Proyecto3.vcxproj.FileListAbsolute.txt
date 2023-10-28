@@ -1,4 +1,3 @@
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\x64\Debug\ArbolAux.h
 C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\x64\Debug\Proyecto3.vcxproj.AssemblyReference.cache
 C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\x64\Debug\Proyecto3.IngresoDatos.resources
 C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\x64\Debug\Proyecto3.Inicio.resources

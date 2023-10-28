@@ -1,4 +1,4 @@
-#include "Enums.h"
+#include "Arboles/Enums.h"
 #include "IngresoDatos.h" 
 
 #pragma once

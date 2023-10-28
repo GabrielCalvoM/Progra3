@@ -1,5 +1,5 @@
-#include "Enums.h"
-#include "Arboles.h"
+#include "Arboles/Enums.h"
+#include "Arboles/Arboles.h"
 #include <msclr/marshal_cppstd.h>
 #include <vcclr.h>
 
@@ -657,14 +657,14 @@ namespace Proyecto3 {
 			else if (arbol == Cliente) {
 				clnodo obj = Arboles::getInstance().clientes.getCliente(cedula);
 				if (obj)
-					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
+					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->getNombre()).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 			else if (arbol == Admin) {
 				adnodo obj = Arboles::getInstance().admins.getAdmin(cedula);
 				if (obj)
-					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
+					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->getNombre()).c_str());
 				else
 					Msj->Text = "No existe";
 			}

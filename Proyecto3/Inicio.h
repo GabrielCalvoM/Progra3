@@ -1,5 +1,5 @@
 #include "Ventana.h"
-#include "Arboles.h"
+#include "Arboles/Arboles.h"
 #include <string>
 #include <iostream>
 
