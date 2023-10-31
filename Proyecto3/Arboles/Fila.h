@@ -56,6 +56,7 @@ public:
     void configProd(ArbolPr lista) { compras = Compras(lista); }
 
     bool ColaVacia() { return fondo < 0; }
+    bool ColaLlena() { return fondo >= 4; }
     bool compraVacía() { return compras.ListaVacia(); }
     void insertaCliente(int ced, ArbolB clientes);
     bool verificarCliente(int ced);

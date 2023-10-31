@@ -50,17 +50,56 @@ Class Proyecto3.IngresoDatos: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     System.Windows.Forms.Panel IdPanel : Public
     System.Windows.Forms.TextBox Ced : Public
     System.Windows.Forms.Label IdLabel : Public
-    System.Windows.Forms.Panel CePanel : Public
-    System.Windows.Forms.TextBox Cedula : Public
-    System.Windows.Forms.Label CeLabel : Public
     System.Windows.Forms.Label NLabel : Public
+    System.Windows.Forms.Panel NCPanel : Public
+    System.Windows.Forms.TextBox Nciudad : Public
+    System.Windows.Forms.Label NCLabel : Public
+    System.Windows.Forms.Panel NPrPanel : Public
+    System.Windows.Forms.TextBox NProd : Public
+    System.Windows.Forms.Label NPrLabel : Public
+    System.Windows.Forms.Panel NRPanel : Public
+    System.Windows.Forms.TextBox NRes : Public
+    System.Windows.Forms.Label NRLabel : Public
+    System.Windows.Forms.Panel NMPanel : Public
+    System.Windows.Forms.TextBox NMenu : Public
+    System.Windows.Forms.Label NMLabel : Public
+    System.Windows.Forms.Panel NPPanel : Public
+    System.Windows.Forms.TextBox NPais : Public
+    System.Windows.Forms.Label NPLabel : Public
   Methods:
-    config(Arbol, ActMenu): PrivateScope, Public, HideBySig
+    config(Arbol, ActMenu, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    actualizar(): PrivateScope, Public, HideBySig
 Class Proyecto3.Ventana: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    VentanaCerrada Cerrado: SpecialName
   Methods:
+    add_Cerrado(VentanaCerrada): PrivateScope, Public, HideBySig, SpecialName
+    remove_Cerrado(VentanaCerrada): PrivateScope, Public, HideBySig, SpecialName
     verificarAdmin(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    CerrarVentana(): PrivateScope, Public, HideBySig
+    ocultarOpciones(): PrivateScope, Public, HideBySig
+Class Proyecto3.Ventana+VentanaCerrada: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, EventArgs): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Object, EventArgs, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
 Class Proyecto3.Inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    VentanaAbierta Abierto: SpecialName
+  Methods:
+    add_Abierto(VentanaAbierta): PrivateScope, Public, HideBySig, SpecialName
+    remove_Abierto(VentanaAbierta): PrivateScope, Public, HideBySig, SpecialName
+    VentanaCerrada(Object, EventArgs): PrivateScope, Public, HideBySig
+Class Proyecto3.Inicio+VentanaAbierta: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, EventArgs): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Object, EventArgs, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask

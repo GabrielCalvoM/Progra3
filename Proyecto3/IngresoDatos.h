@@ -42,6 +42,8 @@ namespace Proyecto3 {
 		}
 	private: ActMenu accion;
 	private: Arbol arbol;
+	private: bool cantidad;
+
 	private: System::Windows::Forms::Label^ Titulo;
 	protected:
 
@@ -83,9 +85,9 @@ namespace Proyecto3 {
 	public: System::Windows::Forms::Panel^ IdPanel;
 	public: System::Windows::Forms::TextBox^ Ced;
 	public: System::Windows::Forms::Label^ IdLabel;
-	public: System::Windows::Forms::Panel^ CePanel;
-	public: System::Windows::Forms::TextBox^ Cedula;
-	public: System::Windows::Forms::Label^ CeLabel;
+
+
+
 	private: System::Windows::Forms::Button^ Execute;
 	public:
 
@@ -96,8 +98,51 @@ namespace Proyecto3 {
 
 	public:
 
-	private: System::Windows::Forms::Button^ Cerrar;
+
 	private: System::Windows::Forms::Label^ Msj;
+	private: System::Windows::Forms::Panel^ CompraPanel;
+	private: System::Windows::Forms::Panel^ NuevoProd;
+
+	public: System::Windows::Forms::Panel^ NCPanel;
+	private:
+
+	public: System::Windows::Forms::TextBox^ Nciudad;
+	public: System::Windows::Forms::Label^ NCLabel;
+
+	private:
+
+
+
+
+
+
+
+
+
+
+	public: System::Windows::Forms::Panel^ NPrPanel;
+
+	public: System::Windows::Forms::TextBox^ NProd;
+	public: System::Windows::Forms::Label^ NPrLabel;
+public: System::Windows::Forms::Panel^ NRPanel;
+
+
+
+	public: System::Windows::Forms::TextBox^ NRes;
+public: System::Windows::Forms::Label^ NRLabel;
+public: System::Windows::Forms::Panel^ NMPanel;
+
+
+
+public: System::Windows::Forms::TextBox^ NMenu;
+public: System::Windows::Forms::Label^ NMLabel;
+public: System::Windows::Forms::Panel^ NPPanel;
+public: System::Windows::Forms::TextBox^ NPais;
+public: System::Windows::Forms::Label^ NPLabel;
+
+
+
+
 
 	public:
 	private:
@@ -125,9 +170,6 @@ namespace Proyecto3 {
 			this->Ced = (gcnew System::Windows::Forms::TextBox());
 			this->IdLabel = (gcnew System::Windows::Forms::Label());
 			this->Codigos = (gcnew System::Windows::Forms::Panel());
-			this->CePanel = (gcnew System::Windows::Forms::Panel());
-			this->Cedula = (gcnew System::Windows::Forms::TextBox());
-			this->CeLabel = (gcnew System::Windows::Forms::Label());
 			this->CPanel = (gcnew System::Windows::Forms::Panel());
 			this->CodC = (gcnew System::Windows::Forms::TextBox());
 			this->CLabel = (gcnew System::Windows::Forms::Label());
@@ -153,12 +195,27 @@ namespace Proyecto3 {
 			this->Nombre = (gcnew System::Windows::Forms::TextBox());
 			this->NLabel = (gcnew System::Windows::Forms::Label());
 			this->Execute = (gcnew System::Windows::Forms::Button());
-			this->Cerrar = (gcnew System::Windows::Forms::Button());
 			this->Msj = (gcnew System::Windows::Forms::Label());
+			this->CompraPanel = (gcnew System::Windows::Forms::Panel());
+			this->NuevoProd = (gcnew System::Windows::Forms::Panel());
+			this->NCPanel = (gcnew System::Windows::Forms::Panel());
+			this->Nciudad = (gcnew System::Windows::Forms::TextBox());
+			this->NCLabel = (gcnew System::Windows::Forms::Label());
+			this->NPrPanel = (gcnew System::Windows::Forms::Panel());
+			this->NProd = (gcnew System::Windows::Forms::TextBox());
+			this->NPrLabel = (gcnew System::Windows::Forms::Label());
+			this->NRPanel = (gcnew System::Windows::Forms::Panel());
+			this->NRes = (gcnew System::Windows::Forms::TextBox());
+			this->NRLabel = (gcnew System::Windows::Forms::Label());
+			this->NMPanel = (gcnew System::Windows::Forms::Panel());
+			this->NMenu = (gcnew System::Windows::Forms::TextBox());
+			this->NMLabel = (gcnew System::Windows::Forms::Label());
+			this->NPPanel = (gcnew System::Windows::Forms::Panel());
+			this->NPLabel = (gcnew System::Windows::Forms::Label());
+			this->NPais = (gcnew System::Windows::Forms::TextBox());
 			this->PPanel->SuspendLayout();
 			this->IdPanel->SuspendLayout();
 			this->Codigos->SuspendLayout();
-			this->CePanel->SuspendLayout();
 			this->CPanel->SuspendLayout();
 			this->RPanel->SuspendLayout();
 			this->MPanel->SuspendLayout();
@@ -167,6 +224,13 @@ namespace Proyecto3 {
 			this->PrePanel->SuspendLayout();
 			this->CaPanel->SuspendLayout();
 			this->NPanel->SuspendLayout();
+			this->CompraPanel->SuspendLayout();
+			this->NuevoProd->SuspendLayout();
+			this->NCPanel->SuspendLayout();
+			this->NPrPanel->SuspendLayout();
+			this->NRPanel->SuspendLayout();
+			this->NMPanel->SuspendLayout();
+			this->NPPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Titulo
@@ -231,46 +295,16 @@ namespace Proyecto3 {
 			// 
 			// Codigos
 			// 
-			this->Codigos->Controls->Add(this->CePanel);
 			this->Codigos->Controls->Add(this->CPanel);
 			this->Codigos->Controls->Add(this->PPanel);
 			this->Codigos->Controls->Add(this->IdPanel);
 			this->Codigos->Controls->Add(this->RPanel);
 			this->Codigos->Controls->Add(this->MPanel);
 			this->Codigos->Controls->Add(this->PrPanel);
-			this->Codigos->Controls->Add(this->KcalPanel);
-			this->Codigos->Controls->Add(this->PrePanel);
-			this->Codigos->Controls->Add(this->CaPanel);
 			this->Codigos->Location = System::Drawing::Point(23, 20);
 			this->Codigos->Name = L"Codigos";
-			this->Codigos->Size = System::Drawing::Size(513, 191);
+			this->Codigos->Size = System::Drawing::Size(513, 114);
 			this->Codigos->TabIndex = 2;
-			// 
-			// CePanel
-			// 
-			this->CePanel->Controls->Add(this->Cedula);
-			this->CePanel->Controls->Add(this->CeLabel);
-			this->CePanel->Location = System::Drawing::Point(3, 59);
-			this->CePanel->Name = L"CePanel";
-			this->CePanel->Size = System::Drawing::Size(164, 50);
-			this->CePanel->TabIndex = 5;
-			// 
-			// Cedula
-			// 
-			this->Cedula->Location = System::Drawing::Point(29, 23);
-			this->Cedula->Name = L"Cedula";
-			this->Cedula->Size = System::Drawing::Size(132, 22);
-			this->Cedula->TabIndex = 3;
-			// 
-			// CeLabel
-			// 
-			this->CeLabel->AutoSize = true;
-			this->CeLabel->Location = System::Drawing::Point(3, 4);
-			this->CeLabel->Name = L"CeLabel";
-			this->CeLabel->Size = System::Drawing::Size(53, 16);
-			this->CeLabel->TabIndex = 2;
-			this->CeLabel->Text = L"Cédula:";
-			this->CeLabel->Click += gcnew System::EventHandler(this, &IngresoDatos::CeLabel_Click);
 			// 
 			// CPanel
 			// 
@@ -351,7 +385,7 @@ namespace Proyecto3 {
 			// 
 			this->PrPanel->Controls->Add(this->CodPr);
 			this->PrPanel->Controls->Add(this->PrLabel);
-			this->PrPanel->Location = System::Drawing::Point(343, 59);
+			this->PrPanel->Location = System::Drawing::Point(343, 58);
 			this->PrPanel->Name = L"PrPanel";
 			this->PrPanel->Size = System::Drawing::Size(164, 50);
 			this->PrPanel->TabIndex = 4;
@@ -376,7 +410,7 @@ namespace Proyecto3 {
 			// 
 			this->KcalPanel->Controls->Add(this->Kcal);
 			this->KcalPanel->Controls->Add(this->KcalLabel);
-			this->KcalPanel->Location = System::Drawing::Point(3, 115);
+			this->KcalPanel->Location = System::Drawing::Point(3, 4);
 			this->KcalPanel->Name = L"KcalPanel";
 			this->KcalPanel->Size = System::Drawing::Size(164, 50);
 			this->KcalPanel->TabIndex = 4;
@@ -401,7 +435,7 @@ namespace Proyecto3 {
 			// 
 			this->PrePanel->Controls->Add(this->Precio);
 			this->PrePanel->Controls->Add(this->PreLabel);
-			this->PrePanel->Location = System::Drawing::Point(173, 114);
+			this->PrePanel->Location = System::Drawing::Point(173, 3);
 			this->PrePanel->Name = L"PrePanel";
 			this->PrePanel->Size = System::Drawing::Size(164, 50);
 			this->PrePanel->TabIndex = 4;
@@ -426,7 +460,7 @@ namespace Proyecto3 {
 			// 
 			this->CaPanel->Controls->Add(this->Cantidad);
 			this->CaPanel->Controls->Add(this->CaLabel);
-			this->CaPanel->Location = System::Drawing::Point(343, 115);
+			this->CaPanel->Location = System::Drawing::Point(343, 4);
 			this->CaPanel->Name = L"CaPanel";
 			this->CaPanel->Size = System::Drawing::Size(164, 50);
 			this->CaPanel->TabIndex = 4;
@@ -451,7 +485,7 @@ namespace Proyecto3 {
 			// 
 			this->NPanel->Controls->Add(this->Nombre);
 			this->NPanel->Controls->Add(this->NLabel);
-			this->NPanel->Location = System::Drawing::Point(26, 226);
+			this->NPanel->Location = System::Drawing::Point(25, 305);
 			this->NPanel->Name = L"NPanel";
 			this->NPanel->Size = System::Drawing::Size(164, 50);
 			this->NPanel->TabIndex = 4;
@@ -474,7 +508,7 @@ namespace Proyecto3 {
 			// 
 			// Execute
 			// 
-			this->Execute->Location = System::Drawing::Point(420, 286);
+			this->Execute->Location = System::Drawing::Point(429, 330);
 			this->Execute->Name = L"Execute";
 			this->Execute->Size = System::Drawing::Size(107, 36);
 			this->Execute->TabIndex = 6;
@@ -482,37 +516,174 @@ namespace Proyecto3 {
 			this->Execute->UseVisualStyleBackColor = true;
 			this->Execute->Click += gcnew System::EventHandler(this, &IngresoDatos::ejecutar);
 			// 
-			// Cerrar
-			// 
-			this->Cerrar->Location = System::Drawing::Point(418, 225);
-			this->Cerrar->Name = L"Cerrar";
-			this->Cerrar->Size = System::Drawing::Size(108, 35);
-			this->Cerrar->TabIndex = 8;
-			this->Cerrar->Text = L"Cerrar";
-			this->Cerrar->UseVisualStyleBackColor = true;
-			this->Cerrar->Click += gcnew System::EventHandler(this, &IngresoDatos::salir);
-			// 
 			// Msj
 			// 
 			this->Msj->AutoSize = true;
-			this->Msj->Location = System::Drawing::Point(207, 227);
+			this->Msj->Location = System::Drawing::Point(185, 15);
 			this->Msj->Name = L"Msj";
-			this->Msj->Size = System::Drawing::Size(44, 16);
+			this->Msj->Size = System::Drawing::Size(0, 16);
 			this->Msj->TabIndex = 9;
-			this->Msj->Text = L"label1";
+			// 
+			// CompraPanel
+			// 
+			this->CompraPanel->Controls->Add(this->KcalPanel);
+			this->CompraPanel->Controls->Add(this->CaPanel);
+			this->CompraPanel->Controls->Add(this->PrePanel);
+			this->CompraPanel->Location = System::Drawing::Point(23, 146);
+			this->CompraPanel->Name = L"CompraPanel";
+			this->CompraPanel->Size = System::Drawing::Size(513, 58);
+			this->CompraPanel->TabIndex = 10;
+			// 
+			// NuevoProd
+			// 
+			this->NuevoProd->Controls->Add(this->NCPanel);
+			this->NuevoProd->Controls->Add(this->Msj);
+			this->NuevoProd->Controls->Add(this->NPPanel);
+			this->NuevoProd->Controls->Add(this->NPrPanel);
+			this->NuevoProd->Controls->Add(this->NRPanel);
+			this->NuevoProd->Controls->Add(this->NMPanel);
+			this->NuevoProd->Location = System::Drawing::Point(23, 210);
+			this->NuevoProd->Name = L"NuevoProd";
+			this->NuevoProd->Size = System::Drawing::Size(513, 115);
+			this->NuevoProd->TabIndex = 11;
+			// 
+			// NCPanel
+			// 
+			this->NCPanel->Controls->Add(this->Nciudad);
+			this->NCPanel->Controls->Add(this->NCLabel);
+			this->NCPanel->Location = System::Drawing::Point(175, 5);
+			this->NCPanel->Name = L"NCPanel";
+			this->NCPanel->Size = System::Drawing::Size(164, 50);
+			this->NCPanel->TabIndex = 7;
+			// 
+			// Nciudad
+			// 
+			this->Nciudad->Location = System::Drawing::Point(29, 23);
+			this->Nciudad->Name = L"Nciudad";
+			this->Nciudad->Size = System::Drawing::Size(132, 22);
+			this->Nciudad->TabIndex = 3;
+			// 
+			// NCLabel
+			// 
+			this->NCLabel->AutoSize = true;
+			this->NCLabel->Location = System::Drawing::Point(3, 4);
+			this->NCLabel->Name = L"NCLabel";
+			this->NCLabel->Size = System::Drawing::Size(96, 16);
+			this->NCLabel->TabIndex = 2;
+			this->NCLabel->Text = L"Nueva Ciudad:";
+			// 
+			// NPrPanel
+			// 
+			this->NPrPanel->Controls->Add(this->NProd);
+			this->NPrPanel->Controls->Add(this->NPrLabel);
+			this->NPrPanel->Location = System::Drawing::Point(345, 60);
+			this->NPrPanel->Name = L"NPrPanel";
+			this->NPrPanel->Size = System::Drawing::Size(164, 50);
+			this->NPrPanel->TabIndex = 10;
+			// 
+			// NProd
+			// 
+			this->NProd->Location = System::Drawing::Point(29, 23);
+			this->NProd->Name = L"NProd";
+			this->NProd->Size = System::Drawing::Size(132, 22);
+			this->NProd->TabIndex = 3;
+			// 
+			// NPrLabel
+			// 
+			this->NPrLabel->AutoSize = true;
+			this->NPrLabel->Location = System::Drawing::Point(3, 4);
+			this->NPrLabel->Name = L"NPrLabel";
+			this->NPrLabel->Size = System::Drawing::Size(107, 16);
+			this->NPrLabel->TabIndex = 2;
+			this->NPrLabel->Text = L"Nuevo Producto:";
+			// 
+			// NRPanel
+			// 
+			this->NRPanel->Controls->Add(this->NRes);
+			this->NRPanel->Controls->Add(this->NRLabel);
+			this->NRPanel->Location = System::Drawing::Point(175, 60);
+			this->NRPanel->Name = L"NRPanel";
+			this->NRPanel->Size = System::Drawing::Size(164, 50);
+			this->NRPanel->TabIndex = 8;
+			// 
+			// NRes
+			// 
+			this->NRes->Location = System::Drawing::Point(29, 23);
+			this->NRes->Name = L"NRes";
+			this->NRes->Size = System::Drawing::Size(132, 22);
+			this->NRes->TabIndex = 3;
+			// 
+			// NRLabel
+			// 
+			this->NRLabel->AutoSize = true;
+			this->NRLabel->Location = System::Drawing::Point(3, 4);
+			this->NRLabel->Name = L"NRLabel";
+			this->NRLabel->Size = System::Drawing::Size(126, 16);
+			this->NRLabel->TabIndex = 2;
+			this->NRLabel->Text = L"Nuevo Restaurante:";
+			// 
+			// NMPanel
+			// 
+			this->NMPanel->Controls->Add(this->NMenu);
+			this->NMPanel->Controls->Add(this->NMLabel);
+			this->NMPanel->Location = System::Drawing::Point(345, 5);
+			this->NMPanel->Name = L"NMPanel";
+			this->NMPanel->Size = System::Drawing::Size(164, 50);
+			this->NMPanel->TabIndex = 9;
+			// 
+			// NMenu
+			// 
+			this->NMenu->Location = System::Drawing::Point(29, 23);
+			this->NMenu->Name = L"NMenu";
+			this->NMenu->Size = System::Drawing::Size(132, 22);
+			this->NMenu->TabIndex = 3;
+			// 
+			// NMLabel
+			// 
+			this->NMLabel->AutoSize = true;
+			this->NMLabel->Location = System::Drawing::Point(3, 4);
+			this->NMLabel->Name = L"NMLabel";
+			this->NMLabel->Size = System::Drawing::Size(86, 16);
+			this->NMLabel->TabIndex = 2;
+			this->NMLabel->Text = L"Nuevo Menu:";
+			// 
+			// NPPanel
+			// 
+			this->NPPanel->Controls->Add(this->NPais);
+			this->NPPanel->Controls->Add(this->NPLabel);
+			this->NPPanel->Location = System::Drawing::Point(5, 5);
+			this->NPPanel->Name = L"NPPanel";
+			this->NPPanel->Size = System::Drawing::Size(164, 50);
+			this->NPPanel->TabIndex = 5;
+			// 
+			// NPLabel
+			// 
+			this->NPLabel->AutoSize = true;
+			this->NPLabel->Location = System::Drawing::Point(3, 4);
+			this->NPLabel->Name = L"NPLabel";
+			this->NPLabel->Size = System::Drawing::Size(80, 16);
+			this->NPLabel->TabIndex = 2;
+			this->NPLabel->Text = L"Nuevo País:";
+			// 
+			// NPais
+			// 
+			this->NPais->Location = System::Drawing::Point(29, 23);
+			this->NPais->Name = L"NPais";
+			this->NPais->Size = System::Drawing::Size(132, 22);
+			this->NPais->TabIndex = 3;
 			// 
 			// IngresoDatos
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(555, 334);
-			this->Controls->Add(this->Msj);
-			this->Controls->Add(this->Cerrar);
+			this->ClientSize = System::Drawing::Size(555, 378);
+			this->Controls->Add(this->CompraPanel);
 			this->Controls->Add(this->Execute);
 			this->Controls->Add(this->Codigos);
 			this->Controls->Add(this->Titulo);
 			this->Controls->Add(this->NPanel);
+			this->Controls->Add(this->NuevoProd);
 			this->Name = L"IngresoDatos";
 			this->Text = L"IngresoDatos";
 			this->PPanel->ResumeLayout(false);
@@ -520,8 +691,6 @@ namespace Proyecto3 {
 			this->IdPanel->ResumeLayout(false);
 			this->IdPanel->PerformLayout();
 			this->Codigos->ResumeLayout(false);
-			this->CePanel->ResumeLayout(false);
-			this->CePanel->PerformLayout();
 			this->CPanel->ResumeLayout(false);
 			this->CPanel->PerformLayout();
 			this->RPanel->ResumeLayout(false);
@@ -538,18 +707,34 @@ namespace Proyecto3 {
 			this->CaPanel->PerformLayout();
 			this->NPanel->ResumeLayout(false);
 			this->NPanel->PerformLayout();
+			this->CompraPanel->ResumeLayout(false);
+			this->NuevoProd->ResumeLayout(false);
+			this->NuevoProd->PerformLayout();
+			this->NCPanel->ResumeLayout(false);
+			this->NCPanel->PerformLayout();
+			this->NPrPanel->ResumeLayout(false);
+			this->NPrPanel->PerformLayout();
+			this->NRPanel->ResumeLayout(false);
+			this->NRPanel->PerformLayout();
+			this->NMPanel->ResumeLayout(false);
+			this->NMPanel->PerformLayout();
+			this->NPPanel->ResumeLayout(false);
+			this->NPPanel->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	public: void config(Arbol arb, ActMenu act) {
+	public: void config(Arbol arb, ActMenu act, bool cant) {
 		arbol = arb;
 		accion = act;
+		cantidad = cant;
 		this->Text = System::Convert::ToString(accion) + " " + System::Convert::ToString(arbol);
 	}
 
 	private: System::Void ejecutar(System::Object^ sender, System::EventArgs^ e) {
+		Arboles& arboles = Arboles::getInstance();
+
 		int pais;
 		int ciudad;
 		int res;
@@ -577,56 +762,121 @@ namespace Proyecto3 {
 			precio = System::Convert::ToInt32(Precio->Text);
 		if (!System::String::IsNullOrWhiteSpace(Cantidad->Text))
 			cant = System::Convert::ToInt32(Cantidad->Text);
-		if (!System::String::IsNullOrWhiteSpace(Cedula->Text))
-			cedula = System::Convert::ToInt32(Cedula->Text);
+		if (!System::String::IsNullOrWhiteSpace(Ced->Text))
+			cedula = System::Convert::ToInt32(Ced->Text);
 		if (!System::String::IsNullOrWhiteSpace(Nombre->Text));
 			nom = msclr::interop::marshal_as<std::string>(Nombre->Text);
 		
 
 		if (accion == Insercion) {
 			if (arbol == Pais) {
-				Arboles::getInstance().paises.InsertaNodo(pais, nom);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.paises.VerificarPais(pais)) {
+					Msj->Text = "El país ya existe";
+				}
+				else {
+					arboles.paises.InsertaNodo(pais, nom);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Ciudad) {
-				Arboles::getInstance().ciudades.InsertaNodo(pais, ciudad, nom, Arboles::getInstance().paises);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.ciudades.VerificarCiudad(pais, ciudad)) {
+					Msj->Text = "La ciudad ya existe";
+				}
+				else {
+					arboles.ciudades.InsertaNodo(pais, ciudad, nom, arboles.paises);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Restaurante) {
-				Arboles::getInstance().restaurantes.InsertaNodo(pais, ciudad, res, nom, Arboles::getInstance().ciudades);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.restaurantes.VerificarRestaurante(pais, ciudad, res)) {
+					Msj->Text = "El restaurante ya existe";
+				}
+				else {
+					arboles.restaurantes.InsertaNodo(pais, ciudad, res, nom, arboles.ciudades);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Arbol::Menu) {
-				Arboles::getInstance().menus.InsertaNodo(pais, ciudad, res, menu, nom, Arboles::getInstance().restaurantes);
-				Msj->Text = "Inserción exitosa";;
+
+				if (arboles.menus.VerificarM(pais, ciudad, res, menu)) {
+					Msj->Text = "El menú ya existe";
+				}
+				else {
+					arboles.menus.InsertaNodo(pais, ciudad, res, menu, nom, arboles.restaurantes);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Producto) {
-				Arboles::getInstance().productos.InsertaNodo(pais, ciudad, res, menu, prod, nom, kcal, precio, cant, Arboles::getInstance().menus);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					Msj->Text = "El producto ya existe";
+				}
+				else {
+					arboles.productos.InsertaNodo(pais, ciudad, res, menu, prod, nom, kcal, precio, cant, arboles.menus);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Cliente) {
-				Arboles::getInstance().clientes.InsertaNodo(cedula, nom);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.clientes.VerificarCliente(cedula)) {
+					Msj->Text = "El cliente ya existe";
+				}
+				else {
+					arboles.clientes.InsertaNodo(cedula, nom);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Admin) {
-				Arboles::getInstance().admins.InsertaNodo(cedula, nom);
-				Msj->Text = "Inserción exitosa";
+
+				if (arboles.admins.VerificarAdmin(cedula)) {
+					Msj->Text = "El administrador ya existe";
+				}
+				else {
+					arboles.admins.InsertaNodo(cedula, nom);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 			else if (arbol == Fila) {
-				Arboles::getInstance().fila.insertaCliente(cedula, Arboles::getInstance().clientes);
-				Msj->Text = "Inserción exitosa";
+				
+				if (arboles.clientes.VerificarCliente(cedula) == NULL)
+					Msj->Text = "El cliente no está registrado";
+				else if (arboles.fila.verificarCliente(cedula))
+					Msj->Text = "El cliente ya está en la fila";
+				else if (arboles.fila.ColaLlena())
+					Msj->Text = "La cola está llena";
+				else {
+					arboles.fila.insertaCliente(cedula, arboles.clientes);
+					Msj->Text = "Inserción exitosa";
+				}
+			}
+			else if (arbol == Compra) {
+
+				if (!arboles.productos.VerificarPr(pais, ciudad, res, menu, prod))
+					Msj->Text = "El producto no está registrado";
+				else if (arboles.fila.ColaVacia())
+					Msj->Text = "La cola está vacía";
+				else if (arboles.fila.verificarProducto(pais, ciudad, res, menu, prod))
+					Msj->Text = "El producto ya está en la lista de compras";
+				else {
+					arboles.fila.agregaProducto(pais, ciudad, res, menu, prod, cant);
+					Msj->Text = "Inserción exitosa";
+				}
 			}
 		}
+
 		else if (accion == Consulta) {
 			if (arbol == Pais) {
-				pnodo obj = Arboles::getInstance().paises.VerificarPais(pais);
+				pnodo obj = arboles.paises.VerificarPais(pais);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 			else if (arbol == Ciudad) {
-				cnodo obj = Arboles::getInstance().ciudades.VerificarCiudad(pais, ciudad);
+				cnodo obj = arboles.ciudades.VerificarCiudad(pais, ciudad);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
 				else
@@ -634,79 +884,155 @@ namespace Proyecto3 {
 			}
 			else if (arbol == Restaurante) {
 				cout << "aaaaaaaa";
-				rnodo obj = Arboles::getInstance().restaurantes.VerificarRestaurante(pais, ciudad, res);
+				rnodo obj = arboles.restaurantes.VerificarRestaurante(pais, ciudad, res);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 			else if (arbol == Arbol::Menu) {
-				mnodo obj = Arboles::getInstance().menus.VerificarM(pais, ciudad, res, menu);
+				mnodo obj = arboles.menus.VerificarM(pais, ciudad, res, menu);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 			else if (arbol == Producto) {
-				prnodo obj = Arboles::getInstance().productos.getProducto(pais, ciudad, res, menu, prod);
+				prnodo obj = arboles.productos.getProducto(pais, ciudad, res, menu, prod);
 				Msj->Text = ("Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->nombre).c_str()) + "\n" +
 							 "Calorías: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(to_string(obj->kcal)).c_str()) + "\n" +
 							 "Precio: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(to_string(obj->precio)).c_str()) + "\n" +
 							 "Cantidad: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(to_string(obj->cant)).c_str()) + "\n");
 			}
 			else if (arbol == Cliente) {
-				clnodo obj = Arboles::getInstance().clientes.getCliente(cedula);
+				clnodo obj = arboles.clientes.getCliente(cedula);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->getNombre()).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 			else if (arbol == Admin) {
-				adnodo obj = Arboles::getInstance().admins.getAdmin(cedula);
+				adnodo obj = arboles.admins.getAdmin(cedula);
 				if (obj)
 					Msj->Text = "Nombre: " + Marshal::PtrToStringAnsi((IntPtr)(void*)(obj->getNombre()).c_str());
 				else
 					Msj->Text = "No existe";
 			}
 		}
+
 		else {
 			if (arbol == Pais) {
-				Arboles::getInstance().paises.Modificar(pais, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.paises.VerificarPais(pais)) {
+					arboles.paises.Modificar(pais, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El país no existe";
 			}
 			else if (arbol == Ciudad) {
-				Arboles::getInstance().ciudades.Modificar(pais, ciudad, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.ciudades.VerificarCiudad(pais, ciudad)) {
+					arboles.ciudades.Modificar(pais, ciudad, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "La ciudad ya existe";
 			}
 			else if (arbol == Restaurante) {
-				Arboles::getInstance().restaurantes.ModificarR(pais, ciudad, res, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.restaurantes.VerificarRestaurante(pais, ciudad, res)) {
+					arboles.restaurantes.ModificarR(pais, ciudad, res, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El restaurante ya existe";
 			}
 			else if (arbol == Arbol::Menu) {
-				Arboles::getInstance().menus.Modificar(pais, ciudad, res, menu, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.menus.VerificarM(pais, ciudad, res, menu)) {
+					arboles.menus.Modificar(pais, ciudad, res, menu, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El menú ya existe";
 			}
 			else if (arbol == Producto) {
-				Arboles::getInstance().productos.Modificar(pais, ciudad, res, menu, prod, nom, to_string(kcal), to_string(precio), to_string(cant));
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					arboles.productos.Modificar(pais, ciudad, res, menu, prod, nom, to_string(kcal), to_string(precio), to_string(cant));
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El producto ya existe";
 			}
 			else if (arbol == Cliente) {
-				Arboles::getInstance().clientes.ModificarCliente(cedula, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.clientes.VerificarCliente(cedula)) {
+					arboles.clientes.ModificarCliente(cedula, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El cliente ya existe";
 			}
 			else if (arbol == Admin) {
-				Arboles::getInstance().admins.ModificarAdmin(cedula, nom);
-				Msj->Text = "Modificación exitosa";
+
+				if (arboles.admins.VerificarAdmin(cedula)) {
+					arboles.admins.ModificarAdmin(cedula, nom);
+					Msj->Text = "Modificación exitosa";
+				}
+				else
+					Msj->Text = "El administrador ya existe";
 			}
 			else if (arbol == Compra) {
-
+				
+				if (arboles.fila.verificarProducto(pais, ciudad, res, menu, prod)) {
+					arboles.fila.modificarCant(pais, ciudad, res, menu, prod, cant);
+					Msj->Text = "Modificación exitosa";
+				}
 			}
 		}
 	}
-private: System::Void salir(System::Object^ sender, System::EventArgs^ e) {
-	delete this;
-}
-private: System::Void CeLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
+	public: System::Void actualizar() {
+		if (accion == Consulta || accion == Eliminacion || arbol == Fila) {
+			this->CompraPanel->Visible = false;
+			this->NPanel->Visible = false;
+		}
+
+		if (arbol == Compra)
+			this->NPanel->Visible = false;
+
+		if (arbol != Cliente && arbol != Admin && arbol != Fila)
+			this->IdPanel->Visible = false;
+		
+		if (arbol != Producto) {
+			this->KcalPanel->Visible = false;
+			this->PrePanel->Visible = false;
+
+			if (arbol != Compra) {
+				this->PrPanel->Visible = false;
+				this->CompraPanel->Visible = false;
+
+				if (arbol != Arbol::Menu) {
+					this->MPanel->Visible = false;
+
+					if (arbol != Restaurante) {
+						this->RPanel->Visible = false;
+
+						if (arbol != Ciudad) {
+							this->CPanel->Visible = false;
+
+							if (arbol != Pais) {
+								this->PPanel->Visible = false;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
 };
 }

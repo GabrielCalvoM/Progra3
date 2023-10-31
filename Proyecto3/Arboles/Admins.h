@@ -53,17 +53,29 @@ public:
     void BuscarNodo(int Clave, apagina P, bool* Encontrado, int* k);
     void MeterHoja(int Mdna, string nom, apagina x, apagina R, int k);
     void DividirNodo(int x, string nom, apagina xder, apagina P, int k, int* Mdna, apagina* mder);
+
+    void EliminarAdmin(int x) { Eliminar(x, raiz); }
+    void Eliminar(int C1, apagina raiz);
+    void EliminarRegistro(int C1, apagina raiz, bool* encontrado);
+    void Quitar(apagina P, int k);
+    void Sucesor(apagina P, int k);
+    void Restablecer(apagina P, int k);
+    void MoverDerecha(apagina P, int k);
+    void MoverIzquierda(apagina P, int k);
+    void Combina(apagina P, int k);
+
     void LeerAdmins();
     bool VerificarAdmin(int ced);
     bool VerificarNodo(int ced, apagina r);
     adnodo getAdmin(int ced);
     adnodo getNodo(int ced, apagina r);
+
     void ModificarAdmin(int ced, string nuevo);
     void ModificarNodo(int ced, apagina r, string nuevo);
 
 private:
 
-    PaginaA* raiz = NULL;
+    apagina raiz = NULL;
 
 };
 

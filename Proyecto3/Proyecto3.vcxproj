@@ -146,6 +146,7 @@
     <ClInclude Include="Arboles\Paises.h" />
     <ClInclude Include="Arboles\Productos.h" />
     <ClInclude Include="Arboles\Restaurantes.h" />
+    <ClInclude Include="Control.h" />
     <ClInclude Include="IngresoDatos.h">
       <FileType>CppForm</FileType>
     </ClInclude>

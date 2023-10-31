@@ -116,6 +116,159 @@ void ArbolB::DividirNodo(int x, string nom, ppagina xder, ppagina P, int k, int*
     P->cuenta -= 1;
 }
 
+
+void ArbolB::Eliminar(int C1, ppagina r) {
+    bool encontrado = false;
+    ppagina P = NULL;
+
+    EliminarRegistro(C1, r, &encontrado);
+    if (!encontrado) {
+
+    }
+    else {
+        if (raiz->cuenta == 0) {
+            P = raiz;
+            raiz = raiz->rama[0];
+            delete P;
+        }
+    }
+}
+
+void ArbolB::EliminarRegistro(int C1, ppagina r, bool* encontrado) {
+    int k = 0;
+
+    if (r == NULL) {
+        *encontrado = false;
+    }
+    else {
+        BuscarNodo(C1, r, encontrado, &k);
+
+        if (*encontrado) {
+            if (r->rama[k - 1] == NULL) {
+                Quitar(r, k);
+            }
+            else {
+                Sucesor(r, k);
+                EliminarRegistro(r->cliente[k]->cedula, r->rama[k], encontrado);
+
+                if (r->rama[k]->cuenta < 2) {
+                    Restablecer(r, k);
+                }
+
+                if (!*encontrado) {
+                    return;
+                }
+            }
+        }
+        else {
+            EliminarRegistro(C1, r->rama[k], encontrado);
+            if (r->rama[k] == NULL) {
+                if (r->rama[k]->cuenta < 2) {
+                    Restablecer(r, k);
+                }
+            }
+        }
+    }
+}
+
+void ArbolB::Quitar(ppagina P, int k) {
+    for (int j = k + 1; j < P->cuenta + 1; j++) {
+        P->cliente[j - 1]->cedula = P->cliente[j]->cedula;
+        P->rama[j - 1] = P->rama[j];
+    }
+
+    P->cuenta -= 1;
+}
+
+void ArbolB::Sucesor(ppagina P, int k) {
+    ppagina Q = P->rama[k];
+
+    while (Q->rama[0] != NULL) {
+        Q = Q->rama[0];
+    }
+
+    P->cliente[k]->cedula = Q->cliente[k]->cedula;
+}
+
+void ArbolB::Restablecer(ppagina P, int k) {
+    if (k > 0) {
+        if (P->rama[k - 1]->cuenta > 2) {
+            MoverDerecha(P, k);
+        }
+        else {
+            Combina(P, k);
+        }
+    }
+    else {
+        if (P->rama[1]->cuenta > 2) {
+            MoverIzquierda(P, 1);
+        }
+        else {
+            Combina(P, 1);
+        }
+    }
+}
+
+void ArbolB::MoverDerecha(ppagina P, int k) {
+    ppagina R = P->rama[k];
+    ppagina Q = P->rama[k - 1];
+
+    for (int j = R->cuenta; j >= 1; j--) {
+        R->cliente[j + 1]->cedula = R->cliente[j]->cedula;
+        R->rama[j + 1] = R->rama[j];
+    }
+
+    R->cuenta += 1;
+    R->rama[1] = R->rama[0];
+    R->cliente[1]->cedula = P->cliente[k]->cedula;
+
+    P->cliente[k]->cedula = Q->cliente[Q->cuenta]->cedula;
+    R->rama[0] = Q->rama[Q->cuenta];
+    Q->cuenta -= 1;
+}
+
+void ArbolB::MoverIzquierda(ppagina P, int k) {
+    ppagina Q = P->rama[k - 1];
+    ppagina R = P->rama[k];
+
+    Q->cuenta += 1;
+    Q->cliente[Q->cuenta]->cedula = P->cliente[k]->cedula;
+    Q->rama[Q->cuenta] = R->rama[0];
+
+    P->cliente[k]->cedula = R->cliente[1]->cedula;
+    P->rama[0] = R->rama[1];
+    R->cuenta -= 1;
+
+    for (int j = 1; j <= R->cuenta; j++) {
+        R->cliente[j]->cedula = R->cliente[j]->cedula;
+        R->rama[j] = R->rama[j + 1];
+    }
+}
+
+void ArbolB::Combina(ppagina P, int k) {
+    ppagina Q = P->rama[k];
+    ppagina R = P->rama[k - 1];
+
+    R->cuenta += 1;
+    R->cliente[R->cuenta]->cedula = P->cliente[k]->cedula;
+    R->rama[R->cuenta] = Q->rama[0];
+
+    for (int j = 1; j <= Q->cuenta; j++) {
+        R->cuenta += 1;
+        R->cliente[R->cuenta]->cedula = Q->cliente[j]->cedula;
+        R->rama[R->cuenta] = Q->rama[j];
+    }
+
+    for (int j = k; j <= P->cuenta - 1; j++) {
+        P->cliente[j]->cedula = P->cliente[j + 1]->cedula;
+        P->rama[j] = P->rama[j + 1];
+    }
+
+    P->cuenta -= 1;
+    delete Q;
+}
+
+
 bool ArbolB::VerificarCliente(int ced) {
     return VerificarNodo(ced, raiz);
 }

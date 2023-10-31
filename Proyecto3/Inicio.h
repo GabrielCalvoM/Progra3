@@ -1,9 +1,10 @@
+#pragma once
+
 #include "Ventana.h"
 #include "Arboles/Arboles.h"
+#include "Arboles/Enums.h"
 #include <string>
 #include <iostream>
-
-#pragma once
 
 namespace Proyecto3 {
 
@@ -18,15 +19,25 @@ namespace Proyecto3 {
 	/// <summary>
 	/// Resumen de Inicio
 	/// </summary>
+	ref class Ventana;
+
 	public ref class Inicio : public System::Windows::Forms::Form
 	{
 	public:
+
+		delegate void VentanaAbierta(System::Object^ sender, System::EventArgs^ e);
+		event VentanaAbierta^ Abierto;
+
 		Inicio(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+
+		void VentanaCerrada(System::Object^ sender, System::EventArgs^ e) {
+			this->Show();
 		}
 
 	protected:
@@ -213,10 +224,14 @@ namespace Proyecto3 {
 		}
 
 		if (valido) {
-			Proyecto3::Ventana menu;
-			menu.verificarAdmin(admin);
+			Ventana^ menu = gcnew Ventana();
+			menu->Cerrado += gcnew Ventana::VentanaCerrada(this, &Inicio::VentanaCerrada);
+			menu->verificarAdmin(admin);
 			this->Visible = false;
-			menu.ShowDialog();
+			this->Codigo->Text = "";
+			this->AdminOp->Checked = false;
+			this->ClienteOp->Checked = false;
+			menu->Show();
 		}
 		else {
 			Advertencia->Text = "LA CÉDULA NO COINCIDE CON EL PERFIL SELECCIONADO";
