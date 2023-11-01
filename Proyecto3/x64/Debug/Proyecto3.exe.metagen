@@ -1,4 +1,6 @@
+  Proyecto3.IngresoDatos.resources - Embedded, ContainedInManifestFile, 
   Proyecto3.Inicio.resources - Embedded, ContainedInManifestFile, 
+  Proyecto3.Mensaje.resources - Embedded, ContainedInManifestFile, 
   Proyecto3.Ventana.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Proyecto3, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
@@ -15,14 +17,88 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Proyecto3.Mensaje: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Proyecto3.IngresoDatos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Panel PPanel : Public
+    System.Windows.Forms.Label PLabel : Public
+    System.Windows.Forms.TextBox CodP : Public
+    System.Windows.Forms.Panel Codigos : Public
+    System.Windows.Forms.Panel CPanel : Public
+    System.Windows.Forms.TextBox CodC : Public
+    System.Windows.Forms.Label CLabel : Public
+    System.Windows.Forms.Panel RPanel : Public
+    System.Windows.Forms.TextBox CodR : Public
+    System.Windows.Forms.Label RLabel : Public
+    System.Windows.Forms.Panel MPanel : Public
+    System.Windows.Forms.TextBox CodM : Public
+    System.Windows.Forms.Label MLabel : Public
+    System.Windows.Forms.Panel PrPanel : Public
+    System.Windows.Forms.TextBox CodPr : Public
+    System.Windows.Forms.Label PrLabel : Public
+    System.Windows.Forms.Panel NPanel : Public
+    System.Windows.Forms.TextBox Nombre : Public
+    System.Windows.Forms.Panel KcalPanel : Public
+    System.Windows.Forms.TextBox Kcal : Public
+    System.Windows.Forms.Label KcalLabel : Public
+    System.Windows.Forms.Panel PrePanel : Public
+    System.Windows.Forms.TextBox Precio : Public
+    System.Windows.Forms.Label PreLabel : Public
+    System.Windows.Forms.Panel CaPanel : Public
+    System.Windows.Forms.TextBox Cantidad : Public
+    System.Windows.Forms.Label CaLabel : Public
+    System.Windows.Forms.Panel IdPanel : Public
+    System.Windows.Forms.TextBox Ced : Public
+    System.Windows.Forms.Label IdLabel : Public
+    System.Windows.Forms.Label NLabel : Public
+    System.Windows.Forms.Panel NPrPanel : Public
+    System.Windows.Forms.TextBox NProd : Public
+    System.Windows.Forms.Label NPrLabel : Public
+    System.Windows.Forms.Panel NMPanel : Public
+    System.Windows.Forms.TextBox NMenu : Public
+    System.Windows.Forms.Label NRLabel : Public
+    System.Windows.Forms.Panel panel1 : Public
+    System.Windows.Forms.Label PedidoLabel : Public
+    System.Windows.Forms.Panel panel2 : Public
+    System.Windows.Forms.Label PagoLabel : Public
+  Methods:
+    config(Arbol, ActMenu, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    actualizar(): PrivateScope, Public, HideBySig
 Class Proyecto3.Ventana: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    VentanaCerrada Cerrado: SpecialName
   Methods:
+    add_Cerrado(VentanaCerrada): PrivateScope, Public, HideBySig, SpecialName
+    remove_Cerrado(VentanaCerrada): PrivateScope, Public, HideBySig, SpecialName
     verificarAdmin(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    CerrarVentana(): PrivateScope, Public, HideBySig
+    ocultarOpciones(): PrivateScope, Public, HideBySig
+Class Proyecto3.Ventana+VentanaCerrada: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, EventArgs): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Object, EventArgs, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
 Class Proyecto3.Inicio: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    VentanaAbierta Abierto: SpecialName
+  Methods:
+    add_Abierto(VentanaAbierta): PrivateScope, Public, HideBySig, SpecialName
+    remove_Abierto(VentanaAbierta): PrivateScope, Public, HideBySig, SpecialName
+    VentanaCerrada(Object, EventArgs): PrivateScope, Public, HideBySig
+Class Proyecto3.Inicio+VentanaAbierta: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, EventArgs): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Object, EventArgs, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask

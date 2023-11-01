@@ -121,38 +121,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArbolAux.h">
-      <DeploymentContent>true</DeploymentContent>
-    </ClCompile>
+    <ClCompile Include="Arboles\Admins.cpp" />
+    <ClCompile Include="Arboles\Ciudades.cpp" />
+    <ClCompile Include="Arboles\Clientes.cpp" />
+    <ClCompile Include="Arboles\Compras.cpp" />
+    <ClCompile Include="Arboles\Fila.cpp" />
+    <ClCompile Include="Arboles\Menus.cpp" />
+    <ClCompile Include="Arboles\Paises.cpp" />
+    <ClCompile Include="Arboles\Producto.cpp" />
     <ClCompile Include="IngresoDatos.cpp" />
     <ClCompile Include="Inicio.cpp" />
-    <ClCompile Include="Paises.h" />
+    <ClCompile Include="Mensaje.cpp" />
     <ClCompile Include="Ventana.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Admins.h" />
-    <ClInclude Include="Arboles.h" />
-    <ClInclude Include="Ciudades.h" />
-    <ClInclude Include="Clientes.h" />
-    <ClInclude Include="Compras.h" />
-    <ClInclude Include="Enums.h" />
-    <ClInclude Include="Fila.h" />
+    <ClInclude Include="Arboles\Admins.h" />
+    <ClInclude Include="Arboles\ArbolAux.h" />
+    <ClInclude Include="Arboles\Arboles.h" />
+    <ClInclude Include="Arboles\Ciudades.h" />
+    <ClInclude Include="Arboles\Clientes.h" />
+    <ClInclude Include="Arboles\Compras.h" />
+    <ClInclude Include="Arboles\Enums.h" />
+    <ClInclude Include="Arboles\Fila.h" />
+    <ClInclude Include="Arboles\Menus.h" />
+    <ClInclude Include="Arboles\Paises.h" />
+    <ClInclude Include="Arboles\Productos.h" />
+    <ClInclude Include="Arboles\Restaurantes.h" />
     <ClInclude Include="IngresoDatos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Menus.h" />
-    <ClInclude Include="Productos.h" />
-    <ClInclude Include="Restaurantes.h" />
+    <ClInclude Include="Mensaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Ventana.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IngresoDatos.resx">
+      <DependentUpon>IngresoDatos.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje.resx">
+      <DependentUpon>Mensaje.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.h</DependentUpon>

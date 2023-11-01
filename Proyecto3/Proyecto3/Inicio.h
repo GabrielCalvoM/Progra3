@@ -1,8 +1,10 @@
-#include "Ventana.h"
-#include "Arboles.h"
-#include <string>
-
 #pragma once
+
+#include "Ventana.h"
+#include "Arboles/Arboles.h"
+#include "Arboles/Enums.h"
+#include <string>
+#include <iostream>
 
 namespace Proyecto3 {
 
@@ -20,12 +22,20 @@ namespace Proyecto3 {
 	public ref class Inicio : public System::Windows::Forms::Form
 	{
 	public:
+
+		delegate void VentanaAbierta(System::Object^ sender, System::EventArgs^ e);
+		event VentanaAbierta^ Abierto;
+
 		Inicio(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+
+		void VentanaCerrada(System::Object^ sender, System::EventArgs^ e) {
+			this->Show();
 		}
 
 	protected:
@@ -163,6 +173,7 @@ namespace Proyecto3 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Inicio";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Inicio";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -212,10 +223,14 @@ namespace Proyecto3 {
 		}
 
 		if (valido) {
-			Proyecto3::Ventana menu;
-			menu.verificarAdmin(admin);
+			Ventana^ menu = gcnew Ventana();
+			menu->Cerrado += gcnew Ventana::VentanaCerrada(this, &Inicio::VentanaCerrada);
+			menu->verificarAdmin(admin);
 			this->Visible = false;
-			menu.ShowDialog();
+			this->Codigo->Text = "";
+			this->AdminOp->Checked = false;
+			this->ClienteOp->Checked = false;
+			menu->Show();
 		}
 		else {
 			Advertencia->Text = "LA CÉDULA NO COINCIDE CON EL PERFIL SELECCIONADO";
