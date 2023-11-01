@@ -1,5 +1,6 @@
   Proyecto3.IngresoDatos.resources - Embedded, ContainedInManifestFile, 
   Proyecto3.Inicio.resources - Embedded, ContainedInManifestFile, 
+  Proyecto3.Mensaje.resources - Embedded, ContainedInManifestFile, 
   Proyecto3.Ventana.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Proyecto3, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
@@ -16,6 +17,9 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Proyecto3.Mensaje: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Proyecto3.IngresoDatos: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -51,21 +55,16 @@ Class Proyecto3.IngresoDatos: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     System.Windows.Forms.TextBox Ced : Public
     System.Windows.Forms.Label IdLabel : Public
     System.Windows.Forms.Label NLabel : Public
-    System.Windows.Forms.Panel NCPanel : Public
-    System.Windows.Forms.TextBox Nciudad : Public
-    System.Windows.Forms.Label NCLabel : Public
     System.Windows.Forms.Panel NPrPanel : Public
     System.Windows.Forms.TextBox NProd : Public
     System.Windows.Forms.Label NPrLabel : Public
-    System.Windows.Forms.Panel NRPanel : Public
-    System.Windows.Forms.TextBox NRes : Public
-    System.Windows.Forms.Label NRLabel : Public
     System.Windows.Forms.Panel NMPanel : Public
     System.Windows.Forms.TextBox NMenu : Public
-    System.Windows.Forms.Label NMLabel : Public
-    System.Windows.Forms.Panel NPPanel : Public
-    System.Windows.Forms.TextBox NPais : Public
-    System.Windows.Forms.Label NPLabel : Public
+    System.Windows.Forms.Label NRLabel : Public
+    System.Windows.Forms.Panel panel1 : Public
+    System.Windows.Forms.Label PedidoLabel : Public
+    System.Windows.Forms.Panel panel2 : Public
+    System.Windows.Forms.Label PagoLabel : Public
   Methods:
     config(Arbol, ActMenu, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     actualizar(): PrivateScope, Public, HideBySig

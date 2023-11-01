@@ -25,7 +25,7 @@ typedef NodoCompras* conodo;
 
 class Compras {
 private:
-    ArbolPr listaProd;
+    ArbolPr* listaProd;
     conodo primero = NULL;
 
     friend class Cola;
@@ -35,7 +35,7 @@ public:
 
     }
 
-    Compras(ArbolPr lista) {
+    Compras(ArbolPr* lista) {
         listaProd = lista;
     }
 

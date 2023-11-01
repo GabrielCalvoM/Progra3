@@ -73,8 +73,8 @@ void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
     arch << "                    Informacion del cilente" << endl << endl;
     arch << "Nombre:   " + Cliente[0]->nombre << endl;
     arch << "CCedula:   " << Cliente[0]->cedula << endl << endl;
-    arch << "Producto                  Cantidad            Precio" << endl;
-    for (int i = 1; i <= compras.len(); i++) {
+    arch << "Producto                  Cantidad                  Precio" << endl;
+    for (int i = 0; i < compras.len(); i++) {
         conodo prod = compras.getProducto(i);
         double valor = prod->producto->precio;
         double cant = prod->cantidad;

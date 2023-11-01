@@ -31,8 +31,10 @@ private:
 			restaurantes.LeerRestaurantes(ciudades);
 		if (menus.ArbolVacio())
 			menus.LeerMenu(restaurantes);
-		if (productos.ArbolVacio())
+		if (productos.ArbolVacio()) {
 			productos.LeerProducto(menus);
+			fila.configProd(&productos);
+		}
 		if (clientes.ArbolVacio())
 			clientes.LeerClientes();
 		if (admins.ArbolVacio())

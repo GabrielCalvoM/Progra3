@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Mensaje.h"
 #include "IngresoDatos.h" 
 
 namespace Proyecto3 {
@@ -33,6 +34,10 @@ namespace Proyecto3 {
 				this->InsercionB->Enabled = false;
 				this->EliminacionB->Enabled = false;
 				this->ModificacionB->Enabled = false;
+				this->InsertaL->Enabled = false;
+				this->EliminaL->Enabled = false;
+				this->ModificaL->Enabled = false;
+				this->UsuarioF->Enabled = false;
 			}
 		}
 
@@ -119,7 +124,8 @@ namespace Proyecto3 {
 	private: System::Windows::Forms::Panel^ Lugares;
 
 	private: System::Windows::Forms::Label^ LugarLabel;
-	private: System::Windows::Forms::Panel^ LugarMenu;
+private: System::Windows::Forms::Panel^ IconMenu;
+
 
 	private: System::Windows::Forms::Button^ ModificaL;
 
@@ -147,17 +153,17 @@ private: System::Windows::Forms::Button^ LugarC;
 
 
 private: System::Windows::Forms::Panel^ Restaurantes;
-private: System::Windows::Forms::Panel^ ResMenu;
 
 
 
-private: System::Windows::Forms::Button^ ModificaR;
-
-private: System::Windows::Forms::Button^ InsertaR;
-private: System::Windows::Forms::Button^ ConsultaR;
 
 
-private: System::Windows::Forms::Button^ EliminaR;
+
+
+
+
+
+
 private: System::Windows::Forms::Panel^ ResOpc;
 
 
@@ -181,6 +187,44 @@ private: System::Windows::Forms::Button^ Descuentos;
 
 private: System::Windows::Forms::Button^ Factura;
 private: System::Windows::Forms::Button^ Registro;
+private: System::Windows::Forms::Panel^ Usuarios;
+private: System::Windows::Forms::Panel^ UsuarioOpc;
+private: System::Windows::Forms::Button^ UsuarioF;
+
+
+
+private: System::Windows::Forms::Button^ UsuarioC;
+private: System::Windows::Forms::Button^ UsuarioA;
+
+
+private: System::Windows::Forms::Label^ UsuarioLabel;
+
+private: System::Windows::Forms::Button^ UsuarioIcon;
+
+private: System::Windows::Forms::Panel^ Facturación;
+private: System::Windows::Forms::Panel^ FacturaOpc;
+private: System::Windows::Forms::Button^ FacturaF;
+private: System::Windows::Forms::Button^ FacturaD;
+
+
+
+
+
+private: System::Windows::Forms::Label^ FacturaLabel;
+private: System::Windows::Forms::Button^ FacturaIcon;
+private: System::Windows::Forms::Panel^ FilaMenu;
+
+private: System::Windows::Forms::Button^ InsCliente;
+private: System::Windows::Forms::Button^ ModProd;
+
+
+private: System::Windows::Forms::Button^ ModCant;
+
+private: System::Windows::Forms::Button^ RegCompra;
+private: System::Windows::Forms::Button^ EliminaCompra;
+
+
+
 
 
 
@@ -251,21 +295,16 @@ private: System::Windows::Forms::Button^ Registro;
 			this->CiudadC = (gcnew System::Windows::Forms::Button());
 			this->PaisIcon = (gcnew System::Windows::Forms::Button());
 			this->Lugares = (gcnew System::Windows::Forms::Panel());
-			this->LugarMenu = (gcnew System::Windows::Forms::Panel());
-			this->ModificaL = (gcnew System::Windows::Forms::Button());
-			this->InsertaL = (gcnew System::Windows::Forms::Button());
-			this->ConsultaL = (gcnew System::Windows::Forms::Button());
-			this->EliminaL = (gcnew System::Windows::Forms::Button());
 			this->LugarOpc = (gcnew System::Windows::Forms::Panel());
 			this->LugarP = (gcnew System::Windows::Forms::Button());
 			this->LugarC = (gcnew System::Windows::Forms::Button());
 			this->LugarLabel = (gcnew System::Windows::Forms::Label());
+			this->IconMenu = (gcnew System::Windows::Forms::Panel());
+			this->ModificaL = (gcnew System::Windows::Forms::Button());
+			this->InsertaL = (gcnew System::Windows::Forms::Button());
+			this->ConsultaL = (gcnew System::Windows::Forms::Button());
+			this->EliminaL = (gcnew System::Windows::Forms::Button());
 			this->Restaurantes = (gcnew System::Windows::Forms::Panel());
-			this->ResMenu = (gcnew System::Windows::Forms::Panel());
-			this->ModificaR = (gcnew System::Windows::Forms::Button());
-			this->InsertaR = (gcnew System::Windows::Forms::Button());
-			this->ConsultaR = (gcnew System::Windows::Forms::Button());
-			this->EliminaR = (gcnew System::Windows::Forms::Button());
 			this->ResOpc = (gcnew System::Windows::Forms::Panel());
 			this->ResP = (gcnew System::Windows::Forms::Button());
 			this->ResR = (gcnew System::Windows::Forms::Button());
@@ -279,19 +318,42 @@ private: System::Windows::Forms::Button^ Registro;
 			this->Factura = (gcnew System::Windows::Forms::Button());
 			this->Descuentos = (gcnew System::Windows::Forms::Button());
 			this->Registro = (gcnew System::Windows::Forms::Button());
+			this->Usuarios = (gcnew System::Windows::Forms::Panel());
+			this->UsuarioOpc = (gcnew System::Windows::Forms::Panel());
+			this->UsuarioF = (gcnew System::Windows::Forms::Button());
+			this->UsuarioC = (gcnew System::Windows::Forms::Button());
+			this->UsuarioA = (gcnew System::Windows::Forms::Button());
+			this->UsuarioLabel = (gcnew System::Windows::Forms::Label());
+			this->UsuarioIcon = (gcnew System::Windows::Forms::Button());
+			this->Facturación = (gcnew System::Windows::Forms::Panel());
+			this->FacturaOpc = (gcnew System::Windows::Forms::Panel());
+			this->FacturaF = (gcnew System::Windows::Forms::Button());
+			this->FacturaD = (gcnew System::Windows::Forms::Button());
+			this->FacturaLabel = (gcnew System::Windows::Forms::Label());
+			this->FacturaIcon = (gcnew System::Windows::Forms::Button());
+			this->FilaMenu = (gcnew System::Windows::Forms::Panel());
+			this->EliminaCompra = (gcnew System::Windows::Forms::Button());
+			this->ModProd = (gcnew System::Windows::Forms::Button());
+			this->ModCant = (gcnew System::Windows::Forms::Button());
+			this->RegCompra = (gcnew System::Windows::Forms::Button());
+			this->InsCliente = (gcnew System::Windows::Forms::Button());
 			this->MenuPop->SuspendLayout();
 			this->MantOp->SuspendLayout();
 			this->InsOp->SuspendLayout();
 			this->ModOp->SuspendLayout();
 			this->ConsOp->SuspendLayout();
 			this->Lugares->SuspendLayout();
-			this->LugarMenu->SuspendLayout();
 			this->LugarOpc->SuspendLayout();
+			this->IconMenu->SuspendLayout();
 			this->Restaurantes->SuspendLayout();
-			this->ResMenu->SuspendLayout();
 			this->ResOpc->SuspendLayout();
 			this->ModCompra->SuspendLayout();
 			this->FacturacionOpc->SuspendLayout();
+			this->Usuarios->SuspendLayout();
+			this->UsuarioOpc->SuspendLayout();
+			this->Facturación->SuspendLayout();
+			this->FacturaOpc->SuspendLayout();
+			this->FilaMenu->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// MenuPop
@@ -718,68 +780,13 @@ private: System::Windows::Forms::Button^ Registro;
 			// 
 			// Lugares
 			// 
-			this->Lugares->Controls->Add(this->LugarMenu);
 			this->Lugares->Controls->Add(this->LugarOpc);
 			this->Lugares->Controls->Add(this->LugarLabel);
 			this->Lugares->Controls->Add(this->PaisIcon);
-			this->Lugares->Location = System::Drawing::Point(443, 80);
+			this->Lugares->Location = System::Drawing::Point(12, 74);
 			this->Lugares->Name = L"Lugares";
-			this->Lugares->Size = System::Drawing::Size(358, 156);
+			this->Lugares->Size = System::Drawing::Size(254, 156);
 			this->Lugares->TabIndex = 6;
-			// 
-			// LugarMenu
-			// 
-			this->LugarMenu->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->LugarMenu->Controls->Add(this->ModificaL);
-			this->LugarMenu->Controls->Add(this->InsertaL);
-			this->LugarMenu->Controls->Add(this->ConsultaL);
-			this->LugarMenu->Controls->Add(this->EliminaL);
-			this->LugarMenu->Location = System::Drawing::Point(252, 3);
-			this->LugarMenu->MinimumSize = System::Drawing::Size(102, 144);
-			this->LugarMenu->Name = L"LugarMenu";
-			this->LugarMenu->Size = System::Drawing::Size(102, 144);
-			this->LugarMenu->TabIndex = 6;
-			this->LugarMenu->Visible = false;
-			// 
-			// ModificaL
-			// 
-			this->ModificaL->Location = System::Drawing::Point(3, 111);
-			this->ModificaL->Name = L"ModificaL";
-			this->ModificaL->Size = System::Drawing::Size(96, 29);
-			this->ModificaL->TabIndex = 5;
-			this->ModificaL->Text = L"Modificación";
-			this->ModificaL->UseVisualStyleBackColor = true;
-			this->ModificaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// InsertaL
-			// 
-			this->InsertaL->Location = System::Drawing::Point(3, 3);
-			this->InsertaL->Name = L"InsertaL";
-			this->InsertaL->Size = System::Drawing::Size(96, 30);
-			this->InsertaL->TabIndex = 2;
-			this->InsertaL->Text = L"Inserción";
-			this->InsertaL->UseVisualStyleBackColor = true;
-			this->InsertaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// ConsultaL
-			// 
-			this->ConsultaL->Location = System::Drawing::Point(3, 75);
-			this->ConsultaL->Name = L"ConsultaL";
-			this->ConsultaL->Size = System::Drawing::Size(96, 30);
-			this->ConsultaL->TabIndex = 4;
-			this->ConsultaL->Text = L"Consultas";
-			this->ConsultaL->UseVisualStyleBackColor = true;
-			this->ConsultaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// EliminaL
-			// 
-			this->EliminaL->Location = System::Drawing::Point(3, 39);
-			this->EliminaL->Name = L"EliminaL";
-			this->EliminaL->Size = System::Drawing::Size(96, 30);
-			this->EliminaL->TabIndex = 3;
-			this->EliminaL->Text = L"Eliminación";
-			this->EliminaL->UseVisualStyleBackColor = true;
-			this->EliminaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// LugarOpc
 			// 
@@ -815,79 +822,78 @@ private: System::Windows::Forms::Button^ Registro;
 			// 
 			// LugarLabel
 			// 
-			this->LugarLabel->AutoSize = true;
-			this->LugarLabel->Font = (gcnew System::Drawing::Font(L"Consolas", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->LugarLabel->Font = (gcnew System::Drawing::Font(L"Consolas", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LugarLabel->Location = System::Drawing::Point(3, 121);
 			this->LugarLabel->Name = L"LugarLabel";
 			this->LugarLabel->Size = System::Drawing::Size(119, 32);
 			this->LugarLabel->TabIndex = 6;
 			this->LugarLabel->Text = L"Lugares";
+			this->LugarLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// IconMenu
+			// 
+			this->IconMenu->BackColor = System::Drawing::Color::Transparent;
+			this->IconMenu->Controls->Add(this->ModificaL);
+			this->IconMenu->Controls->Add(this->InsertaL);
+			this->IconMenu->Controls->Add(this->ConsultaL);
+			this->IconMenu->Controls->Add(this->EliminaL);
+			this->IconMenu->Location = System::Drawing::Point(268, 98);
+			this->IconMenu->MinimumSize = System::Drawing::Size(102, 144);
+			this->IconMenu->Name = L"IconMenu";
+			this->IconMenu->Size = System::Drawing::Size(117, 144);
+			this->IconMenu->TabIndex = 6;
+			this->IconMenu->Visible = false;
+			// 
+			// ModificaL
+			// 
+			this->ModificaL->Location = System::Drawing::Point(3, 111);
+			this->ModificaL->Name = L"ModificaL";
+			this->ModificaL->Size = System::Drawing::Size(111, 29);
+			this->ModificaL->TabIndex = 5;
+			this->ModificaL->Text = L"Modificación";
+			this->ModificaL->UseVisualStyleBackColor = true;
+			this->ModificaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// InsertaL
+			// 
+			this->InsertaL->Location = System::Drawing::Point(3, 3);
+			this->InsertaL->Name = L"InsertaL";
+			this->InsertaL->Size = System::Drawing::Size(111, 30);
+			this->InsertaL->TabIndex = 2;
+			this->InsertaL->Text = L"Inserción";
+			this->InsertaL->UseVisualStyleBackColor = true;
+			this->InsertaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// ConsultaL
+			// 
+			this->ConsultaL->Location = System::Drawing::Point(3, 75);
+			this->ConsultaL->Name = L"ConsultaL";
+			this->ConsultaL->Size = System::Drawing::Size(111, 30);
+			this->ConsultaL->TabIndex = 4;
+			this->ConsultaL->Text = L"Consulta";
+			this->ConsultaL->UseVisualStyleBackColor = true;
+			this->ConsultaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// EliminaL
+			// 
+			this->EliminaL->Location = System::Drawing::Point(3, 39);
+			this->EliminaL->Name = L"EliminaL";
+			this->EliminaL->Size = System::Drawing::Size(111, 30);
+			this->EliminaL->TabIndex = 3;
+			this->EliminaL->Text = L"Eliminación";
+			this->EliminaL->UseVisualStyleBackColor = true;
+			this->EliminaL->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// Restaurantes
 			// 
-			this->Restaurantes->Controls->Add(this->ResMenu);
 			this->Restaurantes->Controls->Add(this->ResOpc);
 			this->Restaurantes->Controls->Add(this->ResLabel);
 			this->Restaurantes->Controls->Add(this->ResIcon);
-			this->Restaurantes->Location = System::Drawing::Point(443, 248);
+			this->Restaurantes->Location = System::Drawing::Point(12, 266);
 			this->Restaurantes->Name = L"Restaurantes";
-			this->Restaurantes->Size = System::Drawing::Size(358, 156);
+			this->Restaurantes->Size = System::Drawing::Size(254, 156);
 			this->Restaurantes->TabIndex = 16;
-			// 
-			// ResMenu
-			// 
-			this->ResMenu->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ResMenu->Controls->Add(this->ModificaR);
-			this->ResMenu->Controls->Add(this->InsertaR);
-			this->ResMenu->Controls->Add(this->ConsultaR);
-			this->ResMenu->Controls->Add(this->EliminaR);
-			this->ResMenu->Location = System::Drawing::Point(252, 3);
-			this->ResMenu->MinimumSize = System::Drawing::Size(102, 144);
-			this->ResMenu->Name = L"ResMenu";
-			this->ResMenu->Size = System::Drawing::Size(102, 144);
-			this->ResMenu->TabIndex = 6;
-			this->ResMenu->Visible = false;
-			// 
-			// ModificaR
-			// 
-			this->ModificaR->Location = System::Drawing::Point(3, 111);
-			this->ModificaR->Name = L"ModificaR";
-			this->ModificaR->Size = System::Drawing::Size(96, 29);
-			this->ModificaR->TabIndex = 5;
-			this->ModificaR->Text = L"Modificación";
-			this->ModificaR->UseVisualStyleBackColor = true;
-			this->ModificaR->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// InsertaR
-			// 
-			this->InsertaR->Location = System::Drawing::Point(3, 3);
-			this->InsertaR->Name = L"InsertaR";
-			this->InsertaR->Size = System::Drawing::Size(96, 30);
-			this->InsertaR->TabIndex = 2;
-			this->InsertaR->Text = L"Inserción";
-			this->InsertaR->UseVisualStyleBackColor = true;
-			this->InsertaR->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// ConsultaR
-			// 
-			this->ConsultaR->Location = System::Drawing::Point(3, 75);
-			this->ConsultaR->Name = L"ConsultaR";
-			this->ConsultaR->Size = System::Drawing::Size(96, 30);
-			this->ConsultaR->TabIndex = 4;
-			this->ConsultaR->Text = L"Consultas";
-			this->ConsultaR->UseVisualStyleBackColor = true;
-			this->ConsultaR->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
-			// 
-			// EliminaR
-			// 
-			this->EliminaR->Location = System::Drawing::Point(3, 39);
-			this->EliminaR->Name = L"EliminaR";
-			this->EliminaR->Size = System::Drawing::Size(96, 30);
-			this->EliminaR->TabIndex = 3;
-			this->EliminaR->Text = L"Eliminación";
-			this->EliminaR->UseVisualStyleBackColor = true;
-			this->EliminaR->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// ResOpc
 			// 
@@ -1009,6 +1015,7 @@ private: System::Windows::Forms::Button^ Registro;
 			this->Factura->TabIndex = 0;
 			this->Factura->Text = L"Factura";
 			this->Factura->UseVisualStyleBackColor = true;
+			this->Factura->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
 			// 
 			// Descuentos
 			// 
@@ -1018,6 +1025,7 @@ private: System::Windows::Forms::Button^ Registro;
 			this->Descuentos->TabIndex = 1;
 			this->Descuentos->Text = L"Descuentos";
 			this->Descuentos->UseVisualStyleBackColor = true;
+			this->Descuentos->Click += gcnew System::EventHandler(this, &Ventana::enviarMensaje);
 			// 
 			// Registro
 			// 
@@ -1028,6 +1036,220 @@ private: System::Windows::Forms::Button^ Registro;
 			this->Registro->Text = L"Cambiar Registro";
 			this->Registro->UseVisualStyleBackColor = true;
 			this->Registro->Click += gcnew System::EventHandler(this, &Ventana::cambiarReg);
+			// 
+			// Usuarios
+			// 
+			this->Usuarios->BackColor = System::Drawing::Color::Transparent;
+			this->Usuarios->Controls->Add(this->UsuarioOpc);
+			this->Usuarios->Controls->Add(this->UsuarioLabel);
+			this->Usuarios->Controls->Add(this->UsuarioIcon);
+			this->Usuarios->Location = System::Drawing::Point(393, 74);
+			this->Usuarios->Name = L"Usuarios";
+			this->Usuarios->Size = System::Drawing::Size(263, 156);
+			this->Usuarios->TabIndex = 17;
+			// 
+			// UsuarioOpc
+			// 
+			this->UsuarioOpc->BackColor = System::Drawing::Color::Transparent;
+			this->UsuarioOpc->Controls->Add(this->UsuarioF);
+			this->UsuarioOpc->Controls->Add(this->UsuarioC);
+			this->UsuarioOpc->Controls->Add(this->UsuarioA);
+			this->UsuarioOpc->Location = System::Drawing::Point(129, 3);
+			this->UsuarioOpc->Name = L"UsuarioOpc";
+			this->UsuarioOpc->Size = System::Drawing::Size(131, 111);
+			this->UsuarioOpc->TabIndex = 15;
+			this->UsuarioOpc->Visible = false;
+			// 
+			// UsuarioF
+			// 
+			this->UsuarioF->Location = System::Drawing::Point(3, 75);
+			this->UsuarioF->Name = L"UsuarioF";
+			this->UsuarioF->Size = System::Drawing::Size(125, 30);
+			this->UsuarioF->TabIndex = 17;
+			this->UsuarioF->Text = L"Fila";
+			this->UsuarioF->UseMnemonic = false;
+			this->UsuarioF->UseVisualStyleBackColor = true;
+			this->UsuarioF->Click += gcnew System::EventHandler(this, &Ventana::abrirIcon);
+			// 
+			// UsuarioC
+			// 
+			this->UsuarioC->Location = System::Drawing::Point(3, 3);
+			this->UsuarioC->Name = L"UsuarioC";
+			this->UsuarioC->Size = System::Drawing::Size(125, 30);
+			this->UsuarioC->TabIndex = 7;
+			this->UsuarioC->Text = L"Clientes";
+			this->UsuarioC->UseMnemonic = false;
+			this->UsuarioC->UseVisualStyleBackColor = true;
+			this->UsuarioC->Click += gcnew System::EventHandler(this, &Ventana::abrirIcon);
+			// 
+			// UsuarioA
+			// 
+			this->UsuarioA->Location = System::Drawing::Point(3, 39);
+			this->UsuarioA->Name = L"UsuarioA";
+			this->UsuarioA->Size = System::Drawing::Size(125, 30);
+			this->UsuarioA->TabIndex = 8;
+			this->UsuarioA->Text = L"Administradores";
+			this->UsuarioA->UseMnemonic = false;
+			this->UsuarioA->UseVisualStyleBackColor = true;
+			this->UsuarioA->Click += gcnew System::EventHandler(this, &Ventana::abrirIcon);
+			// 
+			// UsuarioLabel
+			// 
+			this->UsuarioLabel->Font = (gcnew System::Drawing::Font(L"Consolas", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UsuarioLabel->Location = System::Drawing::Point(5, 124);
+			this->UsuarioLabel->Name = L"UsuarioLabel";
+			this->UsuarioLabel->Size = System::Drawing::Size(117, 20);
+			this->UsuarioLabel->TabIndex = 6;
+			this->UsuarioLabel->Text = L"Usuarios";
+			this->UsuarioLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// UsuarioIcon
+			// 
+			this->UsuarioIcon->BackColor = System::Drawing::Color::Transparent;
+			this->UsuarioIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"UsuarioIcon.BackgroundImage")));
+			this->UsuarioIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->UsuarioIcon->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->UsuarioIcon->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->UsuarioIcon->Location = System::Drawing::Point(3, 3);
+			this->UsuarioIcon->Name = L"UsuarioIcon";
+			this->UsuarioIcon->Size = System::Drawing::Size(120, 116);
+			this->UsuarioIcon->TabIndex = 5;
+			this->UsuarioIcon->UseVisualStyleBackColor = false;
+			this->UsuarioIcon->Click += gcnew System::EventHandler(this, &Ventana::abrirIcon);
+			// 
+			// Facturación
+			// 
+			this->Facturación->BackColor = System::Drawing::Color::Transparent;
+			this->Facturación->Controls->Add(this->FacturaOpc);
+			this->Facturación->Controls->Add(this->FacturaLabel);
+			this->Facturación->Controls->Add(this->FacturaIcon);
+			this->Facturación->Location = System::Drawing::Point(393, 260);
+			this->Facturación->Name = L"Facturación";
+			this->Facturación->Size = System::Drawing::Size(263, 156);
+			this->Facturación->TabIndex = 18;
+			// 
+			// FacturaOpc
+			// 
+			this->FacturaOpc->BackColor = System::Drawing::Color::Transparent;
+			this->FacturaOpc->Controls->Add(this->FacturaF);
+			this->FacturaOpc->Controls->Add(this->FacturaD);
+			this->FacturaOpc->Location = System::Drawing::Point(129, 3);
+			this->FacturaOpc->Name = L"FacturaOpc";
+			this->FacturaOpc->Size = System::Drawing::Size(131, 72);
+			this->FacturaOpc->TabIndex = 15;
+			this->FacturaOpc->Visible = false;
+			// 
+			// FacturaF
+			// 
+			this->FacturaF->Location = System::Drawing::Point(3, 3);
+			this->FacturaF->Name = L"FacturaF";
+			this->FacturaF->Size = System::Drawing::Size(125, 30);
+			this->FacturaF->TabIndex = 7;
+			this->FacturaF->Text = L"Facturación";
+			this->FacturaF->UseMnemonic = false;
+			this->FacturaF->UseVisualStyleBackColor = true;
+			this->FacturaF->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// FacturaD
+			// 
+			this->FacturaD->Location = System::Drawing::Point(3, 39);
+			this->FacturaD->Name = L"FacturaD";
+			this->FacturaD->Size = System::Drawing::Size(125, 30);
+			this->FacturaD->TabIndex = 8;
+			this->FacturaD->Text = L"Descuentos";
+			this->FacturaD->UseMnemonic = false;
+			this->FacturaD->UseVisualStyleBackColor = true;
+			this->FacturaD->Click += gcnew System::EventHandler(this, &Ventana::enviarMensaje);
+			// 
+			// FacturaLabel
+			// 
+			this->FacturaLabel->Font = (gcnew System::Drawing::Font(L"Consolas", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FacturaLabel->Location = System::Drawing::Point(5, 124);
+			this->FacturaLabel->Name = L"FacturaLabel";
+			this->FacturaLabel->Size = System::Drawing::Size(117, 20);
+			this->FacturaLabel->TabIndex = 6;
+			this->FacturaLabel->Text = L"Facturación";
+			this->FacturaLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// FacturaIcon
+			// 
+			this->FacturaIcon->BackColor = System::Drawing::Color::Transparent;
+			this->FacturaIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FacturaIcon.BackgroundImage")));
+			this->FacturaIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->FacturaIcon->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->FacturaIcon->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->FacturaIcon->Location = System::Drawing::Point(3, 3);
+			this->FacturaIcon->Name = L"FacturaIcon";
+			this->FacturaIcon->Size = System::Drawing::Size(120, 116);
+			this->FacturaIcon->TabIndex = 5;
+			this->FacturaIcon->UseVisualStyleBackColor = false;
+			this->FacturaIcon->Click += gcnew System::EventHandler(this, &Ventana::abrirIcon);
+			// 
+			// FilaMenu
+			// 
+			this->FilaMenu->BackColor = System::Drawing::Color::Transparent;
+			this->FilaMenu->Controls->Add(this->EliminaCompra);
+			this->FilaMenu->Controls->Add(this->ModProd);
+			this->FilaMenu->Controls->Add(this->ModCant);
+			this->FilaMenu->Controls->Add(this->RegCompra);
+			this->FilaMenu->Controls->Add(this->InsCliente);
+			this->FilaMenu->Location = System::Drawing::Point(659, 148);
+			this->FilaMenu->Name = L"FilaMenu";
+			this->FilaMenu->Size = System::Drawing::Size(155, 181);
+			this->FilaMenu->TabIndex = 20;
+			this->FilaMenu->Visible = false;
+			// 
+			// EliminaCompra
+			// 
+			this->EliminaCompra->Location = System::Drawing::Point(3, 76);
+			this->EliminaCompra->Name = L"EliminaCompra";
+			this->EliminaCompra->Size = System::Drawing::Size(149, 29);
+			this->EliminaCompra->TabIndex = 4;
+			this->EliminaCompra->Text = L"Eliminar Compra";
+			this->EliminaCompra->UseVisualStyleBackColor = true;
+			this->EliminaCompra->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// ModProd
+			// 
+			this->ModProd->Location = System::Drawing::Point(3, 147);
+			this->ModProd->Name = L"ModProd";
+			this->ModProd->Size = System::Drawing::Size(149, 29);
+			this->ModProd->TabIndex = 3;
+			this->ModProd->Text = L"Modificar Producto";
+			this->ModProd->UseVisualStyleBackColor = true;
+			this->ModProd->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// ModCant
+			// 
+			this->ModCant->Location = System::Drawing::Point(3, 112);
+			this->ModCant->Name = L"ModCant";
+			this->ModCant->Size = System::Drawing::Size(149, 29);
+			this->ModCant->TabIndex = 2;
+			this->ModCant->Text = L"Modificar Cantidad";
+			this->ModCant->UseVisualStyleBackColor = true;
+			this->ModCant->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// RegCompra
+			// 
+			this->RegCompra->Location = System::Drawing::Point(3, 40);
+			this->RegCompra->Name = L"RegCompra";
+			this->RegCompra->Size = System::Drawing::Size(149, 29);
+			this->RegCompra->TabIndex = 1;
+			this->RegCompra->Text = L"Registra Compra";
+			this->RegCompra->UseVisualStyleBackColor = true;
+			this->RegCompra->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			// 
+			// InsCliente
+			// 
+			this->InsCliente->Location = System::Drawing::Point(3, 5);
+			this->InsCliente->Name = L"InsCliente";
+			this->InsCliente->Size = System::Drawing::Size(149, 29);
+			this->InsCliente->TabIndex = 0;
+			this->InsCliente->Text = L"Inserta Cliente";
+			this->InsCliente->UseVisualStyleBackColor = true;
+			this->InsCliente->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// Ventana
 			// 
@@ -1045,7 +1267,12 @@ private: System::Windows::Forms::Button^ Registro;
 			this->Controls->Add(this->MenuPop);
 			this->Controls->Add(this->Restaurantes);
 			this->Controls->Add(this->Lugares);
+			this->Controls->Add(this->IconMenu);
+			this->Controls->Add(this->FilaMenu);
+			this->Controls->Add(this->Facturación);
+			this->Controls->Add(this->Usuarios);
 			this->Name = L"Ventana";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menú";
 			this->MenuPop->ResumeLayout(false);
 			this->MantOp->ResumeLayout(false);
@@ -1053,15 +1280,18 @@ private: System::Windows::Forms::Button^ Registro;
 			this->ModOp->ResumeLayout(false);
 			this->ConsOp->ResumeLayout(false);
 			this->Lugares->ResumeLayout(false);
-			this->Lugares->PerformLayout();
-			this->LugarMenu->ResumeLayout(false);
 			this->LugarOpc->ResumeLayout(false);
+			this->IconMenu->ResumeLayout(false);
 			this->Restaurantes->ResumeLayout(false);
 			this->Restaurantes->PerformLayout();
-			this->ResMenu->ResumeLayout(false);
 			this->ResOpc->ResumeLayout(false);
 			this->ModCompra->ResumeLayout(false);
 			this->FacturacionOpc->ResumeLayout(false);
+			this->Usuarios->ResumeLayout(false);
+			this->UsuarioOpc->ResumeLayout(false);
+			this->Facturación->ResumeLayout(false);
+			this->FacturaOpc->ResumeLayout(false);
+			this->FilaMenu->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1069,6 +1299,10 @@ private: System::Windows::Forms::Button^ Registro;
 	private: System::Void opcionesPop(System::Object^ sender, System::EventArgs^ e) {
 		Button^ boton = (Button^)sender;
 		cerrarIcon();
+
+		if (boton != UsuarioF) {
+			this->FilaMenu->Visible = false;
+		}
 
 		// Mantenimiento
 
@@ -1145,338 +1379,46 @@ private: System::Windows::Forms::Button^ Registro;
 			this->arbol = Admin;
 		else if (boton->Text == "Fila")
 			this->arbol = Fila;
+		else if (boton == this->Factura)
+			this->arbol = Arbol::Factura;
 		else
 			this->arbol = Compra;
 
+		if (boton == this->CompraP)
+			this->cantidad = false;
+		else
+			this->cantidad = true;
 
 
 		ingresa->config(arbol, accion, cantidad);
 		ingresa->actualizar();
-		
-		
-		//-----------------------Ingresar-------------------------
-		if (boton == PaisI) 
-		{
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			String^ codP = ingresa->CodP->Text;
-			String^ nombre = ingresa->Nombre->Text;
-			
-		}
-		if (boton == CiudadI) 
-		{
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ nombre = ingresa->Nombre->Text;
-			
-		}
-		if (boton == RestauranteI)
-		{
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ nombre = ingresa->Nombre->Text; 
-		}
-		if (boton == MenuI)
-		{
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-			String^ nombre = ingresa->Nombre->Text;
-			
-		}
-		if (boton == ProductoI)
-		{
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-			String^ codPr = ingresa->CodPr->Text;
-			String^ kcal = ingresa->Kcal->Text;
-			String^ prec = ingresa->Precio->Text;
-			String^ cant = ingresa->Cantidad->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == AdminI)
-		{
-			ingresa->PPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-			String^ cedula = ingresa->Ced->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == ClienteI) 
-		{ 
-			ingresa->PPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-			String^ cedula = ingresa->Ced->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == FilaI) {
-			ingresa->PPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-			String^ cedula = ingresa->Ced->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == ComprasI) {
-
-		}
-
-
-		//-------------------------Consultar------------------------
-		if (boton == PaisC)
-		{
-			ingresa->NPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-		}
-		if (boton == CiudadC)
-		{
-			ingresa->NPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-
-		}
-		if (boton == RestauranteC)
-		{
-			ingresa->NPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-
-		}
-		if (boton == MenuC)
-		{
-			ingresa->NPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-
-		}
-		if (boton == ProductoC)
-		{
-			ingresa->NPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-			String^ codPr = ingresa->CodPr->Text;
-		}
-		if (boton == AdminC)
-		{
-			ingresa->PPanel->Visible = false;
-			ingresa->NPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-			String^ cedula = ingresa->Ced->Text;
-		}
-		if (boton == ClienteC)
-		{
-			ingresa->PPanel->Visible = false;
-			ingresa->NPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-			String^ cedula = ingresa->Ced->Text;
-		}
-
-
-		//-------------------------Modificar--------------------------
-		if (boton == PaisM)
-		{
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == CiudadM)
-		{
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ nombre = ingresa->Nombre->Text;
-
-		}
-		if (boton == RestauranteM)
-		{
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == MenuM)
-		{
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == ProductoM)
-		{
-			String^ codP = ingresa->CodP->Text;
-			String^ codC = ingresa->CodC->Text;
-			String^ codR = ingresa->CodR->Text;
-			String^ codM = ingresa->CodM->Text;
-			String^ codPr = ingresa->CodPr->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == AdminM)
-		{
-			ingresa->PPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-
-			String^ cedula = ingresa->Ced->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
-		if (boton == ClienteM)
-		{
-			ingresa->PPanel->Visible = false;
-			ingresa->CPanel->Visible = false;
-			ingresa->RPanel->Visible = false;
-			ingresa->MPanel->Visible = false;
-			ingresa->PrPanel->Visible = false;
-			ingresa->KcalPanel->Visible = false;
-			ingresa->CaPanel->Visible = false;
-			ingresa->PrePanel->Visible = false;
-			ingresa->Ced->Visible = true;
-
-			String^ cedula = ingresa->Ced->Text;
-			String^ nombre = ingresa->Nombre->Text;
-		}
 		ingresa->ShowDialog(); 
-		
 	}
 
 	private: System::Void abrirIcon(System::Object^ sender, System::EventArgs^ e) {
 		Button^ boton = (Button^)sender;
+		cerrarPop();
+
+		if (boton != UsuarioF) {
+			this->FilaMenu->Visible = false;
+		}
 
 
 		// Lugares
 
 		if (boton == PaisIcon) {
-			cerrarRestaurantes();
-			this->LugarMenu->Visible = false;
+			this->IconMenu->Visible = false;
 			this->LugarOpc->Visible = !this->LugarOpc->Visible;
+			cerrarRestaurantes();
+			cerrarUsuarios();
+			this->FacturaOpc->Visible = false;
 		}
 		else if (boton == LugarP) {
-			this->LugarMenu->Visible = !this->LugarMenu->Visible;
+			moverPanel(IconMenu, LugarP->Parent->Parent->Right, LugarP->Parent->Parent->Top + LugarP->Top);
 			this->arbol = Pais;
 		}
 		else if (boton == LugarC) {
-			this->LugarMenu->Visible = !this->LugarMenu->Visible;
+			moverPanel(IconMenu, LugarC->Parent->Parent->Right, LugarC->Parent->Parent->Top + LugarC->Top);
 			this->arbol = Ciudad;
 		}
 
@@ -1484,55 +1426,123 @@ private: System::Windows::Forms::Button^ Registro;
 		// Restaurante
 
 		else if (boton == ResIcon) {
+			this->IconMenu->Visible = false;
 			cerrarLugares();
-			this->ResMenu->Visible = false;
 			this->ResOpc->Visible = !this->ResOpc->Visible;
+			cerrarUsuarios();
+			this->FacturaOpc->Visible = false;
 		}
 		else if (boton == ResR) {
-			this->ResMenu->Visible = !this->ResMenu->Visible;
+			moverPanel(IconMenu, ResR->Parent->Parent->Right, ResR->Parent->Parent->Top + ResR->Top);
 			this->arbol = Restaurante;
 		}
 		else if (boton == ResM) {
-			this->ResMenu->Visible = !this->ResMenu->Visible;
+			moverPanel(IconMenu, ResM->Parent->Parent->Right, ResM->Parent->Parent->Top + ResM->Top);
 			this->arbol = Arbol::Menu;
 		}
 		else if (boton == ResP) {
-			this->ResMenu->Visible = !this->ResMenu->Visible;
+			moverPanel(IconMenu, ResP->Parent->Parent->Right, ResP->Parent->Parent->Top + ResP->Top);
 			this->arbol = Producto;
+		}
+
+
+		// Usuarios
+
+		else if (boton == UsuarioIcon) {
+			this->IconMenu->Visible = false;
+			cerrarLugares();
+			cerrarRestaurantes();
+			this->UsuarioOpc->Visible = !this->ResOpc->Visible;
+			this->FacturaOpc->Visible = false;
+		}
+		else if (boton == UsuarioC) {
+			moverPanel(IconMenu, UsuarioC->Parent->Parent->Right, UsuarioC->Parent->Parent->Top + UsuarioC->Top);
+			this->arbol = Cliente;
+		}
+		else if (boton == UsuarioA) {
+			moverPanel(IconMenu, UsuarioA->Parent->Parent->Right, UsuarioA->Parent->Parent->Top + UsuarioA->Top);
+			this->arbol = Admin;
+		}
+		else if (boton == UsuarioF) {
+			this->IconMenu->Visible = false;
+			this->FilaMenu->Visible = !this->FilaMenu->Visible;
+			this->arbol = Fila;
+		}
+
+
+		// Facturación
+		
+		else if (boton == FacturaIcon) {
+			this->IconMenu->Visible = false;
+			cerrarLugares();
+			cerrarRestaurantes();
+			cerrarUsuarios();
+			this->FacturaOpc->Visible = !this->FacturacionOpc->Visible;
 		}
 	}
 
 	private: System::Void cerrarIcon() {
+		this->IconMenu->Visible = false;
 		cerrarLugares();
 		cerrarRestaurantes();
+		cerrarUsuarios();
+		this->FacturaOpc->Visible = false;
 	}
 
 	private: System::Void cerrarLugares() {
 		this->LugarOpc->Visible = false;
-		this->LugarMenu->Visible = false;
+		this->IconMenu->Visible = false;
 	}
 
 	private: System::Void cerrarRestaurantes() {
 		this->ResOpc->Visible = false;
-		this->ResMenu->Visible = false;
+		this->IconMenu->Visible = false;
 	}
 
+	private: System::Void cerrarUsuarios() {
+		this->UsuarioOpc->Visible = false;
+		this->IconMenu->Visible = false;
+		this->FilaMenu->Visible = false;
+	}
 	
 	private: System::Void ingresarIcon(System::Object^ sender, System::EventArgs^ e) {
 		Button^ boton = (Button^)sender;
 		Proyecto3::IngresoDatos^ ingresa = gcnew Proyecto3::IngresoDatos();
+		this->cantidad = true;
 
 		if (boton->Text == "Inserción") {
 			this->accion = Insercion;
 		}
-		if (boton->Text == "Eliminación") {
+		else if (boton->Text == "Eliminación") {
 			this->accion = Eliminacion;
 		}
-		if (boton->Text == "Consulta") {
+		else if (boton->Text == "Consulta") {
 			this->accion = Consulta;
 		}
-		if (boton->Text == "Modificación") {
+		else if (boton->Text == "Modificación") {
 			this->accion = Modificacion;
+		}
+
+		else if (boton == InsCliente) {
+			this->arbol = Fila;
+			this->accion = Insercion;
+		}
+		else if (boton == RegCompra) {
+			this->arbol = Compra;
+			this->accion = Insercion;
+		}
+		else if (boton == EliminaCompra) {
+			this->arbol = Compra;
+			this->accion = Eliminacion;
+		}
+		else if (boton == ModCant) {
+			this->arbol = Compra;
+			this->accion = Modificacion;
+		}
+		else if (boton == ModProd) {
+			this->arbol = Compra;
+			this->accion = Modificacion;
+			this->cantidad = false;
 		}
 
 		ingresa->config(arbol, accion, cantidad);
@@ -1549,5 +1559,36 @@ private: System::Windows::Forms::Button^ Registro;
 		cerrarPop();
 		cerrarIcon();
 	}
+
+	private: System::Void enviarMensaje(System::Object^ sender, System::EventArgs^ e) {
+		Button^ boton = (Button^) sender;
+		String^ msj = "";
+		Arboles& arboles = Arboles::getInstance();
+
+		if (boton->Text == "Descuentos") {
+			msj = "-Tipo de pedido\n" +
+				  "   Para comer: NO HAY\n" +
+				  "   Para llevar: 3%\n\n" +
+				  "-Modo de pago\n" +
+				  "   Efectivo: 1%\n" +
+				  "   Tarjeta: 3%\n";
+			Mensaje mensaje(msj);
+			mensaje.ShowDialog();
+		}
+	}
+
+	private: void moverPanel(Panel^ panel, int x, int y) {
+		if ((panel->Left == x) && (panel->Top == y)) {
+			panel->Visible = !panel->Visible;
+		}
+		else {
+			panel->Left = x;
+			panel->Top = y;
+			panel->Visible = true;
+		}
+	}
+
+
+
 };
 }

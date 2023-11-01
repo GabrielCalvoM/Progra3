@@ -1,9 +1,10 @@
+#pragma once
+
+#include "Mensaje.h"
 #include "Arboles/Enums.h"
 #include "Arboles/Arboles.h"
 #include <msclr/marshal_cppstd.h>
 #include <vcclr.h>
-
-#pragma once
 
 namespace Proyecto3 {
 
@@ -103,11 +104,11 @@ namespace Proyecto3 {
 	private: System::Windows::Forms::Panel^ CompraPanel;
 	private: System::Windows::Forms::Panel^ NuevoProd;
 
-	public: System::Windows::Forms::Panel^ NCPanel;
+
 	private:
 
-	public: System::Windows::Forms::TextBox^ Nciudad;
-	public: System::Windows::Forms::Label^ NCLabel;
+
+
 
 	private:
 
@@ -124,21 +125,44 @@ namespace Proyecto3 {
 
 	public: System::Windows::Forms::TextBox^ NProd;
 	public: System::Windows::Forms::Label^ NPrLabel;
-public: System::Windows::Forms::Panel^ NRPanel;
-
-
-
-	public: System::Windows::Forms::TextBox^ NRes;
-public: System::Windows::Forms::Label^ NRLabel;
 public: System::Windows::Forms::Panel^ NMPanel;
 
-
-
 public: System::Windows::Forms::TextBox^ NMenu;
-public: System::Windows::Forms::Label^ NMLabel;
-public: System::Windows::Forms::Panel^ NPPanel;
-public: System::Windows::Forms::TextBox^ NPais;
-public: System::Windows::Forms::Label^ NPLabel;
+
+
+
+
+public: System::Windows::Forms::Label^ NRLabel;
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Panel^ FPanel;
+public:
+
+private:
+
+
+public: System::Windows::Forms::Panel^ panel1;
+public: System::Windows::Forms::Label^ PedidoLabel;
+
+private: System::Windows::Forms::CheckedListBox^ Pedido;
+public: System::Windows::Forms::Panel^ panel2;
+private: System::Windows::Forms::CheckedListBox^ Pago;
+public: System::Windows::Forms::Label^ PagoLabel;
+private:
+public:
+private:
+
+public:
+
+private:
+public:
 
 
 
@@ -198,21 +222,19 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->Msj = (gcnew System::Windows::Forms::Label());
 			this->CompraPanel = (gcnew System::Windows::Forms::Panel());
 			this->NuevoProd = (gcnew System::Windows::Forms::Panel());
-			this->NCPanel = (gcnew System::Windows::Forms::Panel());
-			this->Nciudad = (gcnew System::Windows::Forms::TextBox());
-			this->NCLabel = (gcnew System::Windows::Forms::Label());
 			this->NPrPanel = (gcnew System::Windows::Forms::Panel());
 			this->NProd = (gcnew System::Windows::Forms::TextBox());
 			this->NPrLabel = (gcnew System::Windows::Forms::Label());
-			this->NRPanel = (gcnew System::Windows::Forms::Panel());
-			this->NRes = (gcnew System::Windows::Forms::TextBox());
-			this->NRLabel = (gcnew System::Windows::Forms::Label());
 			this->NMPanel = (gcnew System::Windows::Forms::Panel());
 			this->NMenu = (gcnew System::Windows::Forms::TextBox());
-			this->NMLabel = (gcnew System::Windows::Forms::Label());
-			this->NPPanel = (gcnew System::Windows::Forms::Panel());
-			this->NPLabel = (gcnew System::Windows::Forms::Label());
-			this->NPais = (gcnew System::Windows::Forms::TextBox());
+			this->NRLabel = (gcnew System::Windows::Forms::Label());
+			this->FPanel = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Pago = (gcnew System::Windows::Forms::CheckedListBox());
+			this->PagoLabel = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Pedido = (gcnew System::Windows::Forms::CheckedListBox());
+			this->PedidoLabel = (gcnew System::Windows::Forms::Label());
 			this->PPanel->SuspendLayout();
 			this->IdPanel->SuspendLayout();
 			this->Codigos->SuspendLayout();
@@ -226,11 +248,11 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->NPanel->SuspendLayout();
 			this->CompraPanel->SuspendLayout();
 			this->NuevoProd->SuspendLayout();
-			this->NCPanel->SuspendLayout();
 			this->NPrPanel->SuspendLayout();
-			this->NRPanel->SuspendLayout();
 			this->NMPanel->SuspendLayout();
-			this->NPPanel->SuspendLayout();
+			this->FPanel->SuspendLayout();
+			this->panel2->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Titulo
@@ -485,7 +507,7 @@ public: System::Windows::Forms::Label^ NPLabel;
 			// 
 			this->NPanel->Controls->Add(this->Nombre);
 			this->NPanel->Controls->Add(this->NLabel);
-			this->NPanel->Location = System::Drawing::Point(25, 305);
+			this->NPanel->Location = System::Drawing::Point(26, 289);
 			this->NPanel->Name = L"NPanel";
 			this->NPanel->Size = System::Drawing::Size(164, 50);
 			this->NPanel->TabIndex = 4;
@@ -518,10 +540,9 @@ public: System::Windows::Forms::Label^ NPLabel;
 			// 
 			// Msj
 			// 
-			this->Msj->AutoSize = true;
-			this->Msj->Location = System::Drawing::Point(185, 15);
+			this->Msj->Location = System::Drawing::Point(214, 289);
 			this->Msj->Name = L"Msj";
-			this->Msj->Size = System::Drawing::Size(0, 16);
+			this->Msj->Size = System::Drawing::Size(197, 65);
 			this->Msj->TabIndex = 9;
 			// 
 			// CompraPanel
@@ -536,47 +557,18 @@ public: System::Windows::Forms::Label^ NPLabel;
 			// 
 			// NuevoProd
 			// 
-			this->NuevoProd->Controls->Add(this->NCPanel);
-			this->NuevoProd->Controls->Add(this->Msj);
-			this->NuevoProd->Controls->Add(this->NPPanel);
 			this->NuevoProd->Controls->Add(this->NPrPanel);
-			this->NuevoProd->Controls->Add(this->NRPanel);
 			this->NuevoProd->Controls->Add(this->NMPanel);
 			this->NuevoProd->Location = System::Drawing::Point(23, 210);
 			this->NuevoProd->Name = L"NuevoProd";
-			this->NuevoProd->Size = System::Drawing::Size(513, 115);
+			this->NuevoProd->Size = System::Drawing::Size(513, 60);
 			this->NuevoProd->TabIndex = 11;
-			// 
-			// NCPanel
-			// 
-			this->NCPanel->Controls->Add(this->Nciudad);
-			this->NCPanel->Controls->Add(this->NCLabel);
-			this->NCPanel->Location = System::Drawing::Point(175, 5);
-			this->NCPanel->Name = L"NCPanel";
-			this->NCPanel->Size = System::Drawing::Size(164, 50);
-			this->NCPanel->TabIndex = 7;
-			// 
-			// Nciudad
-			// 
-			this->Nciudad->Location = System::Drawing::Point(29, 23);
-			this->Nciudad->Name = L"Nciudad";
-			this->Nciudad->Size = System::Drawing::Size(132, 22);
-			this->Nciudad->TabIndex = 3;
-			// 
-			// NCLabel
-			// 
-			this->NCLabel->AutoSize = true;
-			this->NCLabel->Location = System::Drawing::Point(3, 4);
-			this->NCLabel->Name = L"NCLabel";
-			this->NCLabel->Size = System::Drawing::Size(96, 16);
-			this->NCLabel->TabIndex = 2;
-			this->NCLabel->Text = L"Nueva Ciudad:";
 			// 
 			// NPrPanel
 			// 
 			this->NPrPanel->Controls->Add(this->NProd);
 			this->NPrPanel->Controls->Add(this->NPrLabel);
-			this->NPrPanel->Location = System::Drawing::Point(345, 60);
+			this->NPrPanel->Location = System::Drawing::Point(345, 3);
 			this->NPrPanel->Name = L"NPrPanel";
 			this->NPrPanel->Size = System::Drawing::Size(164, 50);
 			this->NPrPanel->TabIndex = 10;
@@ -597,39 +589,14 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->NPrLabel->TabIndex = 2;
 			this->NPrLabel->Text = L"Nuevo Producto:";
 			// 
-			// NRPanel
-			// 
-			this->NRPanel->Controls->Add(this->NRes);
-			this->NRPanel->Controls->Add(this->NRLabel);
-			this->NRPanel->Location = System::Drawing::Point(175, 60);
-			this->NRPanel->Name = L"NRPanel";
-			this->NRPanel->Size = System::Drawing::Size(164, 50);
-			this->NRPanel->TabIndex = 8;
-			// 
-			// NRes
-			// 
-			this->NRes->Location = System::Drawing::Point(29, 23);
-			this->NRes->Name = L"NRes";
-			this->NRes->Size = System::Drawing::Size(132, 22);
-			this->NRes->TabIndex = 3;
-			// 
-			// NRLabel
-			// 
-			this->NRLabel->AutoSize = true;
-			this->NRLabel->Location = System::Drawing::Point(3, 4);
-			this->NRLabel->Name = L"NRLabel";
-			this->NRLabel->Size = System::Drawing::Size(126, 16);
-			this->NRLabel->TabIndex = 2;
-			this->NRLabel->Text = L"Nuevo Restaurante:";
-			// 
 			// NMPanel
 			// 
 			this->NMPanel->Controls->Add(this->NMenu);
-			this->NMPanel->Controls->Add(this->NMLabel);
-			this->NMPanel->Location = System::Drawing::Point(345, 5);
+			this->NMPanel->Controls->Add(this->NRLabel);
+			this->NMPanel->Location = System::Drawing::Point(178, 3);
 			this->NMPanel->Name = L"NMPanel";
 			this->NMPanel->Size = System::Drawing::Size(164, 50);
-			this->NMPanel->TabIndex = 9;
+			this->NMPanel->TabIndex = 8;
 			// 
 			// NMenu
 			// 
@@ -638,39 +605,87 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->NMenu->Size = System::Drawing::Size(132, 22);
 			this->NMenu->TabIndex = 3;
 			// 
-			// NMLabel
+			// NRLabel
 			// 
-			this->NMLabel->AutoSize = true;
-			this->NMLabel->Location = System::Drawing::Point(3, 4);
-			this->NMLabel->Name = L"NMLabel";
-			this->NMLabel->Size = System::Drawing::Size(86, 16);
-			this->NMLabel->TabIndex = 2;
-			this->NMLabel->Text = L"Nuevo Menu:";
+			this->NRLabel->AutoSize = true;
+			this->NRLabel->Location = System::Drawing::Point(3, 4);
+			this->NRLabel->Name = L"NRLabel";
+			this->NRLabel->Size = System::Drawing::Size(86, 16);
+			this->NRLabel->TabIndex = 2;
+			this->NRLabel->Text = L"Nuevo Menú:";
 			// 
-			// NPPanel
+			// FPanel
 			// 
-			this->NPPanel->Controls->Add(this->NPais);
-			this->NPPanel->Controls->Add(this->NPLabel);
-			this->NPPanel->Location = System::Drawing::Point(5, 5);
-			this->NPPanel->Name = L"NPPanel";
-			this->NPPanel->Size = System::Drawing::Size(164, 50);
-			this->NPPanel->TabIndex = 5;
+			this->FPanel->BackColor = System::Drawing::Color::Transparent;
+			this->FPanel->Controls->Add(this->panel2);
+			this->FPanel->Controls->Add(this->panel1);
+			this->FPanel->Location = System::Drawing::Point(105, 101);
+			this->FPanel->Name = L"FPanel";
+			this->FPanel->Size = System::Drawing::Size(370, 140);
+			this->FPanel->TabIndex = 12;
 			// 
-			// NPLabel
+			// panel2
 			// 
-			this->NPLabel->AutoSize = true;
-			this->NPLabel->Location = System::Drawing::Point(3, 4);
-			this->NPLabel->Name = L"NPLabel";
-			this->NPLabel->Size = System::Drawing::Size(80, 16);
-			this->NPLabel->TabIndex = 2;
-			this->NPLabel->Text = L"Nuevo País:";
+			this->panel2->Controls->Add(this->Pago);
+			this->panel2->Controls->Add(this->PagoLabel);
+			this->panel2->Location = System::Drawing::Point(187, 3);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(178, 110);
+			this->panel2->TabIndex = 6;
 			// 
-			// NPais
+			// Pago
 			// 
-			this->NPais->Location = System::Drawing::Point(29, 23);
-			this->NPais->Name = L"NPais";
-			this->NPais->Size = System::Drawing::Size(132, 22);
-			this->NPais->TabIndex = 3;
+			this->Pago->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->Pago->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Pago->Font = (gcnew System::Drawing::Font(L"Century", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Pago->FormattingEnabled = true;
+			this->Pago->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Efectivo", L"Tarjeta" });
+			this->Pago->Location = System::Drawing::Point(8, 29);
+			this->Pago->Name = L"Pago";
+			this->Pago->Size = System::Drawing::Size(156, 69);
+			this->Pago->TabIndex = 3;
+			// 
+			// PagoLabel
+			// 
+			this->PagoLabel->AutoSize = true;
+			this->PagoLabel->Location = System::Drawing::Point(3, 4);
+			this->PagoLabel->Name = L"PagoLabel";
+			this->PagoLabel->Size = System::Drawing::Size(99, 16);
+			this->PagoLabel->TabIndex = 2;
+			this->PagoLabel->Text = L"Modo de pago:";
+			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->Pedido);
+			this->panel1->Controls->Add(this->PedidoLabel);
+			this->panel1->Location = System::Drawing::Point(3, 3);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(178, 110);
+			this->panel1->TabIndex = 5;
+			// 
+			// Pedido
+			// 
+			this->Pedido->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->Pedido->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Pedido->Font = (gcnew System::Drawing::Font(L"Century", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Pedido->FormattingEnabled = true;
+			this->Pedido->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->Pedido->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Para comer", L"Para llevar" });
+			this->Pedido->Location = System::Drawing::Point(8, 29);
+			this->Pedido->Name = L"Pedido";
+			this->Pedido->Size = System::Drawing::Size(156, 69);
+			this->Pedido->TabIndex = 3;
+			// 
+			// PedidoLabel
+			// 
+			this->PedidoLabel->AutoSize = true;
+			this->PedidoLabel->Location = System::Drawing::Point(3, 4);
+			this->PedidoLabel->Name = L"PedidoLabel";
+			this->PedidoLabel->Size = System::Drawing::Size(103, 16);
+			this->PedidoLabel->TabIndex = 2;
+			this->PedidoLabel->Text = L"Tipo de pedido:";
 			// 
 			// IngresoDatos
 			// 
@@ -678,6 +693,8 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(555, 378);
+			this->Controls->Add(this->Msj);
+			this->Controls->Add(this->FPanel);
 			this->Controls->Add(this->CompraPanel);
 			this->Controls->Add(this->Execute);
 			this->Controls->Add(this->Codigos);
@@ -685,6 +702,7 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->Controls->Add(this->NPanel);
 			this->Controls->Add(this->NuevoProd);
 			this->Name = L"IngresoDatos";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"IngresoDatos";
 			this->PPanel->ResumeLayout(false);
 			this->PPanel->PerformLayout();
@@ -709,17 +727,15 @@ public: System::Windows::Forms::Label^ NPLabel;
 			this->NPanel->PerformLayout();
 			this->CompraPanel->ResumeLayout(false);
 			this->NuevoProd->ResumeLayout(false);
-			this->NuevoProd->PerformLayout();
-			this->NCPanel->ResumeLayout(false);
-			this->NCPanel->PerformLayout();
 			this->NPrPanel->ResumeLayout(false);
 			this->NPrPanel->PerformLayout();
-			this->NRPanel->ResumeLayout(false);
-			this->NRPanel->PerformLayout();
 			this->NMPanel->ResumeLayout(false);
 			this->NMPanel->PerformLayout();
-			this->NPPanel->ResumeLayout(false);
-			this->NPPanel->PerformLayout();
+			this->FPanel->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -735,14 +751,9 @@ public: System::Windows::Forms::Label^ NPLabel;
 	private: System::Void ejecutar(System::Object^ sender, System::EventArgs^ e) {
 		Arboles& arboles = Arboles::getInstance();
 
-		int pais;
-		int ciudad;
-		int res;
-		int menu;
-		int prod;
-		int kcal;
-		int precio;
-		int cant;
+		int pais, ciudad, res, menu, prod;
+		int nmenu, nprod;
+		int kcal, precio, cant;
 		int cedula;
 		std::string nom;
 
@@ -756,6 +767,10 @@ public: System::Windows::Forms::Label^ NPLabel;
 			menu = System::Convert::ToInt32(CodM->Text);
 		if (!System::String::IsNullOrWhiteSpace(CodPr->Text))
 			prod = System::Convert::ToInt32(CodPr->Text);
+		if (!System::String::IsNullOrWhiteSpace(NMenu->Text))
+			nmenu = System::Convert::ToInt32(NMenu->Text);
+		if (!System::String::IsNullOrWhiteSpace(NProd->Text))
+			nprod = System::Convert::ToInt32(NProd->Text);
 		if (!System::String::IsNullOrWhiteSpace(Kcal->Text))
 			kcal = System::Convert::ToInt32(Kcal->Text);
 		if (!System::String::IsNullOrWhiteSpace(Precio->Text))
@@ -767,6 +782,18 @@ public: System::Windows::Forms::Label^ NPLabel;
 		if (!System::String::IsNullOrWhiteSpace(Nombre->Text));
 			nom = msclr::interop::marshal_as<std::string>(Nombre->Text);
 		
+		if (arbol == Factura) {
+			if (arboles.fila.ColaVacia()) {
+				Msj->Text = "No hay clientes en la cola";
+			}
+			else {
+				bool llevar = this->Pedido->GetItemChecked(1);
+				bool tarjeta = this->Pago->GetItemChecked(1);
+
+				arboles.fila.pagarFactura(llevar, tarjeta, arboles.caja);
+				Msj->Text = "Factura hecha en la carpeta 'FACTURAS'";
+			}
+		}
 
 		if (accion == Insercion) {
 			if (arbol == Pais) {
@@ -987,14 +1014,34 @@ public: System::Windows::Forms::Label^ NPLabel;
 			else if (arbol == Compra) {
 				
 				if (arboles.fila.verificarProducto(pais, ciudad, res, menu, prod)) {
-					arboles.fila.modificarCant(pais, ciudad, res, menu, prod, cant);
-					Msj->Text = "Modificación exitosa";
+					if (cantidad) {
+						arboles.fila.modificarCant(pais, ciudad, res, menu, prod, cant);
+						Msj->Text = "Modificación de cantidad exitosa";
+					}
+					else {
+						arboles.fila.ModificarProdu(pais, ciudad, res, menu, prod, nmenu, nprod, cant);
+						Msj->Text = "Modificación de producto exitosa";
+					}
+				}
+				else {
+					Msj->Text = "El producto no está en la lista de compras";
 				}
 			}
 		}
 	}
 
 	public: System::Void actualizar() {
+		if (arbol != Factura) {
+			this->FPanel->Visible = false;
+		}
+		else {
+			this->NPanel->Visible = false;
+		}
+
+		if (cantidad) {
+			this->NuevoProd->Visible = false;
+		}
+
 		if (accion == Consulta || accion == Eliminacion || arbol == Fila) {
 			this->CompraPanel->Visible = false;
 			this->NPanel->Visible = false;
@@ -1032,7 +1079,6 @@ public: System::Windows::Forms::Label^ NPLabel;
 			}
 		}
 	}
-
 
 };
 }

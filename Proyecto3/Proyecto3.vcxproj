@@ -131,6 +131,7 @@
     <ClCompile Include="Arboles\Producto.cpp" />
     <ClCompile Include="IngresoDatos.cpp" />
     <ClCompile Include="Inicio.cpp" />
+    <ClCompile Include="Mensaje.cpp" />
     <ClCompile Include="Ventana.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,11 +147,13 @@
     <ClInclude Include="Arboles\Paises.h" />
     <ClInclude Include="Arboles\Productos.h" />
     <ClInclude Include="Arboles\Restaurantes.h" />
-    <ClInclude Include="Control.h" />
     <ClInclude Include="IngresoDatos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Inicio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Mensaje.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Ventana.h">
@@ -163,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje.resx">
+      <DependentUpon>Mensaje.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana.resx">
       <DependentUpon>Ventana.h</DependentUpon>

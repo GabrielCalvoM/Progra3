@@ -3,7 +3,7 @@
 // Lista
 
 void Compras::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, int cant) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 
     if (producto != NULL) {
         if (producto->cant >= cant) {
@@ -28,7 +28,7 @@ void Compras::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, in
 }
 
 int Compras::getCant(int pais, int ciudad, int rest, int menu, int prod) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 
     if (producto != NULL) {
         if (!ListaVacia()) {
@@ -48,7 +48,7 @@ int Compras::getCant(int pais, int ciudad, int rest, int menu, int prod) {
 }
 
 bool Compras::verificarProducto(int pais, int ciudad, int rest, int menu, int prod) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 
     if (producto != NULL) {
         if (!ListaVacia()) {
@@ -68,7 +68,7 @@ bool Compras::verificarProducto(int pais, int ciudad, int rest, int menu, int pr
 }
 
 void Compras::BorrarNodo(int pais, int ciudad, int rest, int menu, int prod) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 
     if (producto != NULL) {
         if (ListaVacia()) {
@@ -99,8 +99,8 @@ void Compras::BorrarNodo(int pais, int ciudad, int rest, int menu, int prod) {
 }
 
 void Compras::ModificarProdu(int pais, int ciudad, int rest, int menu, int prod, int nmenu, int nprod, int cant) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
-    prnodo nuevo = listaProd.getProducto(pais, ciudad, rest, nmenu, nprod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
+    prnodo nuevo = listaProd->getProducto(pais, ciudad, rest, nmenu, nprod);
 
     if (nuevo->cant >= cant) {
         if (producto != NULL) {
@@ -125,7 +125,7 @@ void Compras::ModificarProdu(int pais, int ciudad, int rest, int menu, int prod,
 }
 
 void Compras::ModificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant) {
-    prnodo producto = listaProd.getProducto(pais, ciudad, rest, menu, prod);
+    prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 
     if (producto != NULL) {
         if (ListaVacia()) {
@@ -167,9 +167,9 @@ int Compras::len() {
 
 conodo Compras::getProducto(int i) {
     conodo aux = primero;
-    int nodo = 1;
+    int nodo = 0;
 
-    if (i > len())
+    if (i >= len())
         return NULL;
 
     while (aux != NULL && nodo < i) {

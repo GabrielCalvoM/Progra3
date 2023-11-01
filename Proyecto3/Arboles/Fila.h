@@ -45,7 +45,7 @@ public:
             }
     }
 
-    Cola(ArbolPr lista) {
+    Cola(ArbolPr* lista) {
         fondo = -1;
         for (int i = 0; i < 5; i++) {
             Cliente[i] = NULL;
@@ -53,7 +53,7 @@ public:
         compras = Compras(lista);
     }
 
-    void configProd(ArbolPr lista) { compras = Compras(lista); }
+    void configProd(ArbolPr* lista) { compras = Compras(lista); }
 
     bool ColaVacia() { return fondo < 0; }
     bool ColaLlena() { return fondo >= 4; }

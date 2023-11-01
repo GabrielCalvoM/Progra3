@@ -10,7 +10,8 @@ enum Arbol {
 	Cliente,
 	Admin,
 	Fila,
-	Compra
+	Compra,
+	Factura
 };
 
 enum ActMenu {

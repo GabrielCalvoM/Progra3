@@ -19,8 +19,6 @@ namespace Proyecto3 {
 	/// <summary>
 	/// Resumen de Inicio
 	/// </summary>
-	ref class Ventana;
-
 	public ref class Inicio : public System::Windows::Forms::Form
 	{
 	public:
@@ -175,6 +173,7 @@ namespace Proyecto3 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Inicio";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Inicio";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
