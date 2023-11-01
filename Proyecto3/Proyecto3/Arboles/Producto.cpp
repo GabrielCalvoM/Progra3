@@ -28,6 +28,106 @@ void PrNodo::RestaCant(int cantidad) {
     cant -= cantidad;
 }
 
+void ArbolPr::borrar(int prod)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        prnodo temp = raiz;
+        raiz == NULL;
+        delete temp;
+    }
+    else
+    {
+        prnodo aux = raiz;
+
+
+        if (aux->codigoc != prod)
+        {
+            prnodo temp;
+            if (prod > aux->codigopr)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while (temp->codigopr != prod)
+            {
+                if (temp->codigopr > prod)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                prnodo aux1 = temp->Hizq;
+                prnodo aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                prnodo aux1 = temp->Hizq;
+                prnodo aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            prnodo aux1 = aux->Hizq;
+            prnodo aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            delete aux;
+        }
+
+
+    }
+}
+
 void PrNodo::SumaCant(int cantidad) {
     compra += cantidad;
     cant += cantidad;

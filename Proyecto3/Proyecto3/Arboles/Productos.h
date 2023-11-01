@@ -62,6 +62,7 @@ public:
     void reportecant(int pais, int ciudad, int rest, int menu, int prod);
     void reporteprec(int pais, int ciudad, int rest, int menu, int prod);
     void reportecomprado();
+    void borrar(int prod); 
 };
 
 #endif //PRODUCTOS_H

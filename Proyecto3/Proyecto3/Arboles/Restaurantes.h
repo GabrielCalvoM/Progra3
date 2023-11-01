@@ -45,6 +45,106 @@ private:
         return Busqueda(nodo->Hder, pais, ciudad, res);
     }
 
+    bool ArbolVacio() { return Raiz == NULL; }
+
+    void borrar(int rest)
+    {
+        if (ArbolVacio()) {
+            cout << "No hay elementos disponibles" << endl;
+        }
+        if ((Raiz->Hder == NULL) && (Raiz->Hizq == NULL))
+        {
+            rnodo temp = Raiz;
+            Raiz == NULL;
+            delete temp;
+        }
+        else
+        {
+            rnodo aux = Raiz;
+
+
+            if (aux->codigor != rest)
+            {
+                rnodo temp;
+                if (rest > aux->codigor)
+                    temp = aux->Hder;
+                else
+                    temp = aux->Hizq;
+
+                while (temp->codigor != rest)
+                {
+                    if (temp->codigor > rest)
+                    {
+                        aux = temp;
+                        temp = temp->Hizq;
+                    }
+                    else
+                    {
+                        aux = temp;
+                        temp = temp->Hder;
+                    }
+                }
+
+                if (aux->Hizq == temp)
+                {
+
+                    rnodo aux1 = temp->Hizq;
+                    rnodo aux2 = temp->Hder;
+
+                    if (aux2 == NULL)
+                    {
+                        aux->Hizq = aux1;
+                        delete temp;
+                    }
+                    else
+                    {
+                        while (aux2->Hizq != NULL)
+                            aux2 = aux2->Hizq;
+
+                        aux2->Hizq = aux1->Hder;
+                        aux1->Hder = temp->Hder;
+                        aux->Hizq = aux1;
+                        delete temp;
+                    }
+                }
+                else
+                {
+
+                    rnodo aux1 = temp->Hizq;
+                    rnodo aux2 = temp->Hder;
+
+                    if (aux1 == NULL)
+                    {
+                        aux->Hder = aux2;
+                        delete temp;
+                    }
+                    else {
+                        while (aux1->Hder != NULL)
+                            aux1 = aux1->Hder;
+
+                        aux1->Hder = aux2;
+                        aux->Hder = temp->Hizq;
+                        delete temp;
+                    }
+                }
+            }
+            else
+            {
+                rnodo aux1 = aux->Hizq;
+                rnodo aux2 = aux->Hder;
+
+                while (aux2->Hizq != NULL)
+                {
+                    aux2 = aux2->Hizq;
+                }
+
+                aux2->Hizq = aux1;
+                Raiz = aux->Hder;
+                delete aux;
+            }
+
+        }
+    }
 
     void rbModificar(rnodo uRaiz, rnodo vValor) {
         if (Raiz->padre == nullptr) {

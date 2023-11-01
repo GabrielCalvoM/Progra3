@@ -39,6 +39,8 @@ public:
     void LeerPaises();
     pnodo VerificarPais(int cod);
     void Modificar(int cod, string nombren);
+    bool ArbolVacio() { return raiz == NULL; }
+    void borrar(int pais); 
 };
 
 #endif //PAISES_H

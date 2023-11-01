@@ -58,6 +58,106 @@ void ModificarR(PaisNodo* R, int cod, string nombren) {
 
 // Arbol
 
+void ArbolP::borrar(int cod)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        pnodo temp = raiz;
+        raiz == NULL;
+        delete temp;
+    }
+    else
+    {
+        pnodo aux = raiz;
+
+
+        if (aux->codigo != cod)
+        {
+            pnodo temp;
+            if (cod > aux->codigo)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while (temp->codigo != cod)
+            {
+                if (temp->codigo > cod)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                pnodo aux1 = temp->Hizq;
+                pnodo aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                pnodo aux1 = temp->Hizq;
+                pnodo aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            pnodo aux1 = aux->Hizq;
+            pnodo aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            delete aux;
+        }
+
+
+    }
+}
+
 void ArbolP::InsertaNodo(int cod, string nom) {
     if (raiz == NULL) {
         raiz = new PaisNodo(cod, nom);

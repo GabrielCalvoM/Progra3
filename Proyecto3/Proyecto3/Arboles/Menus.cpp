@@ -38,6 +38,106 @@ void ModificarM(MNodo* m, int pais, int ciudad, int rest, int menu, string nombr
     }
 }
 
+void ArbolAA::borrar(int menu)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        MNodo* temp = raiz;
+        raiz == NULL;
+        delete temp;
+    }
+    else
+    {
+        MNodo* aux = raiz;
+
+
+        if (aux->codigom != menu)
+        {
+            MNodo* temp;
+            if (menu > aux->codigom)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while (temp->codigom != menu)
+            {
+                if (temp->codigom > menu)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                MNodo* aux1 = temp->Hizq;
+                MNodo* aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                MNodo* aux1 = temp->Hizq;
+                MNodo* aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            MNodo* aux1 = aux->Hizq;
+            MNodo* aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            delete aux;
+        }
+
+
+    }
+}
+
 
 
 // Árbol

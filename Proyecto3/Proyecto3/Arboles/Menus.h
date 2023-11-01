@@ -38,6 +38,7 @@ public:
     void Modificar(int pais, int ciudad, int rest, int menu, string nombren);
     void reporte(int pais, int ciudad, int rest);
     void reportebuscado();
+    void borrar(int menu);
 
 private:
     MNodo* skew(MNodo* r);

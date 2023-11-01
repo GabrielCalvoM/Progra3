@@ -113,6 +113,16 @@ namespace Proyecto3 {
 	private: System::Windows::Forms::Button^ ClienteM;
 	private: System::Windows::Forms::Button^ PaisM;
 
+
+	private: System::Windows::Forms::Panel^ ElimOp;
+	private: System::Windows::Forms::Button^ CiudadB;
+	private: System::Windows::Forms::Button^ ClienteB;
+	private: System::Windows::Forms::Button^ RestauranteB;
+	private: System::Windows::Forms::Button^ MenuB;
+	private: System::Windows::Forms::Button^ ProductoB;
+	private: System::Windows::Forms::Button^ AdminB;
+	private: System::Windows::Forms::Button^ PaisB;
+
 	private: System::Windows::Forms::Button^ CiudadM;
 
 	private: System::Windows::Forms::Button^ RestauranteM;
@@ -267,6 +277,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->ConsultasB = (gcnew System::Windows::Forms::Button());
 			this->EliminacionB = (gcnew System::Windows::Forms::Button());
 			this->InsOp = (gcnew System::Windows::Forms::Panel());
+			this->ElimOp = (gcnew System::Windows::Forms::Panel());
 			this->FilaI = (gcnew System::Windows::Forms::Button());
 			this->ComprasI = (gcnew System::Windows::Forms::Button());
 			this->ClienteI = (gcnew System::Windows::Forms::Button());
@@ -285,6 +296,13 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->AdminM = (gcnew System::Windows::Forms::Button());
 			this->ProductoM = (gcnew System::Windows::Forms::Button());
 			this->MenuM = (gcnew System::Windows::Forms::Button());
+			this->ClienteB = (gcnew System::Windows::Forms::Button());
+			this->PaisB = (gcnew System::Windows::Forms::Button());
+			this->CiudadB = (gcnew System::Windows::Forms::Button());
+			this->RestauranteB = (gcnew System::Windows::Forms::Button());
+			this->AdminB = (gcnew System::Windows::Forms::Button());
+			this->ProductoB = (gcnew System::Windows::Forms::Button());
+			this->MenuB = (gcnew System::Windows::Forms::Button());
 			this->PaisC = (gcnew System::Windows::Forms::Button());
 			this->ConsOp = (gcnew System::Windows::Forms::Panel());
 			this->ClienteC = (gcnew System::Windows::Forms::Button());
@@ -342,6 +360,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->InsOp->SuspendLayout();
 			this->ModOp->SuspendLayout();
 			this->ConsOp->SuspendLayout();
+			this->ElimOp->SuspendLayout();
 			this->Lugares->SuspendLayout();
 			this->LugarOpc->SuspendLayout();
 			this->IconMenu->SuspendLayout();
@@ -675,6 +694,96 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->MenuM->Text = L"Menú";
 			this->MenuM->UseVisualStyleBackColor = true;
 			this->MenuM->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+
+			// 
+			// ElimOp
+			// 
+			this->ElimOp->BackColor = System::Drawing::Color::Transparent;
+			this->ElimOp->Controls->Add(this->ClienteB);
+			this->ElimOp->Controls->Add(this->PaisB);
+			this->ElimOp->Controls->Add(this->CiudadB);
+			this->ElimOp->Controls->Add(this->RestauranteB);
+			this->ElimOp->Controls->Add(this->AdminB);
+			this->ElimOp->Controls->Add(this->ProductoB);
+			this->ElimOp->Controls->Add(this->MenuB);
+			this->ElimOp->Location = System::Drawing::Point(141, 130);
+			this->ElimOp->Name = L"ModOp";
+			this->ElimOp->Size = System::Drawing::Size(146, 291);
+			this->ElimOp->TabIndex = 4;
+			this->ElimOp->Visible = false;
+			// 
+			// ClienteB
+			// 
+			this->ClienteB->Location = System::Drawing::Point(4, 183);
+			this->ClienteB->Name = L"ClienteM";
+			this->ClienteB->Size = System::Drawing::Size(140, 30);
+			this->ClienteB->TabIndex = 13;
+			this->ClienteB->Text = L"Cliente";
+			this->ClienteB->UseVisualStyleBackColor = true;
+			this->ClienteB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// PaisB
+			// 
+			this->PaisB->Location = System::Drawing::Point(3, 3);
+			this->PaisB->Name = L"PaisM";
+			this->PaisB->Size = System::Drawing::Size(140, 30);
+			this->PaisB->TabIndex = 7;
+			this->PaisB->Text = L"País";
+			this->PaisB->UseMnemonic = false;
+			this->PaisB->UseVisualStyleBackColor = true;
+			this->PaisB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// CiudadB
+			// 
+			this->CiudadB->Location = System::Drawing::Point(3, 39);
+			this->CiudadB->Name = L"CiudadM";
+			this->CiudadB->Size = System::Drawing::Size(140, 30);
+			this->CiudadB->TabIndex = 8;
+			this->CiudadB->Text = L"Ciudad";
+			this->CiudadB->UseMnemonic = false;
+			this->CiudadB->UseVisualStyleBackColor = true;
+			this->CiudadB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// RestauranteB
+			// 
+			this->RestauranteB->Location = System::Drawing::Point(3, 75);
+			this->RestauranteB->Name = L"RestauranteM";
+			this->RestauranteB->Size = System::Drawing::Size(140, 30);
+			this->RestauranteB->TabIndex = 12;
+			this->RestauranteB->Text = L"Restaurante";
+			this->RestauranteB->UseVisualStyleBackColor = true;
+			this->RestauranteB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// AdminB
+			// 
+			this->AdminB->Location = System::Drawing::Point(3, 219);
+			this->AdminB->Name = L"AdminM";
+			this->AdminB->Size = System::Drawing::Size(140, 30);
+			this->AdminB->TabIndex = 9;
+			this->AdminB->Text = L"Administrador";
+			this->AdminB->UseVisualStyleBackColor = true;
+			this->AdminB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// ProductoB
+			// 
+			this->ProductoB->Location = System::Drawing::Point(3, 147);
+			this->ProductoB->Name = L"ProductoM";
+			this->ProductoB->Size = System::Drawing::Size(140, 30);
+			this->ProductoB->TabIndex = 10;
+			this->ProductoB->Text = L"Producto";
+			this->ProductoB->UseVisualStyleBackColor = true;
+			this->ProductoB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// MenuB
+			// 
+			this->MenuB->Location = System::Drawing::Point(3, 111);
+			this->MenuB->Name = L"MenuM";
+			this->MenuB->Size = System::Drawing::Size(140, 30);
+			this->MenuB->TabIndex = 11;
+			this->MenuB->Text = L"Menú";
+			this->MenuB->UseVisualStyleBackColor = true;
+			this->MenuB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+
 			// 
 			// PaisC
 			// 
@@ -1319,6 +1428,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 		}
 		else if (boton == EliminacionB) {
 			cerrarMantenimiento();
+			this->ElimOp->Visible = !this->ElimOp->Visible;
 			this->accion = Eliminacion;
 		}
 		else if (boton == ConsultasB) {
