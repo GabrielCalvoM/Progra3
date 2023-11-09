@@ -894,6 +894,79 @@ public:
 			}
 		}
 
+		else if (accion == Eliminacion) {
+			if (arbol == Pais) {
+
+				if (!arboles.paises.VerificarPais(pais)) {
+					Msj->Text = "El país no existe";
+				}
+				else {
+					arboles.paises.borrar(pais);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+			else if (arbol == Ciudad) {
+
+				if (!arboles.ciudades.VerificarCiudad(pais, ciudad)) {
+					Msj->Text = "La ciudad no existe";
+				}
+				else {
+					arboles.ciudades.borrar(ciudad);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+			else if (arbol == Restaurante) {
+
+				if (!arboles.restaurantes.VerificarRestaurante(pais, ciudad, res)) {
+					Msj->Text = "El restaurante no existe";
+				}
+				else {
+					//arboles.restaurantes.borrar 
+					Msj->Text = "Eliminacion no exitosa";
+				}
+			}
+			else if (arbol == Arbol::Menu) {
+
+				if (!arboles.menus.VerificarM(pais, ciudad, res, menu)) {
+					Msj->Text = "El menú no existe";
+				}
+				else {
+					arboles.menus.borrar(menu);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+			else if (arbol == Producto) {
+
+				if (!arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					Msj->Text = "El producto no existe";
+				}
+				else {
+					arboles.productos.borrar(prod);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+			else if (arbol == Cliente) {
+
+				if (!arboles.clientes.VerificarCliente(cedula)) {
+					Msj->Text = "El cliente no existe";
+				}
+				else {
+					arboles.clientes.EliminarCliente(cedula);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+			else if (arbol == Admin) {
+
+				if (!arboles.admins.VerificarAdmin(cedula)) {
+					Msj->Text = "El administrador no existe";
+				}
+				else {
+					arboles.admins.EliminarAdmin(cedula);
+					Msj->Text = "Eliminacion exitosa";
+				}
+			}
+		}
+
 		else if (accion == Consulta) {
 			if (arbol == Pais) {
 				pnodo obj = arboles.paises.VerificarPais(pais);
