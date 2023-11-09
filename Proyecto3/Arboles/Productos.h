@@ -58,10 +58,11 @@ public:
     void Mostrar(prnodo raiz, string indent, bool ultimo);
     void MostrarE(int pais, int ciudad, int rest, int menu, int prod);
     void Modificar(int pais, int ciudad, int rest, int menu, int pr, string nombren, string calo, string prec, string cantidad);
-    void reporte(int pais, int ciudad, int rest, int menu);
-    void reportecant(int pais, int ciudad, int rest, int menu, int prod);
-    void reporteprec(int pais, int ciudad, int rest, int menu, int prod);
-    void reportecomprado();
+    void reporte14();
+    void reporte13(int pais, int ciudad, int rest, int menu, int prod);
+    void reporte11(int pais, int ciudad, int rest, int menu, int prod);
+    void reporte8();
+    void borrar(int pais, int ciudad, int rest, int menu, int prod, ArbolPr eliminado, ArbolAA menus);
 };
 
 #endif //PRODUCTOS_H

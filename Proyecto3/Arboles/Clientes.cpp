@@ -23,7 +23,52 @@ void ArbolB::Inserta(int C1, string nom, ppagina R) {
         raiz = P;
     }
 }
+/*
+void Pagina::reporte(Pagina* R) {
+    if (R != NULL) {
+        for (int i = 1; i <= R->cuenta; i++) {
+            ofstream arch("Reporte_Clientes.txt", std::ios::app);
+            if (!arch.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                arch << R->cliente[i]->cedula << " --- " << R->cliente[i]->nombre << endl;
+            }
+        }
+        for (int i = 0; i <= R->cuenta; i++) {
+            PreordenR(R->rama[i]);
+        }
+    }
+}
 
+void ArbolB::reporte4()
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay productos disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Clientes.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Clientes-----" << endl << endl;
+        archivo << "Cedula  ---- Nombre" << endl << endl;
+        archivo.close();
+
+        raiz->reporte(raiz);
+
+        ofstream arch("Reporte_Clientes.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+*/
 void ArbolB::Empujar(int C1, string nom, ppagina R, bool* EA, int* mediana, ppagina* x) {
     int k = 0;
     bool Esta = false;

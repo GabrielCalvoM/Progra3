@@ -96,7 +96,7 @@ void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
     for (int i = 1; i < 5; i++) {
         Cliente[i - 1] = Cliente[i];
     }
-
+    
     lista.InsertaNodo(compras, Cliente[0]);
     compras.primero = NULL;
 

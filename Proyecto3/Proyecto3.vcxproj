@@ -133,6 +133,7 @@
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Mensaje.cpp" />
     <ClCompile Include="Ventana.cpp" />
+    <ClCompile Include="ventas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arboles\Admins.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Ventana.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ventas.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="IngresoDatos.resx">

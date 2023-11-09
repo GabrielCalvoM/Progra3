@@ -55,6 +55,9 @@ public:
     void Mostrar(cnodo raiz, string indent, bool ultimo);
     void MostrarE(int pais, int ciudad);
     void Modificar(int pais, int ciudad, string nombren);
+    void borrar(int pais, int ciudad, ArbolC eliminados, ArbolP paises); 
+    void reporte2(int pais);
+    void reporte16();
 
 };
 

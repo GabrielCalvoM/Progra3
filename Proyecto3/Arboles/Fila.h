@@ -2,6 +2,7 @@
 #define FILA_H
 
 #include "Compras.h"
+//#include "ventas.h"
 #include <direct.h>
 
 class CajaNodo {

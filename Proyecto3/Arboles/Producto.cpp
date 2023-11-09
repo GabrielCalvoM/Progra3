@@ -23,6 +23,34 @@ prnodo PrNodo::VerificarProd(int codp, int codc, int codr, int codm, int codpr) 
     }
 }
 
+typedef PrNodo* prnodo;
+
+PrNodo* prmascomprado(PrNodo* R, PrNodo* MAX)
+{
+    if (R == NULL)
+        return MAX;
+    else
+    {
+        if (MAX == NULL)
+            MAX = R;
+
+        if (R->compra > MAX->compra)
+            MAX = R;
+
+        prnodo max1 = prmascomprado(R->Hizq, MAX);
+        prnodo max2 = prmascomprado(R->Hder, MAX);
+
+        if (max1->compra > MAX->compra)
+            MAX = max1;
+        if (max2->compra > MAX->compra)
+            MAX = max2;
+
+        return MAX;
+
+    }
+
+}
+
 void PrNodo::RestaCant(int cantidad) {
     compra -= cantidad;
     cant -= cantidad;
@@ -60,8 +88,69 @@ void ModificarPr(PrNodo* m, int pais, int ciudad, int rest, int menu, int pr, st
             ModificarPr(m->Hder, pais, ciudad, rest, menu, pr, nombren, calo, prec, cantidad);
     }
 }
+void reporte14i(PrNodo* R)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+            ofstream archivo("Reporte_Productos_Eliminados.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigopr << "     " << R->codigop << "     " << R->codigoc << "     " << R->codigor << "     " << R->codigom << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        
+        reporte14i(R->Hizq);
+        reporte14i(R->Hder);
+    }
+}
 
+void reporte13i(PrNodo* R, int pais, int ciudad, int rest, int menu, int prod)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+        if ((R->codigop == pais) && (R->codigoc == ciudad) && (R->codigor == rest) && (R->codigom == menu) && (R->codigopr == prod))
+        {
+            ofstream archivo("Reporte_Cantidad_Producto.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->cant << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        }
+        reporte13i(R->Hizq, pais, ciudad, rest, menu, prod);
+        reporte13i(R->Hder, pais, ciudad, rest, menu, prod);
+    }
+}
 
+void reporte11i(PrNodo* R, int pais, int ciudad, int rest, int menu, int prod)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+        if ((R->codigop == pais) && (R->codigoc == ciudad) && (R->codigor == rest) && (R->codigom == menu) && (R->codigopr == prod))
+        {
+            ofstream archivo("Reporte_Precio_Producto.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->precio << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        }
+        reporte11i(R->Hizq, pais, ciudad, rest, menu, prod);
+        reporte11i(R->Hder, pais, ciudad, rest, menu, prod);
+    }
+}
 
 // Árbol
 
@@ -69,6 +158,230 @@ void ArbolPr::Modificar(int pais, int ciudad, int rest, int menu, int pr, string
 {
     if (!ArbolVacio())
         ModificarPr(raiz, pais, ciudad, rest, menu, pr, nombren, calo, prec, cantidad);
+}
+
+void ArbolPr::reporte8()
+{
+    prnodo max = prmascomprado(raiz, NULL);
+
+    ofstream archivo("Reporte_Producto_mas_Comprado.txt");
+    if (!archivo.is_open()) {
+        cout << "No se pudo abrir el archivo" << endl;
+        return;
+    }
+    archivo << "-----Reporte Producto mas Comprado-----" << endl << endl;
+    archivo << "Pais: " << max->codigop << endl;
+    archivo << "Ciudad: " << max->codigoc << endl;
+    archivo << "Restaurante: " << max->codigor << endl;
+    archivo << "Menu: " << max->codigom << endl;
+    archivo << "Producto: " << max->codigopr << endl;
+    archivo << "Nombre: " << max->nombre << endl;
+    archivo << "Compra: " << max->compra << endl << endl;
+    archivo << "-----------------------------------------";
+    archivo.close();
+}
+
+void ArbolPr::reporte13(int pais, int ciudad, int rest, int menu, int prod)
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay productos disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Cantidad_Producto.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Cantidad de un Producto-----" << endl << endl;
+        archivo << "Pais: " << pais << endl;
+        archivo << "Ciudad: " << ciudad << endl;
+        archivo << "Restaurante: " << rest << endl;
+        archivo << "Menu: " << menu << endl;
+        archivo << "Producto: " << prod << endl;
+        archivo << "Cantidad Producto  ---- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte13i(raiz, pais, ciudad, rest, menu, prod);
+
+        ofstream arch("Reporte_Cantidad_Producto.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+
+void ArbolPr::reporte11(int pais, int ciudad, int rest, int menu, int prod)
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay productos disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Precio_Producto.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Precio de un Producto-----" << endl << endl;
+        archivo << "Pais: " << pais << endl;
+        archivo << "Ciudad: " << ciudad << endl;
+        archivo << "Restaurante: " << rest << endl;
+        archivo << "Menu: " << menu << endl;
+        archivo << "Producto: " << prod << endl;
+        archivo << "Precio Producto  ---- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte11i(raiz, pais, ciudad, rest, menu, prod);
+
+        ofstream arch("Reporte_Precio_Producto.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+
+void ArbolPr::reporte14()
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay productos disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Productos_Eliminados.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Productos-----" << endl << endl;
+        archivo << "Codigo Producto  ---- Codigo Pais  ---- Codigo Ciudad  ---- Codigo Restaurante  ---- Codigo Menu  ---- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte14i(raiz);
+
+        ofstream arch("Reporte_Productos_Eliminados.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+
+void ArbolPr::borrar(int pais, int ciudad, int rest, int menu, int prod, ArbolPr eliminado, ArbolAA menus)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        if ((raiz->codigop == pais) && (raiz->codigoc == ciudad) && (raiz->codigor == rest) && (raiz->codigom == menu) && (raiz->codigopr == prod))
+        {
+            prnodo temp = raiz;
+            raiz == NULL;
+            eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->codigopr, temp->nombre, temp->kcal, temp->precio, temp->cant, menus);
+            delete temp;
+        }
+    }
+    else
+    {
+        prnodo aux = raiz;
+
+
+        if ((raiz->codigop != pais) && (raiz->codigoc != ciudad) && (raiz->codigor != rest) && (raiz->codigom != menu) && (raiz->codigopr != prod))
+        {
+            prnodo temp;
+            if (prod > aux->codigopr)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while ((raiz->codigop != pais) && (raiz->codigoc != ciudad) && (raiz->codigor != rest) && (raiz->codigom != menu) && (raiz->codigopr != prod)) 
+            {
+                if (temp->codigopr > prod)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                prnodo aux1 = temp->Hizq;
+                prnodo aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->codigopr, temp->nombre, temp->kcal, temp->precio, temp->cant, menus);
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->codigopr, temp->nombre, temp->kcal, temp->precio, temp->cant, menus);
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                prnodo aux1 = temp->Hizq;
+                prnodo aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->codigopr, temp->nombre, temp->kcal, temp->precio, temp->cant, menus);
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->codigopr, temp->nombre, temp->kcal, temp->precio, temp->cant, menus);
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            prnodo aux1 = aux->Hizq;
+            prnodo aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            eliminado.InsertaNodo(aux->codigop, aux->codigoc, aux->codigor, aux->codigom, aux->codigopr, aux->nombre, aux->kcal, aux->precio, aux->cant, menus);
+            delete aux;
+        }
+
+
+    }
 }
 
 bool ArbolPr::VerificarPr(int codp, int codc, int codr, int codm, int codpr) {

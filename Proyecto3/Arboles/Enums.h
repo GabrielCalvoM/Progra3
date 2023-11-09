@@ -6,7 +6,7 @@ enum Arbol {
 	Ciudad,
 	Restaurante,
 	Menu,
-	Producto,
+	Producto, 
 	Cliente,
 	Admin,
 	Fila,

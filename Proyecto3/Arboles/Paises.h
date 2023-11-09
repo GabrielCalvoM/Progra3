@@ -39,6 +39,9 @@ public:
     void LeerPaises();
     pnodo VerificarPais(int cod);
     void Modificar(int cod, string nombren);
+    void borrar(int cod, ArbolP eliminados);
+    void reporte18();
+    void reporte1(); 
 };
 
 #endif //PAISES_H

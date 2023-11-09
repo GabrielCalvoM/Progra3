@@ -18,6 +18,54 @@ MNodo* MNodo::VerificarMR(int codp, int codc, int codr, int codm) {
     }
 }
 
+MNodo* mmasbuscado(MNodo* R, MNodo* MAX)
+{
+    if (R == NULL)
+        return MAX;
+    else
+    {
+        if (MAX == NULL)
+            MAX = R;
+
+        if (R->busqueda > MAX->busqueda)
+            MAX = R;
+
+        mnodo max1 = mmasbuscado(R->Hizq, MAX);
+        mnodo max2 = mmasbuscado(R->Hder, MAX);
+
+        if (max1->busqueda > MAX->busqueda)
+            MAX = max1;
+        if (max2->busqueda > MAX->busqueda)
+            MAX = max2;
+
+        return MAX;
+
+    }
+
+}
+
+void reporte17i(MNodo* R)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+
+
+            ofstream archivo("Reporte_Menu_Eliminados.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigom << "     " << R->codigop << "     " << R->codigoc << "     " << R->codigor << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        
+        reporte17i(R->Hizq);
+        reporte17i(R->Hder);
+    }
+}
+
 void ModificarM(MNodo* m, int pais, int ciudad, int rest, int menu, string nombren)
 {
     if (m == NULL)
@@ -97,6 +145,26 @@ MNodo* ArbolAA::split(MNodo* r) {
     return r;
 }
 
+void ArbolAA::reporte7()
+{
+    mnodo max = mmasbuscado(raiz, NULL);
+
+    ofstream archivo("Reporte_Menu_mas_Buscado.txt");
+    if (!archivo.is_open()) {
+        cout << "No se pudo abrir el archivo" << endl;
+        return;
+    }
+    archivo << "-----Reporte Menu mas Buscado-----" << endl << endl;
+    archivo << "Pais: " << max->codigop << endl;
+    archivo << "Ciudad: " << max->codigoc << endl;
+    archivo << "Restaurante: " << max->codigor << endl;
+    archivo << "Menu: " << max->codigom << endl;
+    archivo << "Nombre: " << max->nombre << endl;
+    archivo << "Busquedas: " << max->busqueda << endl << endl;
+    archivo << "-----------------------------------------";
+    archivo.close();
+}
+
 void ArbolAA::InsertaNodo(int pais, int ciudad, int rest, int menu, string nom, ArbolR restaurantes) {
     if (restaurantes.VerificarRestaurante(pais, ciudad, rest)) {
         if (raiz == NULL) {
@@ -106,6 +174,34 @@ void ArbolAA::InsertaNodo(int pais, int ciudad, int rest, int menu, string nom, 
             //raiz->InsertaBinario(pais, ciudad, nom);
             insertar(raiz, pais, ciudad, rest, menu, nom);
         }
+    }
+}
+
+void ArbolAA::reporte17()
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay restaurantes disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Menu_Eliminados.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Menus Eliminados-----" << endl << endl;
+        archivo << "Codigo Menu ---- Codigo Pais ---- Codigo Ciudad ---- Codigo Restaurante ---- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte17i(raiz);
+
+        ofstream arch("Reporte_Menu_Eliminados.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
     }
 }
 
@@ -129,4 +225,110 @@ void ArbolAA::Modificar(int pais, int ciudad, int rest, int menu, string nombren
 {
     if (raiz != NULL)
         ModificarM(raiz, pais, ciudad, rest, menu, nombren);
+}
+
+void ArbolAA::borrar(int pais, int ciudad, int rest, int menu, ArbolAA eliminado, ArbolR restaurantes)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        MNodo* temp = raiz;
+        raiz == NULL;
+        eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->nombre, restaurantes); 
+        delete temp;
+    }
+    else
+    {
+        MNodo* aux = raiz;
+
+
+        if ((aux->codigop != pais) && (aux->codigoc != ciudad) && (aux->codigor != rest) && (aux->codigom != menu))
+        {
+            MNodo* temp;
+            if (menu > aux->codigom)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while ((aux->codigop != pais) && (aux->codigoc != ciudad) && (aux->codigor != rest) && (aux->codigom != menu)) 
+            {
+                if (temp->codigom > menu)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                MNodo* aux1 = temp->Hizq;
+                MNodo* aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->nombre, restaurantes); 
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->nombre, restaurantes);
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                MNodo* aux1 = temp->Hizq;
+                MNodo* aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->nombre, restaurantes);
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->codigom, temp->nombre, restaurantes);
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            MNodo* aux1 = aux->Hizq;
+            MNodo* aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            eliminado.InsertaNodo(aux->codigop, aux->codigoc, aux->codigor, aux->codigom, aux->nombre, restaurantes);
+            delete aux;
+        }
+
+
+    }
 }

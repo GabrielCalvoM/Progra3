@@ -38,6 +38,7 @@ namespace Proyecto3 {
 				this->EliminaL->Enabled = false;
 				this->ModificaL->Enabled = false;
 				this->UsuarioF->Enabled = false;
+				this->Reportes->Enabled = false;
 			}
 		}
 
@@ -222,24 +223,26 @@ private: System::Windows::Forms::Button^ ModCant;
 
 private: System::Windows::Forms::Button^ RegCompra;
 private: System::Windows::Forms::Button^ EliminaCompra;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	   
+private: System::Windows::Forms::Panel^ ReportesPop;
+private: System::Windows::Forms::Button^ reporte1;
+private: System::Windows::Forms::Button^ reporte2;
+private: System::Windows::Forms::Button^ reporte3;
+private: System::Windows::Forms::Button^ reporte4;
+private: System::Windows::Forms::Button^ reporte5;
+private: System::Windows::Forms::Button^ reporte6;
+private: System::Windows::Forms::Button^ reporte7;
+private: System::Windows::Forms::Button^ reporte8;
+private: System::Windows::Forms::Button^ reporte9;
+private: System::Windows::Forms::Button^ reporte10;
+private: System::Windows::Forms::Button^ reporte11;
+private: System::Windows::Forms::Button^ reporte12;
+private: System::Windows::Forms::Button^ reporte13;
+private: System::Windows::Forms::Button^ reporte14;
+private: System::Windows::Forms::Button^ reporte15;
+private: System::Windows::Forms::Button^ reporte16;
+private: System::Windows::Forms::Button^ reporte17;
+private: System::Windows::Forms::Button^ reporte18;
 
 	private:
 		/// <summary>
@@ -337,6 +340,27 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->ModCant = (gcnew System::Windows::Forms::Button());
 			this->RegCompra = (gcnew System::Windows::Forms::Button());
 			this->InsCliente = (gcnew System::Windows::Forms::Button());
+			
+			this->ReportesPop = (gcnew System::Windows::Forms::Panel());
+			this->reporte1 = (gcnew System::Windows::Forms::Button());
+			this->reporte2 = (gcnew System::Windows::Forms::Button());
+			this->reporte3 = (gcnew System::Windows::Forms::Button());
+			this->reporte4 = (gcnew System::Windows::Forms::Button());
+			this->reporte5 = (gcnew System::Windows::Forms::Button());
+			this->reporte6 = (gcnew System::Windows::Forms::Button());
+			this->reporte7 = (gcnew System::Windows::Forms::Button());
+			this->reporte8 = (gcnew System::Windows::Forms::Button());
+			this->reporte9 = (gcnew System::Windows::Forms::Button());
+			this->reporte10 = (gcnew System::Windows::Forms::Button());
+			this->reporte11 = (gcnew System::Windows::Forms::Button());
+			this->reporte12 = (gcnew System::Windows::Forms::Button());
+			this->reporte13 = (gcnew System::Windows::Forms::Button());
+			this->reporte14 = (gcnew System::Windows::Forms::Button());
+			this->reporte15 = (gcnew System::Windows::Forms::Button());
+			this->reporte16 = (gcnew System::Windows::Forms::Button());
+			this->reporte17 = (gcnew System::Windows::Forms::Button());
+			this->reporte18 = (gcnew System::Windows::Forms::Button());
+			
 			this->MenuPop->SuspendLayout();
 			this->MantOp->SuspendLayout();
 			this->InsOp->SuspendLayout();
@@ -354,6 +378,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->Facturación->SuspendLayout();
 			this->FacturaOpc->SuspendLayout();
 			this->FilaMenu->SuspendLayout();
+			this->ReportesPop->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// MenuPop
@@ -414,6 +439,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->Reportes->TabIndex = 1;
 			this->Reportes->Text = L"Reportes";
 			this->Reportes->UseVisualStyleBackColor = true;
+			this->Reportes->Click += gcnew System::EventHandler(this, &Ventana::reportesPop); 
 			// 
 			// MantOp
 			// 
@@ -1241,15 +1267,25 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->RegCompra->UseVisualStyleBackColor = true;
 			this->RegCompra->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
-			// InsCliente
+			// Reportes Pop
 			// 
-			this->InsCliente->Location = System::Drawing::Point(3, 5);
-			this->InsCliente->Name = L"InsCliente";
-			this->InsCliente->Size = System::Drawing::Size(149, 29);
-			this->InsCliente->TabIndex = 0;
-			this->InsCliente->Text = L"Inserta Cliente";
-			this->InsCliente->UseVisualStyleBackColor = true;
-			this->InsCliente->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
+			this->ReportesPop->BackColor = System::Drawing::Color::Transparent;
+			this->ReportesPop->Controls->Add(reporte1); 
+			this->ReportesPop->Location = System::Drawing::Point(141, 61);
+			this->ReportesPop->Name = L"ReportesPop";
+			this->ReportesPop->Size = System::Drawing::Size(146, 315);
+			this->ReportesPop->TabIndex = 2;
+			this->ReportesPop->Visible = false;
+			// 
+			// reporte1
+			// 
+			this->reporte1->Location = System::Drawing::Point(3, 248);
+			this->reporte1->Name = L"reporte1";
+			this->reporte1->Size = System::Drawing::Size(140, 29);
+			this->reporte1->TabIndex = 14;
+			this->reporte1->Text = L"Paises";
+			this->reporte1->UseVisualStyleBackColor = true;
+			//this->reporte1->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
 			// 
 			// Ventana
 			// 
@@ -1271,6 +1307,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->Controls->Add(this->FilaMenu);
 			this->Controls->Add(this->Facturación);
 			this->Controls->Add(this->Usuarios);
+			this->Controls->Add(this->ReportesPop);
 			this->Name = L"Ventana";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menú";
@@ -1292,6 +1329,7 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->Facturación->ResumeLayout(false);
 			this->FacturaOpc->ResumeLayout(false);
 			this->FilaMenu->ResumeLayout(false);
+			this->ReportesPop->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1335,7 +1373,6 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->ModCompra->Visible = !this->ModCompra->Visible;
 		}
 
-
 		// Facturacion
 
 		if (boton == FacturacionPop) {
@@ -1344,7 +1381,21 @@ private: System::Windows::Forms::Button^ EliminaCompra;
 			this->FacturacionOpc->Visible = !this->FacturacionOpc->Visible;
 		}
 
+		this->ReportesPop->Visible = false; 
+
 	}
+
+	private: System::Void reportesPop(System::Object^ sender, System::EventArgs^ e) {
+		Button^ boton = (Button^)sender;
+		cerrarIcon();
+
+		// Mantenimiento
+		this->MantOp->Visible = false;
+		this->FacturacionOpc->Visible = false;
+		this->ReportesPop->Visible = this->ReportesPop->Visible; 
+
+	}
+
 
 	private: System::Void cerrarPop() {
 		cerrarMantenimiento();

@@ -36,8 +36,9 @@ public:
     MNodo* insertar(MNodo* r, int codp, int codc, int codr, int codm, string nomb);
     void inorder(MNodo* r);
     void Modificar(int pais, int ciudad, int rest, int menu, string nombren);
-    void reporte(int pais, int ciudad, int rest);
-    void reportebuscado();
+    void reporte7();
+    void reporte17();
+    void borrar(int pais, int ciudad, int rest, int menu, ArbolAA eliminado, ArbolR restaurantes); 
 
 private:
     MNodo* skew(MNodo* r);

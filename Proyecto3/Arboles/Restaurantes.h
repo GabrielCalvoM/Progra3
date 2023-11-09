@@ -17,7 +17,77 @@ public:
 };
 
 typedef ResNodo* rnodo;
+/*
+void reporte3i(rnodo R, int pais, int ciudad)
+{
+    if (R == NULL)
+        return;
+    else
+    {
 
+        if ((R->codigop == pais) && (R->codigoc == ciudad))
+        {
+            ofstream archivo("Reporte_Restaurantes.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigor << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        }
+        reporte3i(R->Hizq, pais, ciudad);
+        reporte3i(R->Hder, pais, ciudad); 
+    }
+}
+
+void reporte15i(rnodo R)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+            ofstream archivo("Reporte_Restaurantes_Eliminados.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigor << "     " << R->codigop << "     " << R->codigoc << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        
+        reporte15i(R->Hizq);
+        reporte15i(R->Hder);
+    }
+}
+
+rnodo rmasbuscado(rnodo R, rnodo MAX)
+{
+    if (R == NULL)
+        return MAX;
+    else
+    {
+        if (MAX == NULL)
+            MAX = R;
+
+        if (R->busqueda > MAX->busqueda)
+            MAX = R;
+
+        rnodo max1 = rmasbuscado(R->Hizq, MAX);
+        rnodo max2 = rmasbuscado(R->Hder, MAX);
+
+        if (max1->busqueda > MAX->busqueda)
+            MAX = max1;
+        if (max2->busqueda > MAX->busqueda)
+            MAX = max2;
+
+        return MAX;
+
+    }
+
+}
+
+*/
 class ArbolR {
 private:
     rnodo Raiz;
@@ -114,7 +184,84 @@ public:
         TNULL->Hder = nullptr;
         Raiz = TNULL;
     }
+    /*
+    void reporte3(int pais, int ciudad)
+    {
+        if (ArbolVacio())
+        {
+            cout << "No hay restaurantes disponibles" << endl;
+        }
+        else
+        {
+            ofstream archivo("Reporte_Restaurantes.txt");
+            if (!archivo.is_open()) {
+                cout << "No se pudo abrir el archivo" << endl;
+                return;
+            }
+            archivo << "-----Reporte Restaurantes-----" << endl << endl;
+            archivo << "Pais: " << pais << endl;
+            archivo << "Ciudad: " << ciudad << endl;
+            archivo << "Codigo Reporte ---- Nombre" << endl << endl;
+            archivo.close();
 
+            reporte3i(Raiz, pais, ciudad);
+
+            ofstream arch("Reporte_Restaurantes.txt", std::ios::app);
+            if (!arch.is_open())
+                cout << "ERROR" << endl;
+            else
+                arch << endl << endl << "-------------------------------------------";
+            arch.close();
+        }
+    }
+
+    void reporte15()
+    {
+        if (ArbolVacio())
+        {
+            cout << "No hay restaurantes disponibles" << endl;
+        }
+        else
+        {
+            ofstream archivo("Reporte_Restaurantes_Eliminados.txt");
+            if (!archivo.is_open()) {
+                cout << "No se pudo abrir el archivo" << endl;
+                return;
+            }
+            archivo << "-----Reporte Restaurantes Eliminados-----" << endl << endl;
+            archivo << "Codigo Restaurante ----  Codigo Pais ---- Codigo Ciudad ---- Nombre" << endl << endl;
+            archivo.close();
+
+            reporte15i(Raiz); 
+
+            ofstream arch("Reporte_Restaurantes_Eliminados.txt", std::ios::app);
+            if (!arch.is_open())
+                cout << "ERROR" << endl;
+            else
+                arch << endl << endl << "-------------------------------------------";
+            arch.close();
+        }
+    }
+
+    void reporte6()
+    {
+        rnodo max = rmasbuscado(Raiz, NULL);
+
+        ofstream archivo("Reporte_Restaurante_mas_Buscado.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Restaurante mas Buscado-----" << endl << endl;
+        archivo << "Pais: " << max->codigop << endl;
+        archivo << "Ciudad: " << max->codigoc << endl;
+        archivo << "Restaurante: " << max->codigor << endl;
+        archivo << "Nombre: " << max->nombre << endl;
+        archivo << "Busquedas: " << max->busqueda << endl << endl;
+        archivo << "-----------------------------------------";
+        archivo.close();
+    }
+    */
     rnodo BusquedaM(int pais, int ciudad, int res) {
         return Busqueda(this->Raiz, pais, ciudad, res);
     }
@@ -158,6 +305,111 @@ public:
         }
 
         return y;
+    }
+
+
+    void borrar(int pais, int ciudad, int rest, ArbolR eliminado, ArbolC ciudades)
+    {
+        if (ArbolVacio()) {
+            cout << "No hay elementos disponibles" << endl;
+        }
+        if ((Raiz->Hder == NULL) && (Raiz->Hizq == NULL))
+        {
+            rnodo temp = Raiz;
+            Raiz == NULL;
+            delete temp;
+        }
+        else
+        {
+            rnodo aux = Raiz;
+
+
+            if ((aux->codigop != pais) && (aux->codigoc != ciudad) && (aux->codigor != rest))
+            {
+                rnodo temp;
+                if (rest > aux->codigor)
+                    temp = aux->Hder;
+                else
+                    temp = aux->Hizq;
+
+                while ((temp->codigop != pais) && (temp->codigoc != ciudad) && (temp->codigor != rest)) 
+                {
+                    if (rest > temp->codigor)
+                    {
+                        aux = temp;
+                        temp = temp->Hizq;
+                    }
+                    else
+                    {
+                        aux = temp;
+                        temp = temp->Hder;
+                    }
+                }
+
+                if (aux->Hizq == temp)
+                {
+
+                    rnodo aux1 = temp->Hizq;
+                    rnodo aux2 = temp->Hder;
+
+                    if (aux2 == NULL)
+                    {
+                        aux->Hizq = aux1;
+                        eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->nombre, ciudades);
+                        delete temp;
+                    }
+                    else
+                    {
+                        while (aux2->Hizq != NULL)
+                            aux2 = aux2->Hizq;
+
+                        aux2->Hizq = aux1->Hder;
+                        aux1->Hder = temp->Hder;
+                        aux->Hizq = aux1;
+                        eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->nombre, ciudades);
+                        delete temp;
+                    }
+                }
+                else
+                {
+
+                    rnodo aux1 = temp->Hizq;
+                    rnodo aux2 = temp->Hder;
+
+                    if (aux1 == NULL)
+                    {
+                        aux->Hder = aux2;
+                        eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->nombre, ciudades);
+                        delete temp;
+                    }
+                    else {
+                        while (aux1->Hder != NULL)
+                            aux1 = aux1->Hder;
+
+                        aux1->Hder = aux2;
+                        aux->Hder = temp->Hizq;
+                        eliminado.InsertaNodo(temp->codigop, temp->codigoc, temp->codigor, temp->nombre, ciudades);
+                        delete temp;
+                    }
+                }
+            }
+            else
+            {
+                rnodo aux1 = aux->Hizq;
+                rnodo aux2 = aux->Hder;
+
+                while (aux2->Hizq != NULL)
+                {
+                    aux2 = aux2->Hizq;
+                }
+
+                aux2->Hizq = aux1;
+                Raiz = aux->Hder;
+                eliminado.InsertaNodo(aux->codigop, aux->codigoc, aux->codigor, aux->nombre, ciudades);
+                delete aux;
+            }
+
+        }
     }
 
     void RotacionIzquierda(rnodo nodo) {

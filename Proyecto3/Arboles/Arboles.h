@@ -3,18 +3,25 @@
 
 #include "Fila.h"
 #include "Admins.h"
+#include "ventas.h"
 
 class Arboles {
 public:
 	ArbolP paises;
+	ArbolP paises_el;
 	ArbolC ciudades;
+	ArbolC ciudades_el;
 	ArbolR restaurantes;
+	ArbolR restaurantes_el;
 	ArbolAA menus;
+	ArbolAA menus_el;
 	ArbolPr productos;
+	ArbolPr  productos_el; 
 	ArbolB clientes;
 	ArbolAd admins;
 	Cola fila;
 	ListaCaja caja;
+	ventas ventas; 
 
 	static Arboles& getInstance() {
 		static Arboles instancia;

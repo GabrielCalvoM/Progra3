@@ -84,7 +84,7 @@ public:
     void MostrarB();
     void Mostrar(ppagina r, string indent, int rama);
 
-    void reporte();
+    void reporte4();
     void reporte_pagina(ppagina r);
 
 private:

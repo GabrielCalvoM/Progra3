@@ -894,6 +894,79 @@ public:
 			}
 		}
 
+		else if (accion == Eliminacion) {
+			if (arbol == Pais) {
+
+				if (!arboles.paises.VerificarPais(pais)) {
+					Msj->Text = "El país no existe";
+				}
+				else {
+					arboles.paises.borrar(pais, arboles.paises_el);       
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Ciudad) {
+
+				if (!arboles.ciudades.VerificarCiudad(pais, ciudad)) {
+					Msj->Text = "La ciudad no existe";
+				}
+				else {
+					arboles.ciudades.borrar(pais, ciudad, arboles.ciudades_el, arboles.paises); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Restaurante) {
+
+				if (!arboles.restaurantes.VerificarRestaurante(pais, ciudad, res)) {
+					Msj->Text = "El restaurante no existe";
+				}
+				else {
+					arboles.restaurantes.borrar(pais, ciudad, res, arboles.restaurantes_el, arboles.ciudades); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Arbol::Menu) {
+
+				if (!arboles.menus.VerificarM(pais, ciudad, res, menu)) {
+					Msj->Text = "El menú no existe";
+				}
+				else {
+					arboles.menus.borrar(pais, ciudad, res, menu, arboles.menus_el, arboles.restaurantes); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Producto) {
+
+				if (!arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					Msj->Text = "El producto no existe";
+				}
+				else {
+					arboles.productos.borrar(pais, ciudad, res, menu, prod, arboles.productos_el, arboles.menus); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Cliente) {
+
+				if (!arboles.clientes.VerificarCliente(cedula)) {
+					Msj->Text = "El cliente no existe";
+				}
+				else {
+					arboles.clientes.EliminarCliente(cedula); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+			else if (arbol == Admin) {
+
+				if (!arboles.admins.VerificarAdmin(cedula)) {
+					Msj->Text = "El administrador no existe";
+				}
+				else {
+					arboles.admins.EliminarAdmin(cedula); 
+					Msj->Text = "Eliminación exitosa";
+				}
+			}
+		}
+
 		else if (accion == Consulta) {
 			if (arbol == Pais) {
 				pnodo obj = arboles.paises.VerificarPais(pais);

@@ -2,6 +2,215 @@
 
 // Nodo
 
+void reporte16i(CiudadNodo* R)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+            ofstream archivo("Reporte_Ciudades_Eliminadas.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigoc << "     " << R->codigop << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        
+        reporte16i(R->Hizq);
+        reporte16i(R->Hder);
+    }
+}
+
+void ArbolC::reporte16()
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay ciudades disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Ciudades_Eliminadas.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Ciudades Eliminadas-----" << endl << endl;
+        archivo << "Codigo Ciudad -- Codigo Pais -- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte16i(raiz);
+
+        ofstream arch("Reporte_Ciudades_Eliminadas.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+
+void reporte2i(CiudadNodo* R, int pais)
+{
+    if (R == NULL)
+        return;
+    else
+    {
+
+        if (R->codigop == pais)
+        {
+            ofstream archivo("Reporte_Ciudades.txt", std::ios::app);
+            if (!archivo.is_open())
+                cout << "ERROR" << endl;
+            else
+            {
+                archivo << R->codigoc << "     " << R->nombre << endl;
+                archivo.close();
+            }
+        }
+        reporte2i(R->Hizq, pais);
+        reporte2i(R->Hder, pais);
+    }
+}
+
+void ArbolC::reporte2(int pais)
+{
+    if (ArbolVacio())
+    {
+        cout << "No hay ciudades disponibles" << endl;
+    }
+    else
+    {
+        ofstream archivo("Reporte_Ciudades.txt");
+        if (!archivo.is_open()) {
+            cout << "No se pudo abrir el archivo" << endl;
+            return;
+        }
+        archivo << "-----Reporte Ciudades-----" << endl << endl;
+        archivo << "Pais: " << pais << endl;
+        archivo << "Codigo Ciudad ---- Nombre" << endl << endl;
+        archivo.close();
+
+        reporte2i(raiz, pais); 
+
+        ofstream arch("Reporte_Ciudades.txt", std::ios::app);
+        if (!arch.is_open())
+            cout << "ERROR" << endl;
+        else
+            arch << endl << endl << "-------------------------------------------";
+        arch.close();
+    }
+}
+
+void ArbolC::borrar(int pais, int ciudad, ArbolC eliminados, ArbolP paises)
+{
+    if (ArbolVacio()) {
+        cout << "No hay elementos disponibles" << endl;
+    }
+    if ((raiz->Hder == NULL) && (raiz->Hizq == NULL))
+    {
+        if ((raiz->codigop == pais) && (raiz->codigoc == ciudad))
+        {
+            cnodo temp = raiz;
+            raiz == NULL;
+            eliminados.InsertaNodo(temp->codigop, temp->codigoc, temp->nombre, paises);
+            delete temp;
+        } 
+    }
+    else
+    {
+        cnodo aux = raiz;
+
+        if ((aux->codigop  != pais) && (aux->codigoc != ciudad))
+        {
+            cnodo temp;
+            if (ciudad > aux->codigoc)
+                temp = aux->Hder;
+            else
+                temp = aux->Hizq;
+
+            while ((temp->codigoc != ciudad)&&(temp->codigop != pais))
+            {
+                if (temp->codigoc > ciudad)
+                {
+                    aux = temp;
+                    temp = temp->Hizq;
+                }
+                else
+                {
+                    aux = temp;
+                    temp = temp->Hder;
+                }
+            }
+
+            if (aux->Hizq == temp)
+            {
+
+                cnodo aux1 = temp->Hizq;
+                cnodo aux2 = temp->Hder;
+
+                if (aux2 == NULL)
+                {
+                    aux->Hizq = aux1;
+                    eliminados.InsertaNodo(temp->codigop, temp->codigoc, temp->nombre, paises);
+                    delete temp;
+                }
+                else
+                {
+                    while (aux2->Hizq != NULL)
+                        aux2 = aux2->Hizq;
+
+                    aux2->Hizq = aux1->Hder;
+                    aux1->Hder = temp->Hder;
+                    aux->Hizq = aux1;
+                    eliminados.InsertaNodo(temp->codigop, temp->codigoc, temp->nombre, paises);
+                    delete temp;
+                }
+            }
+            else
+            {
+
+                cnodo aux1 = temp->Hizq;
+                cnodo aux2 = temp->Hder;
+
+                if (aux1 == NULL)
+                {
+                    aux->Hder = aux2;
+                    eliminados.InsertaNodo(temp->codigop, temp->codigoc, temp->nombre, paises); 
+                    delete temp;
+                }
+                else {
+                    while (aux1->Hder != NULL)
+                        aux1 = aux1->Hder;
+
+                    aux1->Hder = aux2;
+                    aux->Hder = temp->Hizq;
+                    eliminados.InsertaNodo(temp->codigop, temp->codigoc, temp->nombre, paises); 
+                    delete temp;
+                }
+            }
+        }
+        else
+        {
+            cnodo aux1 = aux->Hizq;
+            cnodo aux2 = aux->Hder;
+
+            while (aux2->Hizq != NULL)
+            {
+                aux2 = aux2->Hizq;
+            }
+
+            aux2->Hizq = aux1;
+            raiz = aux->Hder;
+            eliminados.InsertaNodo(aux->codigop, aux->codigoc, aux->nombre, paises); 
+            delete aux;
+        }
+
+
+    }
+}
+
+
 void CiudadNodo::InsertaBinario(int pais, int ciudad, string nom)
 {
     if (pais < codigop) {
