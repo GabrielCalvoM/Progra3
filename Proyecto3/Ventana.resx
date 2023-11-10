@@ -20286,7 +20286,7 @@
         a2W52Y93k5BiLGaYh7kjsJFGEgkIkFDGGjQ4iDMbnNnvvvG6bwElemR+TVRg0VFAkd4Y1TKrKswqdYVL
         Q8Wb+8952urkRKN6KAF0Pbnu2wgQ2AFqVdf9OnLd2jHgfwQujJa/xDlNf1CvtrToARDeBM4uW5q0C5xv
         AUMPpmiJdcnP3aGqwOsp0JcDBm6A3pXGrJr/cXIPZDf4RNfA3j4wyvPh1W/X5Gf36L73sAAAAAlwSFlz
-        AAALDQAACw0B7QfALAAA/kdJREFUeF7s3Xd8G8mZJ3z4dt/TvXfve+f30u46T1RgFEXlPEqjMMqZEpUn
+        AAALDAAACwwBP0AiyAAA/kdJREFUeF7s3Xd8G8mZJ3z4dt/TvXfve+f30u46T1RgFEXlPEqjMMqZEpUn
         epzjREmToz32zq7X6/Xu2rvnvLbpPA5rz4ii4oxmRpGZyomZRAae93mquoAGWKQIkgIB8ffH91NAAQS6
         m41G/VDV1R4iAgAAAAAAAIAUWSsBAAAAAAAAoGfWSgAAAAAAAADombUSAAAAAAAAAHpmrQQAAAAAAACA
         nlkrAQAAAAAAAKBn1koAAAAAAAAA6Jm1EgAAAAAAAAB6Zq0EAAAAAAAAgJ5ZKwEAAAAAAACgZ9ZKAAAA
@@ -23140,4 +23140,28 @@
         QRAEQRCEvkDQ/wex8vbphpy+GAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="ClienteB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PaisB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CiudadB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RestauranteB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AdminB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ProductoB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MenuB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ReportesOpc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

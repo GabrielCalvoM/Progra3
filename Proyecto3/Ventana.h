@@ -38,7 +38,17 @@ namespace Proyecto3 {
 				this->EliminaL->Enabled = false;
 				this->ModificaL->Enabled = false;
 				this->UsuarioF->Enabled = false;
-				this->Reportes->Enabled = false;
+				this->reporte4->Enabled = false;
+				this->reporte5->Enabled = false;
+				this->reporte8->Enabled = false;
+				this->reporte9->Enabled = false;
+				this->reporte10->Enabled = false;
+				this->reporte13->Enabled = false;
+				this->reporte14->Enabled = false;
+				this->reporte15->Enabled = false;
+				this->reporte16->Enabled = false;
+				this->reporte17->Enabled = false;
+				this->reporte18->Enabled = false;
 			}
 		}
 
@@ -224,7 +234,50 @@ private: System::Windows::Forms::Button^ ModCant;
 private: System::Windows::Forms::Button^ RegCompra;
 private: System::Windows::Forms::Button^ EliminaCompra;
 	   
-private: System::Windows::Forms::Panel^ ReportesPop;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Panel^ ElimOp;
+private: System::Windows::Forms::Button^ ClienteB;
+private: System::Windows::Forms::Button^ PaisB;
+private: System::Windows::Forms::Button^ CiudadB;
+private: System::Windows::Forms::Button^ RestauranteB;
+private: System::Windows::Forms::Button^ AdminB;
+private: System::Windows::Forms::Button^ ProductoB;
+private: System::Windows::Forms::Button^ MenuB;
+private: System::Windows::Forms::Panel^ InfoEmpresa;
+private: System::Windows::Forms::Label^ ContactoCadena;
+private: System::Windows::Forms::Label^ ContactosL;
+private: System::Windows::Forms::Label^ CadenaN;
+private: System::Windows::Forms::Label^ CadenaL;
+private: System::Windows::Forms::Panel^ ContactoPanel;
+private: System::Windows::Forms::Button^ RegistraContacto;
+private: System::Windows::Forms::TextBox^ ContactoCom;
+private: System::Windows::Forms::TextBox^ ContactoT;
+private: System::Windows::Forms::Label^ ComentL;
+private: System::Windows::Forms::Label^ TelefonoL;
+private: System::Windows::Forms::TextBox^ ContactoC;
+private: System::Windows::Forms::Label^ CorreoL;
+private: System::Windows::Forms::TextBox^ ContactoN;
+private: System::Windows::Forms::Label^ NombreL;
+private: System::Windows::Forms::Panel^ ReportesOpc;
+
 private: System::Windows::Forms::Button^ reporte1;
 private: System::Windows::Forms::Button^ reporte2;
 private: System::Windows::Forms::Button^ reporte3;
@@ -243,6 +296,9 @@ private: System::Windows::Forms::Button^ reporte15;
 private: System::Windows::Forms::Button^ reporte16;
 private: System::Windows::Forms::Button^ reporte17;
 private: System::Windows::Forms::Button^ reporte18;
+
+
+
 
 	private:
 		/// <summary>
@@ -340,13 +396,35 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->ModCant = (gcnew System::Windows::Forms::Button());
 			this->RegCompra = (gcnew System::Windows::Forms::Button());
 			this->InsCliente = (gcnew System::Windows::Forms::Button());
-			
-			this->ReportesPop = (gcnew System::Windows::Forms::Panel());
+			this->ElimOp = (gcnew System::Windows::Forms::Panel());
+			this->ClienteB = (gcnew System::Windows::Forms::Button());
+			this->PaisB = (gcnew System::Windows::Forms::Button());
+			this->CiudadB = (gcnew System::Windows::Forms::Button());
+			this->RestauranteB = (gcnew System::Windows::Forms::Button());
+			this->AdminB = (gcnew System::Windows::Forms::Button());
+			this->ProductoB = (gcnew System::Windows::Forms::Button());
+			this->MenuB = (gcnew System::Windows::Forms::Button());
+			this->InfoEmpresa = (gcnew System::Windows::Forms::Panel());
+			this->ContactoCadena = (gcnew System::Windows::Forms::Label());
+			this->ContactosL = (gcnew System::Windows::Forms::Label());
+			this->CadenaN = (gcnew System::Windows::Forms::Label());
+			this->CadenaL = (gcnew System::Windows::Forms::Label());
+			this->ContactoPanel = (gcnew System::Windows::Forms::Panel());
+			this->RegistraContacto = (gcnew System::Windows::Forms::Button());
+			this->ContactoCom = (gcnew System::Windows::Forms::TextBox());
+			this->ContactoT = (gcnew System::Windows::Forms::TextBox());
+			this->ComentL = (gcnew System::Windows::Forms::Label());
+			this->TelefonoL = (gcnew System::Windows::Forms::Label());
+			this->ContactoC = (gcnew System::Windows::Forms::TextBox());
+			this->CorreoL = (gcnew System::Windows::Forms::Label());
+			this->ContactoN = (gcnew System::Windows::Forms::TextBox());
+			this->NombreL = (gcnew System::Windows::Forms::Label());
 			this->reporte1 = (gcnew System::Windows::Forms::Button());
 			this->reporte2 = (gcnew System::Windows::Forms::Button());
 			this->reporte3 = (gcnew System::Windows::Forms::Button());
 			this->reporte4 = (gcnew System::Windows::Forms::Button());
 			this->reporte5 = (gcnew System::Windows::Forms::Button());
+			this->ReportesOpc = (gcnew System::Windows::Forms::Panel());
 			this->reporte6 = (gcnew System::Windows::Forms::Button());
 			this->reporte7 = (gcnew System::Windows::Forms::Button());
 			this->reporte8 = (gcnew System::Windows::Forms::Button());
@@ -360,7 +438,6 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte16 = (gcnew System::Windows::Forms::Button());
 			this->reporte17 = (gcnew System::Windows::Forms::Button());
 			this->reporte18 = (gcnew System::Windows::Forms::Button());
-			
 			this->MenuPop->SuspendLayout();
 			this->MantOp->SuspendLayout();
 			this->InsOp->SuspendLayout();
@@ -378,11 +455,15 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Facturación->SuspendLayout();
 			this->FacturaOpc->SuspendLayout();
 			this->FilaMenu->SuspendLayout();
-			this->ReportesPop->SuspendLayout();
+			this->ElimOp->SuspendLayout();
+			this->InfoEmpresa->SuspendLayout();
+			this->ContactoPanel->SuspendLayout();
+			this->ReportesOpc->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// MenuPop
 			// 
+			this->MenuPop->BackColor = System::Drawing::Color::Transparent;
 			this->MenuPop->Controls->Add(this->Contactos);
 			this->MenuPop->Controls->Add(this->Mantenimiento);
 			this->MenuPop->Controls->Add(this->Info);
@@ -401,6 +482,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Contactos->TabIndex = 4;
 			this->Contactos->Text = L"Contactos";
 			this->Contactos->UseVisualStyleBackColor = true;
+			this->Contactos->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// Mantenimiento
 			// 
@@ -420,6 +502,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Info->TabIndex = 3;
 			this->Info->Text = L"Acerca de";
 			this->Info->UseVisualStyleBackColor = true;
+			this->Info->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// FacturacionPop
 			// 
@@ -439,7 +522,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Reportes->TabIndex = 1;
 			this->Reportes->Text = L"Reportes";
 			this->Reportes->UseVisualStyleBackColor = true;
-			this->Reportes->Click += gcnew System::EventHandler(this, &Ventana::reportesPop); 
+			this->Reportes->Click += gcnew System::EventHandler(this, &Ventana::opcionesPop);
 			// 
 			// MantOp
 			// 
@@ -806,6 +889,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			// 
 			// Lugares
 			// 
+			this->Lugares->BackColor = System::Drawing::Color::Transparent;
 			this->Lugares->Controls->Add(this->LugarOpc);
 			this->Lugares->Controls->Add(this->LugarLabel);
 			this->Lugares->Controls->Add(this->PaisIcon);
@@ -913,6 +997,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			// 
 			// Restaurantes
 			// 
+			this->Restaurantes->BackColor = System::Drawing::Color::Transparent;
 			this->Restaurantes->Controls->Add(this->ResOpc);
 			this->Restaurantes->Controls->Add(this->ResLabel);
 			this->Restaurantes->Controls->Add(this->ResIcon);
@@ -1055,12 +1140,13 @@ private: System::Windows::Forms::Button^ reporte18;
 			// 
 			// Registro
 			// 
+			this->Registro->BackColor = System::Drawing::Color::Transparent;
 			this->Registro->Location = System::Drawing::Point(665, 424);
 			this->Registro->Name = L"Registro";
 			this->Registro->Size = System::Drawing::Size(135, 44);
 			this->Registro->TabIndex = 19;
 			this->Registro->Text = L"Cambiar Registro";
-			this->Registro->UseVisualStyleBackColor = true;
+			this->Registro->UseVisualStyleBackColor = false;
 			this->Registro->Click += gcnew System::EventHandler(this, &Ventana::cambiarReg);
 			// 
 			// Usuarios
@@ -1267,25 +1353,452 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->RegCompra->UseVisualStyleBackColor = true;
 			this->RegCompra->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
-			// Reportes Pop
+			// InsCliente
 			// 
-			this->ReportesPop->BackColor = System::Drawing::Color::Transparent;
-			this->ReportesPop->Controls->Add(reporte1); 
-			this->ReportesPop->Location = System::Drawing::Point(141, 61);
-			this->ReportesPop->Name = L"ReportesPop";
-			this->ReportesPop->Size = System::Drawing::Size(146, 315);
-			this->ReportesPop->TabIndex = 2;
-			this->ReportesPop->Visible = false;
+			this->InsCliente->Location = System::Drawing::Point(0, 0);
+			this->InsCliente->Name = L"InsCliente";
+			this->InsCliente->Size = System::Drawing::Size(75, 23);
+			this->InsCliente->TabIndex = 5;
+			// 
+			// ElimOp
+			// 
+			this->ElimOp->BackColor = System::Drawing::Color::Transparent;
+			this->ElimOp->Controls->Add(this->ClienteB);
+			this->ElimOp->Controls->Add(this->PaisB);
+			this->ElimOp->Controls->Add(this->CiudadB);
+			this->ElimOp->Controls->Add(this->RestauranteB);
+			this->ElimOp->Controls->Add(this->AdminB);
+			this->ElimOp->Controls->Add(this->ProductoB);
+			this->ElimOp->Controls->Add(this->MenuB);
+			this->ElimOp->Location = System::Drawing::Point(141, 95);
+			this->ElimOp->Name = L"ElimOp";
+			this->ElimOp->Size = System::Drawing::Size(146, 251);
+			this->ElimOp->TabIndex = 21;
+			this->ElimOp->Visible = false;
+			// 
+			// ClienteB
+			// 
+			this->ClienteB->Location = System::Drawing::Point(4, 183);
+			this->ClienteB->Name = L"ClienteB";
+			this->ClienteB->Size = System::Drawing::Size(140, 30);
+			this->ClienteB->TabIndex = 13;
+			this->ClienteB->Text = L"Cliente";
+			this->ClienteB->UseVisualStyleBackColor = true;
+			this->ClienteB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// PaisB
+			// 
+			this->PaisB->Location = System::Drawing::Point(3, 3);
+			this->PaisB->Name = L"PaisB";
+			this->PaisB->Size = System::Drawing::Size(140, 30);
+			this->PaisB->TabIndex = 7;
+			this->PaisB->Text = L"País";
+			this->PaisB->UseMnemonic = false;
+			this->PaisB->UseVisualStyleBackColor = true;
+			this->PaisB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// CiudadB
+			// 
+			this->CiudadB->Location = System::Drawing::Point(3, 39);
+			this->CiudadB->Name = L"CiudadB";
+			this->CiudadB->Size = System::Drawing::Size(140, 30);
+			this->CiudadB->TabIndex = 8;
+			this->CiudadB->Text = L"Ciudad";
+			this->CiudadB->UseMnemonic = false;
+			this->CiudadB->UseVisualStyleBackColor = true;
+			this->CiudadB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// RestauranteB
+			// 
+			this->RestauranteB->Location = System::Drawing::Point(3, 75);
+			this->RestauranteB->Name = L"RestauranteB";
+			this->RestauranteB->Size = System::Drawing::Size(140, 30);
+			this->RestauranteB->TabIndex = 12;
+			this->RestauranteB->Text = L"Restaurante";
+			this->RestauranteB->UseVisualStyleBackColor = true;
+			this->RestauranteB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// AdminB
+			// 
+			this->AdminB->Location = System::Drawing::Point(3, 219);
+			this->AdminB->Name = L"AdminB";
+			this->AdminB->Size = System::Drawing::Size(140, 30);
+			this->AdminB->TabIndex = 9;
+			this->AdminB->Text = L"Administrador";
+			this->AdminB->UseVisualStyleBackColor = true;
+			this->AdminB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// ProductoB
+			// 
+			this->ProductoB->Location = System::Drawing::Point(3, 147);
+			this->ProductoB->Name = L"ProductoB";
+			this->ProductoB->Size = System::Drawing::Size(140, 30);
+			this->ProductoB->TabIndex = 10;
+			this->ProductoB->Text = L"Producto";
+			this->ProductoB->UseVisualStyleBackColor = true;
+			this->ProductoB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// MenuB
+			// 
+			this->MenuB->Location = System::Drawing::Point(3, 111);
+			this->MenuB->Name = L"MenuB";
+			this->MenuB->Size = System::Drawing::Size(140, 30);
+			this->MenuB->TabIndex = 11;
+			this->MenuB->Text = L"Menú";
+			this->MenuB->UseVisualStyleBackColor = true;
+			this->MenuB->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			// 
+			// InfoEmpresa
+			// 
+			this->InfoEmpresa->BackColor = System::Drawing::Color::Transparent;
+			this->InfoEmpresa->Controls->Add(this->ContactoCadena);
+			this->InfoEmpresa->Controls->Add(this->ContactosL);
+			this->InfoEmpresa->Controls->Add(this->CadenaN);
+			this->InfoEmpresa->Controls->Add(this->CadenaL);
+			this->InfoEmpresa->Location = System::Drawing::Point(490, 61);
+			this->InfoEmpresa->Name = L"InfoEmpresa";
+			this->InfoEmpresa->Size = System::Drawing::Size(247, 163);
+			this->InfoEmpresa->TabIndex = 22;
+			this->InfoEmpresa->Visible = false;
+			// 
+			// ContactoCadena
+			// 
+			this->ContactoCadena->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ContactoCadena->Location = System::Drawing::Point(24, 86);
+			this->ContactoCadena->Name = L"ContactoCadena";
+			this->ContactoCadena->Size = System::Drawing::Size(220, 42);
+			this->ContactoCadena->TabIndex = 3;
+			this->ContactoCadena->Text = L"Tel: 8935-0924\r\nCorreo: mcdonalds@gmail.com";
+			// 
+			// ContactosL
+			// 
+			this->ContactosL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ContactosL->Location = System::Drawing::Point(8, 58);
+			this->ContactosL->Name = L"ContactosL";
+			this->ContactosL->Size = System::Drawing::Size(201, 27);
+			this->ContactosL->TabIndex = 2;
+			this->ContactosL->Text = L"Contactos:";
+			// 
+			// CadenaN
+			// 
+			this->CadenaN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CadenaN->Location = System::Drawing::Point(24, 35);
+			this->CadenaN->Name = L"CadenaN";
+			this->CadenaN->Size = System::Drawing::Size(110, 23);
+			this->CadenaN->TabIndex = 1;
+			this->CadenaN->Text = L"McDonalds";
+			// 
+			// CadenaL
+			// 
+			this->CadenaL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CadenaL->Location = System::Drawing::Point(8, 7);
+			this->CadenaL->Name = L"CadenaL";
+			this->CadenaL->Size = System::Drawing::Size(201, 27);
+			this->CadenaL->TabIndex = 0;
+			this->CadenaL->Text = L"Cadena de Restaurantes:";
+			// 
+			// ContactoPanel
+			// 
+			this->ContactoPanel->BackColor = System::Drawing::Color::Transparent;
+			this->ContactoPanel->Controls->Add(this->RegistraContacto);
+			this->ContactoPanel->Controls->Add(this->ContactoCom);
+			this->ContactoPanel->Controls->Add(this->ContactoT);
+			this->ContactoPanel->Controls->Add(this->ComentL);
+			this->ContactoPanel->Controls->Add(this->TelefonoL);
+			this->ContactoPanel->Controls->Add(this->ContactoC);
+			this->ContactoPanel->Controls->Add(this->CorreoL);
+			this->ContactoPanel->Controls->Add(this->ContactoN);
+			this->ContactoPanel->Controls->Add(this->NombreL);
+			this->ContactoPanel->Location = System::Drawing::Point(467, 61);
+			this->ContactoPanel->Name = L"ContactoPanel";
+			this->ContactoPanel->Size = System::Drawing::Size(351, 285);
+			this->ContactoPanel->TabIndex = 23;
+			this->ContactoPanel->Visible = false;
+			// 
+			// RegistraContacto
+			// 
+			this->RegistraContacto->Location = System::Drawing::Point(243, 249);
+			this->RegistraContacto->Name = L"RegistraContacto";
+			this->RegistraContacto->Size = System::Drawing::Size(79, 24);
+			this->RegistraContacto->TabIndex = 25;
+			this->RegistraContacto->Text = L"Guardar";
+			this->RegistraContacto->UseVisualStyleBackColor = true;
+			this->RegistraContacto->Click += gcnew System::EventHandler(this, &Ventana::guardarContacto);
+			// 
+			// ContactoCom
+			// 
+			this->ContactoCom->Location = System::Drawing::Point(28, 138);
+			this->ContactoCom->Multiline = true;
+			this->ContactoCom->Name = L"ContactoCom";
+			this->ContactoCom->Size = System::Drawing::Size(295, 97);
+			this->ContactoCom->TabIndex = 24;
+			// 
+			// ContactoT
+			// 
+			this->ContactoT->Location = System::Drawing::Point(79, 81);
+			this->ContactoT->Name = L"ContactoT";
+			this->ContactoT->Size = System::Drawing::Size(203, 22);
+			this->ContactoT->TabIndex = 5;
+			// 
+			// ComentL
+			// 
+			this->ComentL->AutoSize = true;
+			this->ComentL->Location = System::Drawing::Point(14, 118);
+			this->ComentL->Name = L"ComentL";
+			this->ComentL->Size = System::Drawing::Size(79, 16);
+			this->ComentL->TabIndex = 23;
+			this->ComentL->Text = L"Comentario:";
+			// 
+			// TelefonoL
+			// 
+			this->TelefonoL->AutoSize = true;
+			this->TelefonoL->Location = System::Drawing::Point(14, 83);
+			this->TelefonoL->Name = L"TelefonoL";
+			this->TelefonoL->Size = System::Drawing::Size(64, 16);
+			this->TelefonoL->TabIndex = 4;
+			this->TelefonoL->Text = L"Teléfono:";
+			// 
+			// ContactoC
+			// 
+			this->ContactoC->Location = System::Drawing::Point(79, 46);
+			this->ContactoC->Name = L"ContactoC";
+			this->ContactoC->Size = System::Drawing::Size(203, 22);
+			this->ContactoC->TabIndex = 3;
+			// 
+			// CorreoL
+			// 
+			this->CorreoL->AutoSize = true;
+			this->CorreoL->Location = System::Drawing::Point(14, 48);
+			this->CorreoL->Name = L"CorreoL";
+			this->CorreoL->Size = System::Drawing::Size(51, 16);
+			this->CorreoL->TabIndex = 2;
+			this->CorreoL->Text = L"Correo:";
+			// 
+			// ContactoN
+			// 
+			this->ContactoN->Location = System::Drawing::Point(79, 12);
+			this->ContactoN->Name = L"ContactoN";
+			this->ContactoN->Size = System::Drawing::Size(203, 22);
+			this->ContactoN->TabIndex = 1;
+			// 
+			// NombreL
+			// 
+			this->NombreL->AutoSize = true;
+			this->NombreL->Location = System::Drawing::Point(14, 14);
+			this->NombreL->Name = L"NombreL";
+			this->NombreL->Size = System::Drawing::Size(59, 16);
+			this->NombreL->TabIndex = 0;
+			this->NombreL->Text = L"Nombre:";
 			// 
 			// reporte1
 			// 
-			this->reporte1->Location = System::Drawing::Point(3, 248);
+			this->reporte1->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte1->Location = System::Drawing::Point(5, 5);
 			this->reporte1->Name = L"reporte1";
-			this->reporte1->Size = System::Drawing::Size(140, 29);
+			this->reporte1->Size = System::Drawing::Size(150, 30);
 			this->reporte1->TabIndex = 14;
 			this->reporte1->Text = L"Paises";
-			this->reporte1->UseVisualStyleBackColor = true;
-			//this->reporte1->Click += gcnew System::EventHandler(this, &Ventana::ingresarPop);
+			this->reporte1->UseVisualStyleBackColor = false;
+			// 
+			// reporte2
+			// 
+			this->reporte2->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte2->Location = System::Drawing::Point(7, 37);
+			this->reporte2->Name = L"reporte2";
+			this->reporte2->Size = System::Drawing::Size(148, 28);
+			this->reporte2->TabIndex = 0;
+			this->reporte2->Text = L"Ciudades";
+			this->reporte2->UseVisualStyleBackColor = false;
+			// 
+			// reporte3
+			// 
+			this->reporte3->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte3->Location = System::Drawing::Point(7, 67);
+			this->reporte3->Name = L"reporte3";
+			this->reporte3->Size = System::Drawing::Size(148, 27);
+			this->reporte3->TabIndex = 0;
+			this->reporte3->Text = L"Restaurantes";
+			this->reporte3->UseVisualStyleBackColor = false;
+			// 
+			// reporte4
+			// 
+			this->reporte4->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte4->Location = System::Drawing::Point(7, 96);
+			this->reporte4->Name = L"reporte4";
+			this->reporte4->Size = System::Drawing::Size(148, 27);
+			this->reporte4->TabIndex = 0;
+			this->reporte4->Text = L"Clientes";
+			this->reporte4->UseVisualStyleBackColor = false;
+			// 
+			// reporte5
+			// 
+			this->reporte5->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte5->Location = System::Drawing::Point(7, 125);
+			this->reporte5->Name = L"reporte5";
+			this->reporte5->Size = System::Drawing::Size(148, 44);
+			this->reporte5->TabIndex = 0;
+			this->reporte5->Text = L"Compras de un cliente";
+			this->reporte5->UseVisualStyleBackColor = false;
+			// 
+			// ReportesOpc
+			// 
+			this->ReportesOpc->Controls->Add(this->reporte1);
+			this->ReportesOpc->Controls->Add(this->reporte2);
+			this->ReportesOpc->Controls->Add(this->reporte3);
+			this->ReportesOpc->Controls->Add(this->reporte4);
+			this->ReportesOpc->Controls->Add(this->reporte5);
+			this->ReportesOpc->Controls->Add(this->reporte6);
+			this->ReportesOpc->Controls->Add(this->reporte7);
+			this->ReportesOpc->Controls->Add(this->reporte8);
+			this->ReportesOpc->Controls->Add(this->reporte9);
+			this->ReportesOpc->Controls->Add(this->reporte10);
+			this->ReportesOpc->Controls->Add(this->reporte11);
+			this->ReportesOpc->Controls->Add(this->reporte12);
+			this->ReportesOpc->Controls->Add(this->reporte13);
+			this->ReportesOpc->Controls->Add(this->reporte14);
+			this->ReportesOpc->Controls->Add(this->reporte15);
+			this->ReportesOpc->Controls->Add(this->reporte16);
+			this->ReportesOpc->Controls->Add(this->reporte17);
+			this->ReportesOpc->Controls->Add(this->reporte18);
+			this->ReportesOpc->Location = System::Drawing::Point(172, 61);
+			this->ReportesOpc->Name = L"ReportesOpc";
+			this->ReportesOpc->Size = System::Drawing::Size(309, 396);
+			this->ReportesOpc->TabIndex = 26;
+			this->ReportesOpc->Visible = false;
+			// 
+			// reporte6
+			// 
+			this->reporte6->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte6->Location = System::Drawing::Point(7, 168);
+			this->reporte6->Name = L"reporte6";
+			this->reporte6->Size = System::Drawing::Size(148, 49);
+			this->reporte6->TabIndex = 0;
+			this->reporte6->Text = L"Restaurantes más buscados";
+			this->reporte6->UseVisualStyleBackColor = false;
+			// 
+			// reporte7
+			// 
+			this->reporte7->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte7->Location = System::Drawing::Point(8, 217);
+			this->reporte7->Name = L"reporte7";
+			this->reporte7->Size = System::Drawing::Size(148, 27);
+			this->reporte7->TabIndex = 0;
+			this->reporte7->Text = L"Menú más buscado";
+			this->reporte7->UseVisualStyleBackColor = false;
+			// 
+			// reporte8
+			// 
+			this->reporte8->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte8->Location = System::Drawing::Point(8, 245);
+			this->reporte8->Name = L"reporte8";
+			this->reporte8->Size = System::Drawing::Size(148, 47);
+			this->reporte8->TabIndex = 0;
+			this->reporte8->Text = L"Producto más comprado";
+			this->reporte8->UseVisualStyleBackColor = false;
+			// 
+			// reporte9
+			// 
+			this->reporte9->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte9->Location = System::Drawing::Point(9, 293);
+			this->reporte9->Name = L"reporte9";
+			this->reporte9->Size = System::Drawing::Size(148, 50);
+			this->reporte9->TabIndex = 0;
+			this->reporte9->Text = L"Factura de mayor monto\r\n\r\n";
+			this->reporte9->UseVisualStyleBackColor = false;
+			// 
+			// reporte10
+			// 
+			this->reporte10->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte10->Location = System::Drawing::Point(8, 344);
+			this->reporte10->Name = L"reporte10";
+			this->reporte10->Size = System::Drawing::Size(148, 49);
+			this->reporte10->TabIndex = 0;
+			this->reporte10->Text = L"Factura de menor monto\r\n\r\n";
+			this->reporte10->UseVisualStyleBackColor = false;
+			// 
+			// reporte11
+			// 
+			this->reporte11->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte11->Location = System::Drawing::Point(161, 3);
+			this->reporte11->Name = L"reporte11";
+			this->reporte11->Size = System::Drawing::Size(138, 46);
+			this->reporte11->TabIndex = 0;
+			this->reporte11->Text = L"Precio de un producto\r\n\r\n";
+			this->reporte11->UseVisualStyleBackColor = false;
+			// 
+			// reporte12
+			// 
+			this->reporte12->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte12->Location = System::Drawing::Point(161, 53);
+			this->reporte12->Name = L"reporte12";
+			this->reporte12->Size = System::Drawing::Size(137, 47);
+			this->reporte12->TabIndex = 0;
+			this->reporte12->Text = L"Descuento de tarjeta";
+			this->reporte12->UseVisualStyleBackColor = false;
+			// 
+			// reporte13
+			// 
+			this->reporte13->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte13->Location = System::Drawing::Point(161, 106);
+			this->reporte13->Name = L"reporte13";
+			this->reporte13->Size = System::Drawing::Size(137, 47);
+			this->reporte13->TabIndex = 0;
+			this->reporte13->Text = L"Cantidad de un producto";
+			this->reporte13->UseVisualStyleBackColor = false;
+			// 
+			// reporte14
+			// 
+			this->reporte14->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte14->Location = System::Drawing::Point(162, 153);
+			this->reporte14->Name = L"reporte14";
+			this->reporte14->Size = System::Drawing::Size(137, 47);
+			this->reporte14->TabIndex = 0;
+			this->reporte14->Text = L"Productos eliminados";
+			this->reporte14->UseVisualStyleBackColor = false;
+			// 
+			// reporte15
+			// 
+			this->reporte15->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte15->Location = System::Drawing::Point(162, 202);
+			this->reporte15->Name = L"reporte15";
+			this->reporte15->Size = System::Drawing::Size(137, 47);
+			this->reporte15->TabIndex = 0;
+			this->reporte15->Text = L"Restaurantes eliminados";
+			this->reporte15->UseVisualStyleBackColor = false;
+			// 
+			// reporte16
+			// 
+			this->reporte16->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte16->Location = System::Drawing::Point(162, 255);
+			this->reporte16->Name = L"reporte16";
+			this->reporte16->Size = System::Drawing::Size(137, 47);
+			this->reporte16->TabIndex = 0;
+			this->reporte16->Text = L"Ciudades eliminadas";
+			this->reporte16->UseVisualStyleBackColor = false;
+			// 
+			// reporte17
+			// 
+			this->reporte17->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte17->Location = System::Drawing::Point(163, 308);
+			this->reporte17->Name = L"reporte17";
+			this->reporte17->Size = System::Drawing::Size(137, 29);
+			this->reporte17->TabIndex = 0;
+			this->reporte17->Text = L"Menus eliminados\r\n\r\n";
+			this->reporte17->UseVisualStyleBackColor = false;
+			// 
+			// reporte18
+			// 
+			this->reporte18->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->reporte18->Location = System::Drawing::Point(162, 343);
+			this->reporte18->Name = L"reporte18";
+			this->reporte18->Size = System::Drawing::Size(138, 32);
+			this->reporte18->TabIndex = 0;
+			this->reporte18->Text = L"Paises eliminados";
+			this->reporte18->UseVisualStyleBackColor = false;
 			// 
 			// Ventana
 			// 
@@ -1293,11 +1806,15 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(828, 479);
+			this->Controls->Add(this->ReportesOpc);
+			this->Controls->Add(this->ContactoPanel);
+			this->Controls->Add(this->InfoEmpresa);
+			this->Controls->Add(this->ModOp);
+			this->Controls->Add(this->ConsOp);
+			this->Controls->Add(this->ElimOp);
 			this->Controls->Add(this->Registro);
 			this->Controls->Add(this->FacturacionOpc);
 			this->Controls->Add(this->ModCompra);
-			this->Controls->Add(this->ModOp);
-			this->Controls->Add(this->ConsOp);
 			this->Controls->Add(this->InsOp);
 			this->Controls->Add(this->MantOp);
 			this->Controls->Add(this->MenuPop);
@@ -1307,7 +1824,6 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Controls->Add(this->FilaMenu);
 			this->Controls->Add(this->Facturación);
 			this->Controls->Add(this->Usuarios);
-			this->Controls->Add(this->ReportesPop);
 			this->Name = L"Ventana";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menú";
@@ -1329,7 +1845,11 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->Facturación->ResumeLayout(false);
 			this->FacturaOpc->ResumeLayout(false);
 			this->FilaMenu->ResumeLayout(false);
-			this->ReportesPop->ResumeLayout(false);
+			this->ElimOp->ResumeLayout(false);
+			this->InfoEmpresa->ResumeLayout(false);
+			this->ContactoPanel->ResumeLayout(false);
+			this->ContactoPanel->PerformLayout();
+			this->ReportesOpc->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1345,27 +1865,38 @@ private: System::Windows::Forms::Button^ reporte18;
 		// Mantenimiento
 
 		if (boton == Mantenimiento) {
-			//ingresarPop(); 
 			cerrarMantenimiento();
-			this->FacturacionOpc->Visible = false;
 			this->MantOp->Visible = !this->MantOp->Visible;
+			this->ReportesOpc->Visible = false;
+			this->FacturacionOpc->Visible = false;
+			this->InfoEmpresa->Visible = false;
+			this->ContactoPanel->Visible = false;
 		}
 		else if (boton == InsercionB) {
-			cerrarMantenimiento();
 			this->InsOp->Visible = !this->InsOp->Visible;
+			this->ElimOp->Visible = false;
+			this->ConsOp->Visible = false;
+			this->ModOp->Visible = false;
 			this->accion = Insercion;
 		}
 		else if (boton == EliminacionB) {
-			cerrarMantenimiento();
+			this->InsOp->Visible = false;
+			this->ElimOp->Visible = !this->ElimOp->Visible;
+			this->ConsOp->Visible = false;
+			this->ModOp->Visible = false;
 			this->accion = Eliminacion;
 		}
 		else if (boton == ConsultasB) {
-			cerrarMantenimiento();
+			this->InsOp->Visible = false;
+			this->ElimOp->Visible = false;
 			this->ConsOp->Visible = !this->ConsOp->Visible;
+			this->ModOp->Visible = false;
 			this->accion = Consulta;
 		}
 		else if (boton == ModificacionB) {
-			cerrarMantenimiento();
+			this->InsOp->Visible = false;
+			this->ElimOp->Visible = false;
+			this->ConsOp->Visible = false;
 			this->ModOp->Visible = !this->ModOp->Visible;
 			this->accion = Modificacion;
 		}
@@ -1373,26 +1904,53 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->ModCompra->Visible = !this->ModCompra->Visible;
 		}
 
+
+		// Reportes
+
+		if (boton == Reportes) {
+			cerrarMantenimiento();
+			this->MantOp->Visible = false;
+			this->ReportesOpc->Visible = !this->ReportesOpc->Visible;
+			this->FacturacionOpc->Visible = false;
+			this->InfoEmpresa->Visible = false;
+			this->ContactoPanel->Visible = false;
+		}
+
+
 		// Facturacion
 
 		if (boton == FacturacionPop) {
 			cerrarMantenimiento();
 			this->MantOp->Visible = false;
+			this->ReportesOpc->Visible = false;
 			this->FacturacionOpc->Visible = !this->FacturacionOpc->Visible;
+			this->InfoEmpresa->Visible = false;
+			this->ContactoPanel->Visible = false;
 		}
 
-		this->ReportesPop->Visible = false; 
 
-	}
+		// Acerca de
 
-	private: System::Void reportesPop(System::Object^ sender, System::EventArgs^ e) {
-		Button^ boton = (Button^)sender;
-		cerrarIcon();
+		if (boton == Info) {
+			cerrarMantenimiento();
+			this->MantOp->Visible = false;
+			this->ReportesOpc->Visible = false;
+			this->FacturacionOpc->Visible = false;
+			this->InfoEmpresa->Visible = !this->InfoEmpresa->Visible;
+			this->ContactoPanel->Visible = false;
+		}
 
-		// Mantenimiento
-		this->MantOp->Visible = false;
-		this->FacturacionOpc->Visible = false;
-		this->ReportesPop->Visible = this->ReportesPop->Visible; 
+
+		// Contactos
+
+		if (boton == Contactos) {
+			cerrarMantenimiento();
+			this->MantOp->Visible = false;
+			this->ReportesOpc->Visible = false;
+			this->FacturacionOpc->Visible = false;
+			this->InfoEmpresa->Visible = false;
+			this->ContactoPanel->Visible = !this->ContactoPanel->Visible;
+		}
 
 	}
 
@@ -1638,6 +2196,29 @@ private: System::Windows::Forms::Button^ reporte18;
 			panel->Visible = true;
 		}
 	}
+
+	private: System::Void guardarContacto(System::Object^ sender, System::EventArgs^ e) {
+		int dir = _mkdir("Contactos");
+		ofstream arch;
+		int i = 0;
+		string nomfac = "Contactos/" + msclr::interop::marshal_as<std::string>(ContactoN->Text) + ".txt";
+		arch.open(nomfac.c_str());
+
+		arch << "Nombre: " << msclr::interop::marshal_as<std::string>(ContactoN->Text) << endl;
+		arch << "Correo: " << msclr::interop::marshal_as<std::string>(ContactoC->Text) << endl;
+		arch << "Telefono: " << msclr::interop::marshal_as<std::string>(ContactoT->Text) << endl << endl;
+		arch << "Comentario:" << endl;
+		arch << msclr::interop::marshal_as<std::string>(ContactoCom->Text);
+
+		ContactoN->Text = "";
+		ContactoC->Text = "";
+		ContactoT->Text = "";
+		ContactoCom->Text = "";
+
+		arch.close();
+
+	}
+
 
 
 
