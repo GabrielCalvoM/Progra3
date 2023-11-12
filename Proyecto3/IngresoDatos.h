@@ -790,7 +790,7 @@ public:
 				bool llevar = this->Pedido->GetItemChecked(1);
 				bool tarjeta = this->Pago->GetItemChecked(1);
 
-				arboles.fila.pagarFactura(llevar, tarjeta, arboles.caja);
+				arboles.fila.pagarFactura(llevar, tarjeta, arboles.caja, arboles.ventas);
 				Msj->Text = "Factura hecha en la carpeta 'FACTURAS'";
 			}
 		}
@@ -1019,7 +1019,41 @@ public:
 					Msj->Text = "No existe";
 			}
 		}
+		else if (accion == Reporte) {
+			if (arbol == Pais) {
+				if (arboles.paises.VerificarPais(pais)) {
+					arboles.ciudades.reporte2(pais);
+					Msj->Text = "Reporte Generado";
+				}
+			}
+			if (arbol == Ciudad) {
+				if (arboles.ciudades.VerificarCiudad(pais, ciudad)) {
+					//arboles.restaurantes.reporte3(pais, ciudad);
+					Msj->Text = "Reporte Generado";
+				}
+			}
+			if (arbol == Cliente) {
+				if (arboles.clientes.VerificarCliente(cedula)) {
+					arboles.ventas.reporte5(cedula);
+					Msj->Text = "Reporte Generado";
 
+				}
+			}
+			if (arbol == Producto) {
+				if (arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					arboles.productos.reporte11(pais, ciudad, res, menu, prod);
+					Msj->Text = "Reporte Generado";
+				}
+			}
+		}
+		else if (accion == Reporte1) {
+			if (arbol == Producto) {
+				if (arboles.productos.VerificarPr(pais, ciudad, res, menu, prod)) {
+					arboles.productos.reporte13(pais, ciudad, res, menu, prod);
+					Msj->Text = "Reporte Generado";
+				}
+			}
+		}
 		else {
 			if (arbol == Pais) {
 
@@ -1115,7 +1149,7 @@ public:
 			this->NuevoProd->Visible = false;
 		}
 
-		if (accion == Consulta || accion == Eliminacion || arbol == Fila) {
+		if (accion == Consulta || accion == Eliminacion || arbol == Fila || accion == Reporte || accion == Reporte1) {
 			this->CompraPanel->Visible = false;
 			this->NPanel->Visible = false;
 		}

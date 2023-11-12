@@ -2,8 +2,9 @@
 #define FILA_H
 
 #include "Compras.h"
-//#include "ventas.h"
-#include <direct.h>
+#include "ventas.h"    
+#include <direct.h> 
+
 
 class CajaNodo {
 private:
@@ -63,7 +64,7 @@ public:
     bool verificarCliente(int ced);
     bool verificarProducto(int pais, int ciudad, int rest, int menu, int prod);
     int  getCant(int pais, int ciudad, int rest, int menu, int prod) { return compras.getCant(pais, ciudad, rest, menu, prod); }
-    void pagarFactura(bool llevar, bool tarjeta, ListaCaja lista);
+    void pagarFactura(bool llevar, bool tarjeta, ListaCaja lista, ventas ventas);
     void agregaProducto(int pais, int ciudad, int rest, int menu, int prod, int cant);
     void borrarProducto(int pais, int ciudad, int rest, int menu, int prod);
     void modificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant);
