@@ -1,0 +1,11 @@
+-----Reporte Productos-----
+
+Codigo Producto  ---- Codigo Pais  ---- Codigo Ciudad  ---- Codigo Restaurante  ---- Codigo Menu  ---- Nombre
+
+78     345     987     456     2     MacPapasPequeñas
+65     4567     234     876     3     McNuggets4
+109     123     345     34     1     BigMac
+704     123     345     2341     12     CrispyChicken
+
+
+-------------------------------------------

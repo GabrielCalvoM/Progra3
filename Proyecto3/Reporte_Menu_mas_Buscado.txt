@@ -1,0 +1,10 @@
+-----Reporte Menu mas Buscado-----
+
+Pais: 123
+Ciudad: 345
+Restaurante: 34
+Menu: 1
+Nombre: HC
+Busquedas: 0
+
+-----------------------------------------

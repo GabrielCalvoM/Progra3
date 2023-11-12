@@ -1,0 +1,11 @@
+-----Reporte Producto mas Comprado-----
+
+Pais: 345
+Ciudad: 987
+Restaurante: 456
+Menu: 2
+Producto: 78
+Nombre: MacPapasPequeñas
+Compra: 0
+
+-----------------------------------------

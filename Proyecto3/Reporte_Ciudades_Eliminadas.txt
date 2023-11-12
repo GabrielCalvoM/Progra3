@@ -1,0 +1,10 @@
+-----Reporte Ciudades Eliminadas-----
+
+Codigo Ciudad -- Codigo Pais -- Nombre
+
+345     123     David
+234     4567     Guadalajara
+987     345     Orlando
+
+
+-------------------------------------------

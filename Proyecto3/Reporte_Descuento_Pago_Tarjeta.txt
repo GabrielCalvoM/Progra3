@@ -1,0 +1,5 @@
+---------Reporte Descuento---------
+
+Descuento aplicado por tarjeta: 3%
+
+-----------------------------------

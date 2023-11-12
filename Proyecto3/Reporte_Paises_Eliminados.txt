@@ -1,0 +1,9 @@
+-----Reporte Paises Eliminados-----
+
+Codigo Pais --- Nombre
+
+345     Estados Unidos
+4567     Mexico
+
+
+-------------------------------------------

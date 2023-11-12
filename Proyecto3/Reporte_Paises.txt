@@ -2,8 +2,6 @@
 
 Codigo Pais --- Nombre
 
-123     Panama
-5     po
 345     Estados Unidos
 4567     Mexico
 
