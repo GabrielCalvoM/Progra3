@@ -51,7 +51,10 @@
     <ClCompile Include="Mensaje.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ventas.cpp">
+    <ClCompile Include="Arboles\ventas.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Arboles\Restaurantes.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

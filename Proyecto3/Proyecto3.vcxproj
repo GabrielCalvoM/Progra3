@@ -129,11 +129,12 @@
     <ClCompile Include="Arboles\Menus.cpp" />
     <ClCompile Include="Arboles\Paises.cpp" />
     <ClCompile Include="Arboles\Producto.cpp" />
+    <ClCompile Include="Arboles\Restaurantes.cpp" />
+    <ClCompile Include="Arboles\ventas.cpp" />
     <ClCompile Include="IngresoDatos.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Mensaje.cpp" />
     <ClCompile Include="Ventana.cpp" />
-    <ClCompile Include="ventas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arboles\Admins.h" />

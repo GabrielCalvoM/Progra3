@@ -1,4 +1,5 @@
-#include "Fila.h"
+#include "Fila.h" 
+#include "ventas.h"
 
 // Caja
 
@@ -47,7 +48,7 @@ bool Cola::verificarProducto(int pais, int ciudad, int rest, int menu, int prod)
     return compras.verificarProducto(pais, ciudad, rest, menu, prod);
 }
 
-void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
+void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista, ventas ventas) {
     int dir = _mkdir("Facturas");
     ofstream arch;
     bool abierto = false;
@@ -93,6 +94,7 @@ void Cola::pagarFactura(bool llevar, bool tarjeta, ListaCaja lista) {
 
     arch.close();
 
+    ventas.InsertarFinal(Cliente[0]->cedula, precio);
     for (int i = 1; i < 5; i++) {
         Cliente[i - 1] = Cliente[i];
     }

@@ -18,7 +18,9 @@ enum ActMenu {
 	Insercion,
 	Eliminacion,
 	Consulta,
-	Modificacion
+	Modificacion,
+	Reporte,
+	Reporte1
 };
 
 #endif // !ENUMS_H

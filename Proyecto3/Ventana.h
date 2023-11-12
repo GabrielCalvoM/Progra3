@@ -1616,7 +1616,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte2->TabIndex = 0;
 			this->reporte2->Text = L"Ciudades";
 			this->reporte2->UseVisualStyleBackColor = false;
-			this->reporte2->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
+			this->reporte2->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// reporte3
 			// 
@@ -1627,7 +1627,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte3->TabIndex = 0;
 			this->reporte3->Text = L"Restaurantes";
 			this->reporte3->UseVisualStyleBackColor = false;
-			this->reporte3->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
+			this->reporte3->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// reporte4
 			// 
@@ -1649,7 +1649,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte5->TabIndex = 0;
 			this->reporte5->Text = L"Compras de un cliente";
 			this->reporte5->UseVisualStyleBackColor = false;
-			this->reporte5->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
+			this->reporte5->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// ReportesOpc
 			// 
@@ -1741,7 +1741,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte11->TabIndex = 0;
 			this->reporte11->Text = L"Precio de un producto\r\n\r\n";
 			this->reporte11->UseVisualStyleBackColor = false;
-			this->reporte11->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
+			this->reporte11->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon); 
 			// 
 			// reporte12
 			// 
@@ -1763,7 +1763,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte13->TabIndex = 0;
 			this->reporte13->Text = L"Cantidad de un producto";
 			this->reporte13->UseVisualStyleBackColor = false;
-			this->reporte13->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
+			this->reporte13->Click += gcnew System::EventHandler(this, &Ventana::ingresarIcon);
 			// 
 			// reporte14
 			// 
@@ -1995,20 +1995,11 @@ private: System::Windows::Forms::Button^ reporte18;
 		if (boton == reporte1) {
 			arboles.paises.reporte1();  
 		}
-		if (boton == reporte2) {
-
-		}
-		if (boton == reporte3) {
-
-		}
 		if (boton == reporte4) {
 			//arboles.clientes.reporte4();
 		}
-		if (boton == reporte5) {
-
-		}
 		if (boton == reporte6) {
-			//arboles.restaurantes.reporte6();  
+			arboles.restaurantes.reporte6();  
 		}
 		if (boton == reporte7) {
 			arboles.menus.reporte7();
@@ -2022,29 +2013,23 @@ private: System::Windows::Forms::Button^ reporte18;
 		if (boton == reporte10) {
 			arboles.ventas.reporte10();
 		}
-		if (boton == reporte11) {
-
-		}
 		if (boton == reporte12) {
 			arboles.ventas.reporte12();
 		}
-		if (boton == reporte13) {
-
-		}
 		if (boton == reporte14) {
-			arboles.productos.reporte14();
+			arboles.productos_el.reporte14();
 		}
 		if (boton == reporte15) {
-			//arboles.restaurantes.reporte15();
+			//arboles.restaurantes_el.reporte15();
 		}
 		if (boton == reporte16) {
-			arboles.ciudades.reporte16();
+			arboles.ciudades_el.reporte16();
 		}
 		if (boton == reporte17) {
-			arboles.menus.reporte17();
+			arboles.menus_el.reporte17();
 		}
 		if (boton == reporte18) {
-			arboles.paises.reporte18(); 
+			arboles.paises_el.reporte18();
 		}
 	}
 
@@ -2055,15 +2040,15 @@ private: System::Windows::Forms::Button^ reporte18;
 
 		if (boton->Text == "País")
 			this->arbol = Pais;
-		else if (boton->Text == "Ciudad")
+		else if (boton->Text == "Ciudad") 
 			this->arbol = Ciudad;
-		else if (boton->Text == "Restaurante")
+		else if (boton->Text == "Restaurante") 
 			this->arbol = Restaurante;
 		else if (boton->Text == "Menú")
 			this->arbol = Arbol::Menu;
-		else if (boton->Text == "Producto")
+		else if (boton->Text == "Producto") 
 			this->arbol = Producto;
-		else if (boton->Text == "Cliente")
+		else if (boton->Text == "Cliente") 
 			this->arbol = Cliente;
 		else if (boton->Text == "Administrador")
 			this->arbol = Admin;
@@ -2233,6 +2218,26 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->arbol = Compra;
 			this->accion = Modificacion;
 			this->cantidad = false;
+		}
+		else if (boton == reporte2) {
+			this->arbol = Pais;
+			this->accion = Reporte;
+		}
+		else if (boton == reporte3) {
+			this->arbol = Ciudad;
+			this->accion = Reporte;
+		}
+		else if (boton == reporte5) {
+			this->arbol = Cliente;
+			this->accion = Reporte;
+		}
+		else if (boton == reporte11) {
+			this->arbol = Producto;
+			this->accion = Reporte;
+		}
+		else if (boton == reporte13) {
+			this->arbol = Producto;
+			this->accion = Reporte1;
 		}
 
 		ingresa->config(arbol, accion, cantidad);
