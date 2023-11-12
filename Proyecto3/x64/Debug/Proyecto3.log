@@ -1,14 +1,37 @@
-﻿  Inicio.cpp
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\IngresoDatos.h(782,57): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Inicio.cpp(7,1): warning C4829: Parámetros posiblemente incorrectos para la función main. Utilice 'int main(Platform::Array<Platform::String^>^ argv)'
+﻿  Compras.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+  Fila.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+  Menus.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Menus.cpp(238,14): warning C4553: '==': result of expression not used; did you intend '='?
+  Producto.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Producto.cpp(288,18): warning C4553: '==': result of expression not used; did you intend '='?
+  IngresoDatos.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\IngresoDatos.h(782,57): warning C4390: ';': empty controlled statement found; is this the intent?
+  Inicio.cpp
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\IngresoDatos.h(782,57): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Inicio.cpp(7,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   Ventana.cpp
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\Proyecto3\IngresoDatos.h(782,57): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-  Generando código...
-  Admins.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  Proyecto3.vcxproj -> C:\Users\Gabriel\Documents\U\Semestre II\Datos\Trabajos\Proyectos\Progra3\x64\Debug\Proyecto3.exe
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(46,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\ArbolAux.h(60,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\Arboles\Restaurantes.h(319,18): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Lenovo\TEC\Datos\Progra3\Proyecto3\IngresoDatos.h(782,57): warning C4390: ';': empty controlled statement found; is this the intent?
+  Generating Code...
+  Admins.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Proyecto3.vcxproj -> C:\Users\Lenovo\TEC\Datos\Progra3\x64\Debug\Proyecto3.exe

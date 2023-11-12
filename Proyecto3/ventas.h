@@ -52,6 +52,7 @@ public:
     void reporte5(int cedula);
     void reporte9();
     void reporte10();
+    void reporte12();
 
 private:
     vnodo primero;

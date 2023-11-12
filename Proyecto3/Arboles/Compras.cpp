@@ -2,21 +2,6 @@
 
 // Lista
 
-void reporte12() {
-    
-        ofstream archivo("Reporte_Descuento_Pago_Tarjeta.txt");
-        if (!archivo.is_open()) {
-            cout << "No se pudo abrir el archivo" << endl;
-        }
-        archivo << "---------Reporte Descuento---------" << endl << endl;
-        archivo << "Descuento aplicado por tarjeta: 3%" << endl << endl;
-        archivo << "-----------------------------------";
-        archivo.close();
-
-        cout << "Reporte_Descuento_Pago_Tarjeta hecho" << endl;
-    
-}
-
 void Compras::InsertaNodo(int pais, int ciudad, int rest, int menu, int prod, int cant) {
     prnodo producto = listaProd->getProducto(pais, ciudad, rest, menu, prod);
 

@@ -45,7 +45,7 @@ public:
     bool verificarProducto(int pais, int ciudad, int rest, int menu, int prod);
     void BorrarNodo(int pais, int ciudad, int rest, int menu, int prod);
     void ModificarProdu(int pais, int ciudad, int rest, int menu, int prod, int nmenu, int nprod, int cant);
-    void ModificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant);
+    void ModificarCant(int pais, int ciudad, int rest, int menu, int prod, int cant); 
     int len();
     conodo getProducto(int i);
 };

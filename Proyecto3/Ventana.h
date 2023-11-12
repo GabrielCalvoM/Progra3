@@ -2,6 +2,8 @@
 
 #include "Mensaje.h"
 #include "IngresoDatos.h" 
+#include "Arboles/Enums.h"
+#include "Arboles/Arboles.h"
 
 namespace Proyecto3 {
 
@@ -1603,6 +1605,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte1->TabIndex = 14;
 			this->reporte1->Text = L"Paises";
 			this->reporte1->UseVisualStyleBackColor = false;
+			this->reporte1->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte2
 			// 
@@ -1613,6 +1616,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte2->TabIndex = 0;
 			this->reporte2->Text = L"Ciudades";
 			this->reporte2->UseVisualStyleBackColor = false;
+			this->reporte2->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte3
 			// 
@@ -1623,6 +1627,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte3->TabIndex = 0;
 			this->reporte3->Text = L"Restaurantes";
 			this->reporte3->UseVisualStyleBackColor = false;
+			this->reporte3->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte4
 			// 
@@ -1633,6 +1638,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte4->TabIndex = 0;
 			this->reporte4->Text = L"Clientes";
 			this->reporte4->UseVisualStyleBackColor = false;
+			this->reporte4->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte5
 			// 
@@ -1643,6 +1649,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte5->TabIndex = 0;
 			this->reporte5->Text = L"Compras de un cliente";
 			this->reporte5->UseVisualStyleBackColor = false;
+			this->reporte5->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// ReportesOpc
 			// 
@@ -1679,6 +1686,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte6->TabIndex = 0;
 			this->reporte6->Text = L"Restaurantes más buscados";
 			this->reporte6->UseVisualStyleBackColor = false;
+			this->reporte6->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte7
 			// 
@@ -1689,6 +1697,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte7->TabIndex = 0;
 			this->reporte7->Text = L"Menú más buscado";
 			this->reporte7->UseVisualStyleBackColor = false;
+			this->reporte7->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte8
 			// 
@@ -1699,6 +1708,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte8->TabIndex = 0;
 			this->reporte8->Text = L"Producto más comprado";
 			this->reporte8->UseVisualStyleBackColor = false;
+			this->reporte8->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte9
 			// 
@@ -1709,6 +1719,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte9->TabIndex = 0;
 			this->reporte9->Text = L"Factura de mayor monto\r\n\r\n";
 			this->reporte9->UseVisualStyleBackColor = false;
+			this->reporte9->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte10
 			// 
@@ -1719,6 +1730,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte10->TabIndex = 0;
 			this->reporte10->Text = L"Factura de menor monto\r\n\r\n";
 			this->reporte10->UseVisualStyleBackColor = false;
+			this->reporte10->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte11
 			// 
@@ -1729,6 +1741,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte11->TabIndex = 0;
 			this->reporte11->Text = L"Precio de un producto\r\n\r\n";
 			this->reporte11->UseVisualStyleBackColor = false;
+			this->reporte11->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte12
 			// 
@@ -1739,6 +1752,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte12->TabIndex = 0;
 			this->reporte12->Text = L"Descuento de tarjeta";
 			this->reporte12->UseVisualStyleBackColor = false;
+			this->reporte12->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte13
 			// 
@@ -1749,6 +1763,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte13->TabIndex = 0;
 			this->reporte13->Text = L"Cantidad de un producto";
 			this->reporte13->UseVisualStyleBackColor = false;
+			this->reporte13->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte14
 			// 
@@ -1759,6 +1774,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte14->TabIndex = 0;
 			this->reporte14->Text = L"Productos eliminados";
 			this->reporte14->UseVisualStyleBackColor = false;
+			this->reporte14->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte15
 			// 
@@ -1769,6 +1785,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte15->TabIndex = 0;
 			this->reporte15->Text = L"Restaurantes eliminados";
 			this->reporte15->UseVisualStyleBackColor = false;
+			this->reporte15->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte16
 			// 
@@ -1779,6 +1796,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte16->TabIndex = 0;
 			this->reporte16->Text = L"Ciudades eliminadas";
 			this->reporte16->UseVisualStyleBackColor = false;
+			this->reporte16->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte17
 			// 
@@ -1789,6 +1807,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte17->TabIndex = 0;
 			this->reporte17->Text = L"Menus eliminados\r\n\r\n";
 			this->reporte17->UseVisualStyleBackColor = false;
+			this->reporte17->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// reporte18
 			// 
@@ -1799,6 +1818,7 @@ private: System::Windows::Forms::Button^ reporte18;
 			this->reporte18->TabIndex = 0;
 			this->reporte18->Text = L"Paises eliminados";
 			this->reporte18->UseVisualStyleBackColor = false;
+			this->reporte18->Click += gcnew System::EventHandler(this, &Ventana::generarReportes);
 			// 
 			// Ventana
 			// 
@@ -1965,6 +1985,67 @@ private: System::Windows::Forms::Button^ reporte18;
 		this->InsOp->Visible = false;
 		this->ConsOp->Visible = false;
 		this->ModOp->Visible = false;
+	}
+
+	private: System::Void generarReportes(System::Object^ sender, System::EventArgs^ e) {
+		Arboles& arboles = Arboles::getInstance();
+		Button^ boton = (Button^)sender;
+		Proyecto3::IngresoDatos^ ingresa = gcnew Proyecto3::IngresoDatos();
+
+		if (boton == reporte1) {
+			arboles.paises.reporte1();  
+		}
+		if (boton == reporte2) {
+
+		}
+		if (boton == reporte3) {
+
+		}
+		if (boton == reporte4) {
+			//arboles.clientes.reporte4();
+		}
+		if (boton == reporte5) {
+
+		}
+		if (boton == reporte6) {
+			//arboles.restaurantes.reporte6();  
+		}
+		if (boton == reporte7) {
+			arboles.menus.reporte7();
+		}
+		if (boton == reporte8) {
+			arboles.productos.reporte8();
+		}
+		if (boton == reporte9) {
+			arboles.ventas.reporte9();
+		}
+		if (boton == reporte10) {
+			arboles.ventas.reporte10();
+		}
+		if (boton == reporte11) {
+
+		}
+		if (boton == reporte12) {
+			arboles.ventas.reporte12();
+		}
+		if (boton == reporte13) {
+
+		}
+		if (boton == reporte14) {
+			arboles.productos.reporte14();
+		}
+		if (boton == reporte15) {
+			//arboles.restaurantes.reporte15();
+		}
+		if (boton == reporte16) {
+			arboles.ciudades.reporte16();
+		}
+		if (boton == reporte17) {
+			arboles.menus.reporte17();
+		}
+		if (boton == reporte18) {
+			arboles.paises.reporte18(); 
+		}
 	}
 
 	private: System::Void ingresarPop(System::Object^ sender, System::EventArgs^ e)

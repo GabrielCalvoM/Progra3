@@ -86,11 +86,11 @@ rnodo rmasbuscado(rnodo R, rnodo MAX)
     }
 
 }
-
 */
+
 class ArbolR {
 private:
-    rnodo Raiz;
+    rnodo Raiz; 
     rnodo TNULL;
 
     void initializeNULLNode(rnodo nodo, rnodo padre) {
@@ -117,7 +117,7 @@ private:
 
 
     void rbModificar(rnodo uRaiz, rnodo vValor) {
-        if (Raiz->padre == nullptr) {
+        if (Raiz->padre == nullptr) { 
             Raiz = vValor;
         }
         else if (uRaiz == uRaiz->padre->Hizq) {
